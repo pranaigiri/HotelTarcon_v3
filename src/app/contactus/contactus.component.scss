@@ -1,0 +1,167 @@
+ 
+  a {
+    color:   #eeac36;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color:   #eeac36;
+    text-decoration: none;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Nunito", sans-serif;
+  }
+
+  /*--------------------------------------------------------------
+  # Contact
+  --------------------------------------------------------------*/
+  .contact .info-box {
+    color: #444444;
+    background-color: white;
+    text-align: center;
+    box-shadow: 0 0 30px rgb(214 215 216 / 20%);
+    padding: 20px 0 30px 0;
+  }
+  
+  .contact .info-box i {
+    font-size: 32px;
+    color:   #eeac36;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #f5a0a0;
+  }
+  
+  .contact .info-box h3 {
+    font-size: 20px;
+    color: #777777;
+    font-weight: 700;
+    margin: 10px 0;
+  }
+  
+  .contact .info-box p {
+    padding: 0;
+    line-height: 24px;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  
+  .contact .php-email-form {
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 30px;
+    background: white;
+  }
+  
+  .contact .php-email-form .error-message {
+    display: none;
+    color: #fff;
+    background: #eeac36;
+    text-align: left;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .contact .php-email-form .error-message {
+    margin-top: 25px;
+  }
+  
+  .contact .php-email-form .sent-message {
+    display: none;
+    color: #fff;
+    background: #18d26e;
+    text-align: center;
+    padding: 15px;
+    font-weight: 600;
+  }
+  
+  .contact .php-email-form .loading {
+    display: none;
+    background: #fff;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .contact .php-email-form .loading:before {
+    content: "";
+    display: inline-block;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin: 0 10px -6px 0;
+    border: 3px solid #18d26e;
+    border-top-color: #eee;
+    -webkit-animation: animate-loading 1s linear infinite;
+    animation: animate-loading 1s linear infinite;
+  }
+  
+  .contact .php-email-form input,
+  .contact .php-email-form textarea {
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+  }
+  
+  .contact .php-email-form input::focus,
+  .contact .php-email-form textarea::focus {
+    background-color:   #eeac36;
+  }
+  
+  .contact .php-email-form input {
+    padding: 10px 15px;
+  }
+  
+  .contact .php-email-form textarea {
+    padding: 12px 15px;
+  }
+  
+  .contact .php-email-form button[type=submit] {
+    background:   #eeac36;
+    border: 0;
+    padding: 10px 24px;
+    color: #fff;
+    transition: 0.4s;
+  }
+  
+  .contact .php-email-form button[type=submit]:hover {
+    background:  #eeac36;
+  }
+  
+  @-webkit-keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  @keyframes animate-loading {
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .social-links{
+    color: #444444;
+    text-align: center;
+    box-shadow: 0 0 30px rgba(214, 215, 216, 0.6);
+    padding: 20px 0 30px 0;
+  }
+  
+  .social-links i {
+    font-size: 20px;
+    color:   #eeac36;
+    border-radius: 50%;
+    padding: 8px;
+    border: 2px dotted #f5e7a0;
+  }

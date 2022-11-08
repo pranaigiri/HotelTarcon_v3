@@ -1,0 +1,51 @@
+<section class="home-slider-section">
+    <div class="slider-container">
+        <swiper [allowTouchMove]="true" [navigation]="true" [pagination]="true"[config]="config"
+            class="landingPageSlider">
+            <ng-template swiperSlide>
+                <div class="slide" style="background: url(assets/slider-images/home7.jpg);">
+                    <div class="slide-info px-5">
+                        <div class="h1 slide-title"> <span class="fs-6">Welcome to</span> <br> The Hotel Tarcon</div>
+                        <div class="slide-desc fs-6"> Premium & Luxury Hotel With 3 Star Room Facilities With Modarn Amenities </div>
+                        <button class="slide-btn btn btn-primary rounded-pill px-4 py-2 mt-3">Explore</button>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template swiperSlide>
+                <div class="slide" style="background: url(assets/slider-images/1.jpg);">
+                    <div class="slide-info px-5">
+                        <div class="h1 slide-title">Hotel</div>
+                        <div class="slide-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium
+                            quas eos tempora vitae sunt vero nihil suscipit odit, commodi excepturi.</div>
+                        <button class="slide-btn btn btn-primary rounded-pill px-4 py-2 mt-3">View Rooms</button>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template swiperSlide>
+                <div class="slide" style="background: url(assets/slider-images/restaurant2.JPG);">
+                    <div class="slide-info px-5">
+                        <div class="h1 slide-title">Restaurant</div>
+                        <div class="slide-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum magnam
+                            deleniti sunt necessitatibus temporibus hic.</div>
+                        <button class="slide-btn btn btn-primary rounded-pill px-4 py-2 mt-3">Explore</button>
+                    </div>
+                </div>
+            </ng-template>
+            <ng-template swiperSlide>
+                <div class="slide" style="background: url(assets/slider-images/bar2.JPG);">
+                    <div class="slide-info px-5">
+                        <div class="h1 slide-title">Bar</div>
+                        <div class="slide-desc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eius,
+                            provident.</div>
+                        <button class="slide-btn btn btn-primary rounded-pill px-4 py-2 mt-3">Explore</button>
+                    </div>
+                </div>
+            </ng-template>
+        </swiper>
+
+        <!-- If we need pagination -->
+        <div class="swiper-pagination"></div>
+
+    </div>
+    <app-checkinform></app-checkinform>
+</section>

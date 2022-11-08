@@ -1,0 +1,119 @@
+
+    
+    /* About Text Start */
+    
+    .quote-left h1 {
+      font-size: 30px;
+      text-align: right;
+      font-weight: 100;
+    }
+    
+    .quote-left h1 span {
+      font-weight: 600;
+    }
+    
+    .service-item {
+      box-shadow: 0 0 45px rgba(0, 0, 0, .08);
+      transition: .5s;
+    }
+    
+    .service-item:hover {
+      background: #FEA116;
+    }
+    
+    .service-item * {
+      transition: .5s;
+    }
+    
+    .service-item:hover * {
+      color: #F1F8FF;
+    }
+    
+    /*--------------------------------------------------------------
+      # Sections General
+      --------------------------------------------------------------*/
+    .section-title {
+      text-align: center;
+      padding: 30px 0;
+      position: relative;
+    }
+    
+    .section-title h2 {
+      font-size: 32px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+      padding-bottom: 0;
+      color: #191919;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .section-title span {
+      position: absolute;
+      top: 30px;
+      color: #f4f4f4;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      font-weight: 700;
+      font-size: 52px;
+      text-transform: uppercase;
+      line-height: 0;
+    }
+    
+    .section-title p {
+      margin-bottom: 0;
+      position: relative;
+      z-index: 2;
+    }
+    
+    @media (max-width: 575px) {
+      .section-title h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+      }
+    
+      .section-title span {
+        font-size: 38px;
+      }
+    }
+    
+    .about_area {
+      position: relative;
+    }
+    
+    
+    .main_title {
+      text-align: center;
+      max-width: 680px;
+      margin: 0px auto 95px;
+    }
+    
+    .main_title .top-part p {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    
+    .main_title h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 60px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: #222222;
+    
+    }
+    
+    .main_title p {
+      margin-bottom: 0px;
+    }
+    
+    p {
+      display: block;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0px;
+      margin-inline-end: 0px;
+    }

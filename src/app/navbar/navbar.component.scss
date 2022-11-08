@@ -1,0 +1,108 @@
+.c-navbar{
+    height: 0px;
+    transition: .4s ease !important;
+    position: fixed;
+    top: 0;
+    color: white;
+    background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255, 236, 204, 0));
+}
+.c-navbar.expand{
+    height: 60px;
+    background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 236, 204, 1));
+}
+.c-navbar.expand .nav-menu, .c-navbar.expand .navmenu-items{
+    color: #ce923a;
+}
+.nav-title{
+    font-family: 'Abril Fatface', 'Nunito', 'sans-serif';
+    background: linear-gradient(350deg, #ffae00, #ffeac4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.nav-menu, .navmenu-items{
+    text-transform: uppercase;
+    font-size: .8rem;
+    font-weight: 600;
+    color: rgb(222, 222, 222);
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.bg-white .nav-menu .li{
+    color: #787878;
+}
+
+.nav-menu .li:hover,  .ul .li:hover, .bg-white .nav-menu .li:hover, .phone-nav .li:hover, .navmenu-items:hover{
+    color: orange;
+    cursor: pointer;
+}
+
+
+.tarcon-logo{
+    width: 150px;
+    filter: invert(72%) sepia(57%) saturate(629%) hue-rotate(343deg) brightness(98%) contrast(90%);
+}
+.c-navbar.expand .tarcon-logo{
+    width: 110px;
+    filter: invert(72%) sepia(57%) saturate(629%) hue-rotate(343deg) brightness(58%) contrast(90%);
+}
+.burger-menu{
+    color: #ce923a;
+}
+
+.phone-nav{
+    display: none;
+}
+.phone-nav .ul .li{
+    color: #9a8766;
+}
+.phone-nav .ul .li:hover{
+    color: #ce923a;
+}
+
+@media screen and (max-width:990px) {
+    .c-navbar{
+        background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 236, 204, 1)) !important;
+        height: auto;
+    }
+
+    .phone-nav{
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        height: 100vh;
+        background: rgb(255 251 238);
+        z-index: -1;
+        transform: translateX(100%);
+    }
+    .phone-nav.opened{
+        transform: translateX(0);
+    }
+    .burger-menu.c-rotate{
+        animation: rotateHalf .5s ease;
+    }
+
+}
+
+@keyframes rotateHalf {
+    0%{
+        transform: rotate(0deg);
+    }100%{
+        transform: rotate(180deg);
+    }
+}
+
+
+// For Modal Styling
+.c-modal-style{
+    background-color: rgb(255 255 255 / 20%);
+    backdrop-filter: blur(5px);
+}
+.c-modal-style .modal-header{
+    border-bottom: 1px solid #9a8766;
+}
+.c-modal-style .modal-footer{
+    border-top: 1px solid #9a8766;
+}

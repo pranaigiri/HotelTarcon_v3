@@ -1,0 +1,16 @@
+.nearby-container {
+    background: rgb(255, 255, 255);
+  }
+  
+  .nearby-container:before {
+    content: "";
+    position: fixed;
+    top: calc(50% - 1000px);
+    left: 0;
+    width: 50%;
+    height: 1000vh;
+    background: #fffcf8;
+    transform: skew(21deg);
+    transform-origin: top;
+    z-index: -1;
+  }

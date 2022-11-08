@@ -1,0 +1,116 @@
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+
+.home-slider-section{
+
+  .slider-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper {
+      width: 100%;
+      height: 700px;
+      position: relative;
+      top: -60px;
+    }
+    
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      width: 100%;
+      height: 700px;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      overflow: hidden;
+    }
+  
+    .slide{
+      width: 100%;
+      height: 100%;
+      background-size: cover !important;
+      background-position: center !important;
+      transform: scale3d(1.3, 1.3, 1.3);
+    }
+    .swiper-slide-active .slide{
+      transform: scale3d(1, 1, 1) !important;
+    }
+  
+    .slide-info{
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      place-items: center;
+      flex-direction: column;
+      text-align: center;
+      color: white;
+      box-shadow: 0px 0px 200px black inset;
+      backdrop-filter: brightness(.8);
+  
+      .slide-title{
+          font-family: 'Abril Fatface', 'Nunito', sans-serif;
+          text-transform: uppercase;
+      }
+      .slide-desc{
+          filter: drop-shadow(2px 4px 6px black);
+          max-width: 600px;
+          font-weight: 100;
+      }
+      .slide-btn{
+          text-transform: uppercase;
+          font-size: .7rem;
+      }
+    }
+  
+  
+    .swiper-button-next, .swiper-button-prev{
+      color: #eeac36;
+      transform: scale(.6);
+    }
+  
+  
+    .swiper-pagination {
+      display: flex;
+      background: #272727d6;
+      justify-content: center;
+      width: fit-content !important;
+      padding: 0.2rem 0.2rem;
+      border-radius: 50px;
+      position: absolute;
+      bottom: 90px !important;
+      left: 50% !important;
+      transform: translateX(-50%);
+      margin-bottom: 50px;
+      height: 25px;
+    }
+    .swiper-pagination-bullet {
+      text-transform: uppercase;
+      font-size: .8rem;
+      font-weight: 600;
+      color: rgb(222, 222, 222);
+      opacity: 1;
+      background: none;
+      width: fit-content;
+      user-select: none;
+    }
+    .swiper-pagination-bullet-active {
+      background: #eeac36;
+      padding: 0rem 0.9rem;
+      border-radius: 20px;
+      color: white;
+      height: 100%;
+    }
+  
+    @media screen and (max-width:990px){
+      
+    }
+}

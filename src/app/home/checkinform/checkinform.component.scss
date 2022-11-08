@@ -1,0 +1,27 @@
+// Check Room Availibility
+
+.check-availabilty {
+    position: relative;
+    z-index: 10;
+    top: -120px;
+}
+
+.check-availabilty .block-32 {
+    background: #fff;
+    border-radius: 10px;
+
+}
+
+.block-32 {
+    padding: 30px;
+    width: 90%;
+    margin: auto;
+    box-shadow: 0 2px 80px -10px rgb(0 0 0 / 20%);
+}
+.block-32 form{
+    display: none;
+}
+.block-32 form.active{
+    display: block !important;
+    opacity: 1;
+}

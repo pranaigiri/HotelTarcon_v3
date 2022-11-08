@@ -1,0 +1,78 @@
+// footer 9
+.footer-16371 {
+    background-image: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 236, 204)) !important;
+	padding: 2rem 0;
+
+	.footer-site-logo {
+		text-align: center;
+		font-size: 2rem;
+		a {
+            background: linear-gradient(101deg, #ffd375, #fda300);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-decoration: none;
+            font-family: "Abril Fatface" !important;
+		}
+	}
+
+	.nav-links {
+		padding: 0;
+		margin: 0;
+		li {
+			display: inline-block;
+			a {
+				padding: 10px;
+				color: #835b21;
+				&:hover {
+					color: orange;
+				}
+                text-decoration: none;
+			}
+		}
+	}
+	.social {
+		h3 {
+			font-weight: bold;
+			font-size: 18px;
+			color: #c8ab82;
+		}
+		ul {
+			li {
+				display: inline-block;
+				a {
+					display: inline-block;
+					padding: 10px;
+				}
+				&.in {
+					a {
+						color: #df588a;
+					}
+				}
+				&.tw {
+					a {
+						color: #15b8ff;
+					}
+				}
+				&.fb {
+					a {
+						color: #3742d0;
+					}
+				}
+				&.dr {
+					a {
+						color: #fa38c1;
+					}
+				}
+				&.pin {
+					a {
+						color: #dd4d5a;
+					}
+				}
+			}
+		}
+	}
+	.copyright {
+		color: #c8ab82;
+	}
+}
