@@ -1,5 +1,6 @@
 .nearby-container {
-    background: rgb(255, 255, 255);
+  background: url('../../assets/pattern-flower.png'); 
+  background-attachment: fixed !important;
   }
   
   .nearby-container:before {
@@ -13,4 +14,8 @@
     transform: skew(21deg);
     transform-origin: top;
     z-index: -1;
+  }
+
+  .contactus-container{
+    background: linear-gradient(348deg, #2a241a, #51473b) !important;
   }
