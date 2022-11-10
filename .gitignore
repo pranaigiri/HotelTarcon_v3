@@ -40,3 +40,8 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
+/.vs/HotelTarcon_v3/config/applicationhost.config
+/.vs/HotelTarcon_v3/FileContentIndex/7bf9f0be-2de0-4847-b3db-60adf51ce427.vsidx
+/.vs/HotelTarcon_v3/FileContentIndex/061bd83a-58c0-4341-bd0e-d4cdfb330bcc.vsidx
+/.vs/HotelTarcon_v3/FileContentIndex
+/.vs
