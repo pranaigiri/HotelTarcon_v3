@@ -1,600 +1,542 @@
-<section id="section-restaurant">
+<section id="section-foodmenu" name="section-foodmenu">
 
 <!--  List Menu STart -->
 
-<div class="container menu_container">
-  <div class="row justify-content-center mb-5 pb-2">
-    <div class="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
-      <span class="subheading">Specialities</span>
-      <h2 class="mb-4">Our Menu</h2>
-    </div>
-  </div>
-  <ul class="filters_menu">
-    <li data-filter="*" (click)="filterMenu('FEATURED')" [ngClass]="{'active': filterOption=='FEATURED'}" class="my-1">
-      FEATURED</li>
-    <li data-filter=".burger" (click)="filterMenu('BREAKFAST')" [ngClass]="{'active': filterOption=='BREAKFAST'}"
-      class="my-1">BREAKFAST</li>
-    <li data-filter=".pizza" (click)="filterMenu('STARTERS')" [ngClass]="{'active': filterOption=='STARTERS'}" class="my-1">
-      STARTERS</li>
-    <li data-filter=".pasta" (click)="filterMenu('MAIN COURSE')" [ngClass]="{'active': filterOption=='MAIN COURSE'}" class="my-1">
-      MAIN COURSE</li>
-    <li data-filter=".pasta" (click)="filterMenu('BEVERAGES')" [ngClass]="{'active': filterOption=='BEVERAGES'}"
-      class="my-1">BEVERAGES</li>
-
-      <li data-filter=".pasta" (click)="filterMenu('OTHERS')" [ngClass]="{'active': filterOption=='OTHERS'}"
-      class="my-1">OTHERS</li>
-
-      <li data-filter=".pasta" (click)="filterMenu('CURRY')" [ngClass]="{'active': filterOption=='CURRY'}"
-      class="my-1">CURRY</li>
-  </ul>
-  <div class="row first-menu-container">
-
-    <!-- indian breakfast -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>Morning Indian Breakfast</h3>
+    <div class="container menu_container">
+      <div class="row justify-content-center mb-5 pb-2">
+        <div class="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
+          <span class="subheading">Specialities</span>
+          <h2 class="mb-4">Our Menu</h2>
         </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of breakFastArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa-solid fa-seedling text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
+      </div>
+      <ul class="filters_menu">
+        <li data-filter="*" (click)="filterMenu('FEATURED')" [ngClass]="{'active': filterOption=='FEATURED'}" class="my-1">
+          FEATURED</li>
+        <li data-filter=".burger" (click)="filterMenu('BREAKFAST')" [ngClass]="{'active': filterOption=='BREAKFAST'}"
+          class="my-1">BREAKFAST</li>
+        <li data-filter=".pizza" (click)="filterMenu('STARTERS')" [ngClass]="{'active': filterOption=='STARTERS'}" class="my-1">
+          STARTERS</li>
+        <li data-filter=".pasta" (click)="filterMenu('MAIN COURSE')" [ngClass]="{'active': filterOption=='MAIN COURSE'}" class="my-1">
+          MAIN COURSE</li>
+        <li data-filter=".pasta" (click)="filterMenu('BEVERAGES')" [ngClass]="{'active': filterOption=='BEVERAGES'}"
+          class="my-1">BEVERAGES</li>
+
+          <li data-filter=".pasta" (click)="filterMenu('OTHERS')" [ngClass]="{'active': filterOption=='OTHERS'}"
+          class="my-1">OTHERS</li>
+
+          <li data-filter=".pasta" (click)="filterMenu('CURRY')" [ngClass]="{'active': filterOption=='CURRY'}"
+          class="my-1">CURRY</li>
+      </ul>
+      <div class="row first-menu-container">
+
+        <!-- indian breakfast -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>Morning Indian Breakfast</h3>
             </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- sikkimese breakfast-->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>Sikkimese Breakfast</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
-          *ngFor="let item of sikkimBreakfastArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa-solid fa-seedling text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of breakFastArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa-solid fa-seedling text-white fa-1x"></i>
               </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- hot beverages -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BEVERAGES'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>Hot Beverages</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
-          *ngFor="let item of hotBeveragesArr">
-          <div class="menu-img img  bg-white">
-            <i class="fa fa-cocktail text-primary cocktail-icon fs-4"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- cold beverages -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BEVERAGES'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>Cold Beverages</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
-          *ngFor="let item of coldBeveragesArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa fa-cocktail text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- sandwich -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>Sandwich</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of sandwichArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa-solid fa-seedling text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- veg starters -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'STARTERS'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>veg starters</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
-          *ngFor="let item of vegetableStartersArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa fa-bowl-food text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- nonveg starters -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'STARTERS'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>nonveg starters</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
-          *ngFor="let item of nonvegStartersArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa fa-bowl-food text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- soup -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>soup</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of soupArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa fa-bowl-food text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-    <!-- eggItem -->
-    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
-      <div class="menu-wrap">
-        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-          <h3>eggItem</h3>
-        </div>
-        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of eggItemArr">
-          <div class="menu-img img  {{item.category}}">
-            <i class="fa-solid fa-seedling text-white fa-1x"></i>
-          </div>
-          <div class="text">
-            <div class="d-flex">
-              <div class="one-half">
-                <h3>{{item.title}}</h3>
-              </div>
-              <div class="one-forth ms-auto">
-                <span class="price">₹{{item.price}}</span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <span class="flat flaticon-bread" style="left: 0;"></span>
-        <span class="flat flaticon-breakfast" style="right: 0;"></span>
-      </div>
-    </div>
-
-<!-- chineseVegMainCourse -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>chineseVegMainCourse</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of chineseVegMainCourseArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-<!-- chineseNonVegMainCourse -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>chineseNonVegMainCourse</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of chineseNonVegMainCourseArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-<!-- noodles -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>noodles</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of noodlesArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-<!-- continental -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>continental</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of continentalArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-
-<!-- indianDessert -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>indianDessert</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of indianDessertArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-
-<!-- rice -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>rice</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of riceArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-<!-- curryVeg -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'CURRY'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>curryVeg</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of curryVegArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-<!-- curryNonVeg -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'CURRY'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>curryNonVeg</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of curryNonVegArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-<!-- dal -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>dal</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of dalArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-
-<!-- curd -->
-<div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
-  <div class="menu-wrap">
-    <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>curd</h3>
-    </div>
-    <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of curdArr">
-      <div class="menu-img img  {{item.category}}">
-        <i class="fa fa-bowl-food text-white fa-1x"></i>
-      </div>
-      <div class="text">
-        <div class="d-flex">
-          <div class="one-half">
-            <h3>{{item.title}}</h3>
-          </div>
-          <div class="one-forth ms-auto">
-            <span class="price">₹{{item.price}}</span>
-          </div>
-        </div>
-      </div>
-    </div>
-    <span class="flat flaticon-bread" style="left: 0;"></span>
-    <span class="flat flaticon-breakfast" style="right: 0;"></span>
-  </div>
-</div>
-
-
-    <!-- row end -->
-  </div>
-</div>
-
-<!--  List Menu End -->
-
-<!-- Menu -->
-<!-- Restaurant Food Section Start-->
-<!-- <section class="food_section layout_padding-bottom my-5 pt-5">
-  <div class="container my-5 py-5">
-    <div class="heading_container heading_center">
-      <h2>
-        Our Menu
-      </h2>
-    </div>
-
-    <ul class="filters_menu">
-      <li data-filter="*" (click)="filterMenu('All')" [ngClass]="{'active': filterOption=='All'}">All</li>
-      <li data-filter=".burger" (click)="filterMenu('Burger')"  [ngClass]="{'active': filterOption=='Burger'}">Burger</li>
-      <li data-filter=".pizza" (click)="filterMenu('Pizza')"  [ngClass]="{'active': filterOption=='Pizza'}">Pizza</li>
-      <li data-filter=".pasta" (click)="filterMenu('Pasta')"  [ngClass]="{'active': filterOption=='Pasta'}">Pasta</li>
-      <li data-filter=".fries" (click)="filterMenu('Fries')"  [ngClass]="{'active': filterOption=='Fries'}">Fries</li>
-    </ul>
-
-    <div class="filters-content">
-      <div class="row grid">
-        <div class="col-sm-6 col-lg-4 all pizza" *ngFor="let item of Menu">
-          <div class="box">
-            <div>
-              <div class="img-box">
-                <img src="{{item.img}}" alt="{{item.title}}">
-              </div>
-              <div class="detail-box">
-                <h5>
-                  {{item.title}}
-                </h5>
-                <p>
-                  {{item.description}}
-                </p>
-                <div class="options {{item.option}}">
-                  <h6>
-                    {{item.price}}
-                  </h6>
-                  <a>
-                  </a>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
                 </div>
               </div>
             </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
           </div>
         </div>
 
+        <!-- sikkimese breakfast-->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>Sikkimese Breakfast</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+              *ngFor="let item of sikkimBreakfastArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa-solid fa-seedling text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- hot beverages -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BEVERAGES'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>Hot Beverages</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+              *ngFor="let item of hotBeveragesArr">
+              <div class="menu-img img  bg-white">
+                <i class="fa fa-cocktail text-primary cocktail-icon fs-4"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- cold beverages -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BEVERAGES'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>Cold Beverages</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+              *ngFor="let item of coldBeveragesArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa fa-cocktail text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- sandwich -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>Sandwich</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of sandwichArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa-solid fa-seedling text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- veg starters -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'STARTERS'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>veg starters</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+              *ngFor="let item of vegetableStartersArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa fa-bowl-food text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- nonveg starters -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'STARTERS'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>nonveg starters</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+              *ngFor="let item of nonvegStartersArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa fa-bowl-food text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- soup -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>soup</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of soupArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa fa-bowl-food text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+        <!-- eggItem -->
+        <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'BREAKFAST'">
+          <div class="menu-wrap">
+            <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+              <h3>eggItem</h3>
+            </div>
+            <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of eggItemArr">
+              <div class="menu-img img  {{item.category}}">
+                <i class="fa-solid fa-seedling text-white fa-1x"></i>
+              </div>
+              <div class="text">
+                <div class="d-flex">
+                  <div class="one-half">
+                    <h3>{{item.title}}</h3>
+                  </div>
+                  <div class="one-forth ms-auto">
+                    <span class="price">₹{{item.price}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <span class="flat flaticon-bread" style="left: 0;"></span>
+            <span class="flat flaticon-breakfast" style="right: 0;"></span>
+          </div>
+        </div>
+
+    <!-- chineseVegMainCourse -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>chineseVegMainCourse</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of chineseVegMainCourseArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
       </div>
     </div>
-    <div class="btn-box">
-      <a (click)="viewAll()" class="cursor">
-        {{viewButton}}
-      </a>
-    </div>
-  </div>
-</section> -->
-<!-- Restaurant Food Section Ed -->
-<!-- Menu End -->
 
+    <!-- chineseNonVegMainCourse -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>chineseNonVegMainCourse</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of chineseNonVegMainCourseArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+    <!-- noodles -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>noodles</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of noodlesArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+    <!-- continental -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>continental</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of continentalArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+
+    <!-- indianDessert -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>indianDessert</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of indianDessertArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+
+    <!-- rice -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>rice</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of riceArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+    <!-- curryVeg -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'CURRY'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>curryVeg</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of curryVegArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+    <!-- curryNonVeg -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'CURRY'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>curryNonVeg</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of curryNonVegArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+    <!-- dal -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>dal</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of dalArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+
+    <!-- curd -->
+    <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+      <div class="menu-wrap">
+        <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+          <h3>curd</h3>
+        </div>
+        <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of curdArr">
+          <div class="menu-img img  {{item.category}}">
+            <i class="fa fa-bowl-food text-white fa-1x"></i>
+          </div>
+          <div class="text">
+            <div class="d-flex">
+              <div class="one-half">
+                <h3>{{item.title}}</h3>
+              </div>
+              <div class="one-forth ms-auto">
+                <span class="price">₹{{item.price}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <span class="flat flaticon-bread" style="left: 0;"></span>
+        <span class="flat flaticon-breakfast" style="right: 0;"></span>
+      </div>
+    </div>
+
+
+        <!-- row end -->
+      </div>
+    </div>
+
+</section>
 
 <!-- Services -->
 <section class="ftco-section bg-light">
@@ -643,6 +585,5 @@
   </div>
 </section>
 <!-- End of Services -->
-</section>
 
 
