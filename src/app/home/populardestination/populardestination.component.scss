@@ -1,0 +1,442 @@
+/*--------------------------------------------------------------
+# About Sikkim
+--------------------------------------------------------------*/
+.about {
+    margin-top: 72px;
+}
+
+.about h3 {
+    font-weight: 700;
+    font-size: 34px;
+    color: #4e4039;
+}
+
+.about h4 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 5px;
+    color: #7a6960;
+}
+
+.about i {
+    font-size: 48px;
+    margin-top: 15px;
+    color: #f39e7a;
+}
+
+.about p {
+    font-size: 15px;
+    color: #5a6570;
+}
+
+@media (max-width: 991px) {
+    .about .about-img img {
+        max-width: 70%;
+    }
+}
+
+@media (max-width: 767px) {
+    .about .about-img img {
+        max-width: 90%;
+    }
+}
+
+
+/* <!-- Explore Sikkim Start --> */
+a {
+    text-decoration: none;
+}
+
+.visit-country .item {
+    position: relative;
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+    border-bottom: 1px solid #eee;
+}
+
+.visit-country .item .image img {
+    border-radius: 23px;
+}
+
+img {
+    width: 100%;
+    overflow: hidden;
+}
+
+.visit-country .item .right-content h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+    color: #2a2a2a;
+    font-weight: 700;
+}
+
+.visit-country .item .right-content span {
+    font-size: 15px;
+    color: #afafaf;
+    display: block;
+}
+
+.visit-country .item .right-content .main-button {
+    position: absolute;
+    right: 0;
+    top: -16px;
+}
+
+.main-button a {
+    font-size: 14px;
+    color: #fff;
+    background-color: #22b3c1;
+    border: 1px solid #22b3c1;
+    padding: 12px 30px;
+    display: inline-block;
+    border-radius: 25px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+}
+
+.visit-country .item .right-content p {
+    margin: 18px 0px;
+}
+
+p {
+    font-size: 15px;
+    line-height: 30px;
+    color: #afafaf;
+}
+
+.visit-country .item .right-content ul {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0px;
+}
+
+.visit-country .item .right-content ul li {
+    display: inline-block;
+    width: 32%;
+    color: #afafaf;
+    font-size: 14px;
+    list-style: none;
+}
+
+.visit-country .item .right-content ul li i {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.visit-country .item .right-content ul li:nth-child(2) {
+    text-align: center;
+}
+
+.visit-country .item .right-content .text-button {
+    margin-top: 20px;
+}
+
+.visit-country ul.page-numbers {
+    text-align: center;
+}
+
+.visit-country ul.page-numbers li {
+    display: inline-block;
+    margin: 0px 5px;
+}
+
+.visit-country ul.page-numbers li:first-child a {
+    border: none;
+}
+
+.visit-country ul.page-numbers li:first-child a,
+.visit-country ul.page-numbers li:last-child a {
+    border: none;
+}
+
+.visit-country ul.page-numbers li a {
+    display: inline-block;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #22b3c1;
+    line-height: 44px;
+    color: #22b3c1;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 50%;
+    transition: all .3s;
+    text-decoration: none;
+}
+
+/* <!-- Explore Sikkim End --> */
+
+/* <!-- Popular Destination Start--> */
+.popular_destination_area {
+    padding-bottom: 120px;
+}
+
+.mb_70 {
+    margin-bottom: 62px;
+}
+
+.section_title h3 {
+    font-size: 38px;
+    font-weight: 400;
+    color: #040E27;
+    position: relative;
+    z-index: 0;
+    padding-bottom: 7px;
+    line-height: 1.2em;
+}
+
+.popular_destination_area .single_destination {
+    position: relative;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.popular_destination_area .single_destination:before {
+    background: -moz-linear-gradient(top, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%);
+    background: -webkit-linear-gradient(top, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%);
+    background: linear-gradient(to bottom, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00040e27', endColorstr='#b3040e27', GradientType=0);
+    content: '';
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    position: absolute;
+}
+
+.single_destination {
+    height: 300px;
+}
+
+.popular_destination_area .single_destination .thumb img {
+    width: 100%;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.popular_destination_area .single_destination .content {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+    z-index: 7;
+}
+
+.popular_destination_area .single_destination .content p {
+    margin-bottom: 0;
+    font-size: 22px;
+    color: #fff;
+    font-weight: 400;
+    font-family: "Rubik", sans-serif;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+.popular_destination_area .single_destination .content p a {
+    display: inline-block;
+    background: #eeac36;
+    font-size: 12px;
+    border-radius: 30px;
+    font-weight: 400;
+    padding: 0px 12px;
+    height: 25px;
+    line-height: 25px;
+    color: #fff;
+    margin-left: 10px;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    outline: medium none;
+}
+
+
+/* <!-- Travels Guide Start --> */
+
+/* .travel-guid-outer {
+    float: left;
+    width: 100%;
+    padding-bottom: 50px;
+    position: relative;
+}
+
+.travel-main h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 32px;
+    font-weight: bold;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.5;
+    letter-spacing: normal;
+    color: #24272c;
+    margin-bottom: 25px;
+}
+
+.travel-main .bx-wrapper .bx-viewport {
+    height: auto !important;
+}
+
+.travel-guid-outer .bx-wrapper .bx-pager {
+    display: none;
+}
+
+.travel-guid-outer .bx-wrapper .bx-controls-direction a {
+    width: 52px;
+    height: 52px;
+    margin-top: -27px;
+}
+
+.travel-guid-outer .bx-wrapper .bx-prev {
+    background: url(../../assets/home-componenet/populardestination/arrow-slide1.png) no-repeat;
+    font-size: 0px;
+    color: transparent;
+    opacity: 1 !important;
+    left: -19px !important;
+    -webkit-box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 0px 33px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
+    border-radius: 50%;
+    height: 20px;
+}
+
+.travel-guid-outer .bx-wrapper .bx-next {
+    background: url(../../assets/home-componenet/populardestination/arrow-slide.png) no-repeat;
+    font-size: 0px;
+    color: transparent;
+    opacity: 1 !important;
+    right: -19px !important;
+    -webkit-box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
+    -moz-box-shadow: 0px 0px 33px -8px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
+    border-radius: 50%;
+}
+
+.travel-guid-outer .bx-controls-auto {
+    display: none;
+}
+
+.travel-guid-outer .slides2 li {
+    position: relative;
+    -webkit-box-shadow: 0px 0px 12px -2px rgb(0 0 0 / 24%);
+    -moz-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0px 0px 12px -2px rgb(0 0 0 / 24%);
+}
+
+.travel-guid-outer .slides2 li figure {
+    border-radius: 6px;
+    overflow: hidden;
+    width: 234px;
+    height: auto;
+}
+
+.travel-guid-outer .slides2 li figure img {
+    width: 100%;
+    max-width: inherit;
+    border-radius: 6px;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    object-fit: cover;
+    height: 100%;
+}
+
+.travel-guid-outer .slides2 li figcaption {
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 6px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.travel-guid-outer .slides2 li figcaption a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+.travel-guid-outer .slides2 li figcaption h3 {
+    font-family: Montserrat;
+    font-size: 20px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -1px;
+    text-align: center;
+    color: #ffffff;
+}
+
+.container:before {
+    display: table;
+    content: " ";
+}
+
+.container:after {
+    clear: both;
+} */
+
+
+/* <!-- Travels Guide End --> */
+
+
+/* <!-- Reservation Area Start --> */
+
+.section-padding {
+    padding: 130px 0;
+}
+
+.reservation-area {
+    /* background-image: url(../../assets/home-componenet/populardestination/restaurant-menu/reservation-bg.jpg); */
+    background-image: url(../../../assets/home-componenet/populardestination/wallpaperflare.co.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.reservation-area h2 {
+    color: rgb(250, 144, 45);
+    font-family: "Playfair Display", serif;
+    font-size: 42px !important;
+    font-weight: 700;
+}
+
+.reservation-area h4 {
+    color: #fff;
+    font-family: "Roboto", sans-serif;
+    font-size: 24px !important;
+    font-weight: 400;
+    font-style: italic;
+    text-transform: capitalize;
+}
+
+.template-btn {
+    color: #131230;
+    background: #ffb606;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid transparent;
+    display: inline-block;
+    padding: 12px 30px !important;
+    transition: all 0.5s;
+    text-decoration: none;
+}
