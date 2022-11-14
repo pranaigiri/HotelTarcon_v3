@@ -21,11 +21,11 @@
     <li data-filter=".pasta" (click)="filterMenu('BEVERAGES')" [ngClass]="{'active': filterOption=='BEVERAGES'}"
       class="my-1">BEVERAGES</li>
 
+      <li data-filter=".pasta" (click)="filterMenu('CURRY')" [ngClass]="{'active': filterOption=='CURRY'}"
+      class="my-1">CURRY</li>
       <li data-filter=".pasta" (click)="filterMenu('OTHERS')" [ngClass]="{'active': filterOption=='OTHERS'}"
       class="my-1">OTHERS</li>
 
-      <li data-filter=".pasta" (click)="filterMenu('CURRY')" [ngClass]="{'active': filterOption=='CURRY'}"
-      class="my-1">CURRY</li>
   </ul>
   <div class="row first-menu-container">
 
@@ -42,7 +42,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -69,7 +69,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -91,12 +91,12 @@
         <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
           *ngFor="let item of hotBeveragesArr">
           <div class="menu-img img  bg-white">
-            <i class="fa fa-cocktail text-primary cocktail-icon fs-4"></i>
+            <i class="fa fa-mug-saucer text-primary cocktail-icon fs-4"></i>
           </div>
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -118,12 +118,12 @@
         <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
           *ngFor="let item of coldBeveragesArr">
           <div class="menu-img img  {{item.category}}">
-            <i class="fa fa-cocktail text-white fa-1x"></i>
+            <i class="fa fa-mug-saucer text-white fa-1x"></i>
           </div>
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -149,7 +149,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -176,7 +176,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -203,7 +203,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -229,7 +229,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -255,7 +255,7 @@
           <div class="text">
             <div class="d-flex">
               <div class="one-half">
-                <h3>{{item.title}}</h3>
+                <h3>{{item.title | uppercase}}</h3>
               </div>
               <div class="one-forth ms-auto">
                 <span class="price">₹{{item.price}}</span>
@@ -272,7 +272,7 @@
 <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
   <div class="menu-wrap">
     <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>chineseVegMainCourse</h3>
+      <h3>chinese Veg MainCourse</h3>
     </div>
     <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of chineseVegMainCourseArr">
       <div class="menu-img img  {{item.category}}">
@@ -281,7 +281,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -298,7 +298,7 @@
 <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
   <div class="menu-wrap">
     <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>chineseNonVegMainCourse</h3>
+      <h3>chinese NonVeg MainCourse</h3>
     </div>
     <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of chineseNonVegMainCourseArr">
       <div class="menu-img img  {{item.category}}">
@@ -307,7 +307,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -333,7 +333,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -359,7 +359,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -386,7 +386,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -404,7 +404,7 @@
 <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'MAIN COURSE'">
   <div class="menu-wrap">
     <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-      <h3>rice</h3>
+      <h3>rice & roti</h3>
     </div>
     <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center" *ngFor="let item of riceArr">
       <div class="menu-img img  {{item.category}}">
@@ -413,7 +413,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -439,7 +439,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -465,7 +465,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -491,7 +491,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -518,7 +518,7 @@
       <div class="text">
         <div class="d-flex">
           <div class="one-half">
-            <h3>{{item.title}}</h3>
+            <h3>{{item.title | uppercase}}</h3>
           </div>
           <div class="one-forth ms-auto">
             <span class="price">₹{{item.price}}</span>
@@ -562,11 +562,11 @@
           <div class="box">
             <div>
               <div class="img-box">
-                <img src="{{item.img}}" alt="{{item.title}}">
+                <img src="{{item.img}}" alt="{{item.title | uppercase}}">
               </div>
               <div class="detail-box">
                 <h5>
-                  {{item.title}}
+                  {{item.title | uppercase}}
                 </h5>
                 <p>
                   {{item.description}}
