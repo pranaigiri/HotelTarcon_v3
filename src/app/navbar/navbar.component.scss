@@ -2,12 +2,12 @@
     height: 0px;
     transition: .4s ease !important;
     position: fixed;
+    width: 100vw;
     top: 0;
     color: white;
     background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255, 236, 204, 0));
 }
 .c-navbar.expand{
-    height: 60px;
     background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 236, 204, 1));
 }
 .c-navbar.expand .nav-menu, .c-navbar.expand .navmenu-items{
@@ -61,6 +61,11 @@
     color: #ce923a;
 }
 
+@media screen and (min-width:991px) {
+    .c-navbar.expand{
+        height: 60px;
+    }
+}
 @media screen and (max-width:990px) {
     .c-navbar{
         background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 236, 204, 1)) !important;

@@ -1,3 +1,4 @@
+import { ViewportScroller } from '@angular/common';
 import { Component, ElementRef, HostListener, NgZone, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -17,9 +18,7 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
 })
 export class SliderComponent implements OnInit {
 
-
-
-  constructor(private router: Router, private eventEmitterService: EventEmitterService, private ngZone: NgZone) {
+  constructor(private router: Router, private eventEmitterService: EventEmitterService, private ngZone: NgZone,private scroller:ViewportScroller) {
 
   }
 
@@ -98,6 +97,9 @@ export class SliderComponent implements OnInit {
   }
 
 
+  scrollFunc(obj:any){
+this.scroller.scrollToAnchor(obj)
+  }
 
 
 

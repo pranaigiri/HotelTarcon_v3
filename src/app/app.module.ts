@@ -20,6 +20,7 @@ import { EventEmitterService } from './event-emitter.service';
 import { ExploreinnComponent } from './home/exploreinn/exploreinn.component';
 import { DineinnComponent } from './home/dineinn/dineinn.component';
 import { NearbyComponent } from './home/nearby/nearby.component';
+import { PopulardestinationComponent } from './home/populardestination/populardestination.component';
 
 
 
@@ -41,6 +42,7 @@ import { NearbyComponent } from './home/nearby/nearby.component';
       ExploreinnComponent,
       DineinnComponent,
       NearbyComponent,
+      PopulardestinationComponent,
       ContactusComponent
    ],
   imports: [
