@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
+
+// MODULES
+import { SwiperModule } from 'swiper/angular';
+
+// COMPONENTS
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { SliderComponent } from './slider/slider.component';
-import { SwiperModule } from 'swiper/angular';
 import { FooterComponent } from './footer/footer.component';
 import { HotelComponent } from './hotel/hotel.component';
 import { RestaurantComponent } from './restaurant/restaurant.component';
@@ -16,11 +20,22 @@ import { TarconservicesComponent } from './home/tarconservices/tarconservices.co
 import { GreetingComponent } from './home/greeting/greeting.component';
 import { AboutusComponent } from './home/aboutus/aboutus.component';
 import { ContactusComponent } from './contactus/contactus.component';
-import { EventEmitterService } from './event-emitter.service';
 import { ExploreinnComponent } from './home/exploreinn/exploreinn.component';
 import { DineinnComponent } from './home/dineinn/dineinn.component';
 import { NearbyComponent } from './home/nearby/nearby.component';
 import { PopulardestinationComponent } from './home/populardestination/populardestination.component';
+
+
+// SERVICES
+import { EventEmitterService } from './event-emitter.service';
+
+
+//FOR FIREBASE HOSTING
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
 
 
