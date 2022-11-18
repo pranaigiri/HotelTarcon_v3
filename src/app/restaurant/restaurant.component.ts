@@ -1346,11 +1346,9 @@ export class RestaurantComponent implements OnInit {
   
   filterMenu(category: any) {
     this.filterOption = category;
-    this.sliceMenu()
   }
 
   sliceMenu(){
-    if(this.filterOption  != "FEATURED"){
     this.breakFastArr=this.breakFast.slice()
     this.hotBeveragesArr=this.hotBeverages.slice()
     this.coldBeveragesArr=this.coldBeverages.slice()
@@ -1370,28 +1368,6 @@ export class RestaurantComponent implements OnInit {
     this.curryNonVegArr=this.curryNonVeg.slice()
     this.dalArr=this.dal.slice()
     this.curdArr=this.curd.slice()
-    }
-    else{
-      this.breakFastArr=this.breakFast.slice(0,5)
-    this.hotBeveragesArr=this.hotBeverages.slice(0,5)
-    this.coldBeveragesArr=this.coldBeverages.slice(0,5)
-    this.sikkimBreakfastArr=this.sikkimBreakfast.slice(0,5)
-    this.sandwichArr=this.sandwich.slice(0,5)
-    this.eggItemArr=this.eggItem.slice(0,5)
-    this.soupArr=this.soup.slice(0,5)
-    this.vegetableStartersArr=this.vegetableStarters.slice(0,5)
-    this.nonvegStartersArr=this.nonvegStarters.slice(0,5)
-    this.chineseVegMainCourseArr=this.chineseVegMainCourse.slice(0,5)
-    this.chineseNonVegMainCourseArr=this.chineseNonVegMainCourse.slice(0,5)
-    this.noodlesArr=this.noodles.slice(0,5)
-    this.continentalArr=this.continental.slice(0,5)
-    this.indianDessertArr=this.indianDessert.slice(0,5)
-    this.riceArr=this.rice.slice(0,5)
-    this.curryVegArr=this.curryVeg.slice(0,5)
-    this.curryNonVegArr=this.curryNonVeg.slice(0,5)
-    this.dalArr=this.dal.slice(0,5)
-    this.curdArr=this.curd.slice(0,5)
-    }
   }
 
 }
