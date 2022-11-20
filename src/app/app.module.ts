@@ -19,12 +19,13 @@ import { CheckinformComponent } from './home/checkinform/checkinform.component';
 import { TarconservicesComponent } from './home/tarconservices/tarconservices.component';
 import { GreetingComponent } from './home/greeting/greeting.component';
 import { AboutusComponent } from './home/aboutus/aboutus.component';
-import { ContactusComponent } from './contactus/contactus.component';
 import { ExploreinnComponent } from './home/exploreinn/exploreinn.component';
 import { DineinnComponent } from './home/dineinn/dineinn.component';
 import { NearbyComponent } from './home/nearby/nearby.component';
 import { PopulardestinationComponent } from './home/populardestination/populardestination.component';
-
+import { ContactusComponent } from './contactus/contactus.component';
+import { PrivacypolicyComponent } from './footer/privacypolicy/privacypolicy.component';
+import { TermsandconditionsComponent } from './footer/termsandconditions/termsandconditions.component';
 
 // SERVICES
 import { EventEmitterService } from './event-emitter.service';
@@ -58,7 +59,9 @@ import { getAnalytics } from "firebase/analytics";
       DineinnComponent,
       NearbyComponent,
       PopulardestinationComponent,
-      ContactusComponent
+      ContactusComponent,
+      PrivacypolicyComponent,
+      TermsandconditionsComponent
    ],
   imports: [
     BrowserModule,
