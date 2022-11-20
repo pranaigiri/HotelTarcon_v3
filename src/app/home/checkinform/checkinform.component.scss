@@ -7,7 +7,7 @@
 }
 
 .check-availabilty .block-32 {
-    background: #fff;
+    background: linear-gradient(273deg, #fffefc, #fff4e1) !important;
     border-radius: 10px;
 
 }
@@ -24,4 +24,19 @@
 .block-32 form.active{
     display: block !important;
     opacity: 1;
+}
+
+input, select{
+    outline: none;
+    border: none;
+    color: gray;
+    user-select: none;
+}
+
+input:focus, select:focus{
+    color: #212529;
+    background-color: #fff;
+    border-color: #ffe7bd;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem rgb(255 211 146 / 25%);
 }
