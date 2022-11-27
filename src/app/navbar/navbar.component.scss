@@ -61,7 +61,7 @@
     color: #ce923a;
 }
 
-@media screen and (min-width:991px) {
+@media screen and (min-width:1200px) {
 
     .c-navbar.expand{
             height: 40px;
@@ -79,7 +79,7 @@
     }
     
 }
-@media screen and (max-width:990px) {
+@media screen and (max-width:1200px) {
     .c-navbar{
         background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 236, 204, 1)) !important;
         height: auto;
