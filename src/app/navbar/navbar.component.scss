@@ -62,9 +62,22 @@
 }
 
 @media screen and (min-width:991px) {
+
     .c-navbar.expand{
-        height: 60px;
+            height: 40px;
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        .nav-title{
+            font-size: 1.5rem;
+        }
+        .bookBtn{
+            font-size: .7rem;
+        }
+        .tarcon-logo{
+            transform: scale(.8);
+        }
     }
+    
 }
 @media screen and (max-width:990px) {
     .c-navbar{
