@@ -1,5 +1,5 @@
 
-  <div class="container-fluid px-4 py-2 c-navbar sticky-top">
+  <div class="container-fluid ps-3 pe-4 py-1 c-navbar sticky-top">
     <div class="row cols-3 navbar-row">
   
       <div class="col-5 text-start">
@@ -21,8 +21,8 @@
   
       <div class="col-5 text-end align-self-center">
         <div class="row justify-content-end">
-          <i class="burger-menu d-block d-lg-none fa-solid fa-bars p-0 w-auto" (click)="togglePhoneNav($event)"></i>
-          <div class="ul d-none d-lg-flex h-100 align-items-center justify-content-end gap-lg-3 gap-xl-5 nav-menu">
+          <i class="burger-menu d-block d-xl-none fa-solid fa-bars p-0 w-auto" (click)="togglePhoneNav($event)"></i>
+          <div class="ul d-none d-xl-flex h-100 align-items-center justify-content-end gap-xl-4 nav-menu">
             
             <div *ngFor="let navMenu of navMenus; index as i">
               <div class="li"><a class="navmenu-items" href="#{{navMenu.link}}">{{navMenu.navMenu}}</a></div>

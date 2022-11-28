@@ -3,12 +3,15 @@
   bottom: 30px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
   z-index: 999999; /* Make sure it does not overlap */
-  background-color: teal; /* Set a background color */
-  color: white; /* Text color */
-  cursor: pointer; /* Add a mouse pointer on hover */
-  padding: 10px; /* Some padding */
-  border-radius: 8px; /* Rounded corners */
+  background-color: #59b050;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 100%;
   text-decoration: none !important;
+  i{
+    font-size: 1.5rem;
+  }
 }
 
 @media (max-width: 1200px) {
