@@ -26,7 +26,7 @@ import { PopulardestinationComponent } from './home/populardestination/popularde
 import { ContactusComponent } from './contactus/contactus.component';
 import { PrivacypolicyComponent } from './footer/privacypolicy/privacypolicy.component';
 import { TermsandconditionsComponent } from './footer/termsandconditions/termsandconditions.component';
-
+import { HttpClientModule , HttpClient} from '@angular/common/http'
 // SERVICES
 import { EventEmitterService } from './event-emitter.service';
 
