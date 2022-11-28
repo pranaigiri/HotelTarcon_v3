@@ -26,7 +26,7 @@ import { PopulardestinationComponent } from './home/populardestination/popularde
 import { ContactusComponent } from './contactus/contactus.component';
 import { PrivacypolicyComponent } from './footer/privacypolicy/privacypolicy.component';
 import { TermsandconditionsComponent } from './footer/termsandconditions/termsandconditions.component';
-
+import { HttpClientModule , HttpClient} from '@angular/common/http'
 // SERVICES
 import { EventEmitterService } from './event-emitter.service';
 
@@ -35,6 +35,7 @@ import { EventEmitterService } from './event-emitter.service';
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { ApiService } from './service/api.service';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -67,8 +68,9 @@ import { getAnalytics } from "firebase/analytics";
     BrowserModule,
     AppRoutingModule,
     SwiperModule,
+    HttpClientModule,
   ],
-  providers: [EventEmitterService],
+  providers: [EventEmitterService,ApiService,HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
