@@ -1,6 +1,6 @@
 <!-- Check Room Availibility Start -->
 <div class="container">
-    <div class="row check-availabilty text-center" id="next">
+    <div class="row check-availabilty text-center container mx-0 px-0" id="next">
         <div class="block-32" ngClass="">
 
             <!-- FOR HOME AND HOTEL -->
@@ -46,9 +46,6 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-lg-auto align-self-end">
-                        <button class="btn btn-primary btn-block text-white mt-3">Check Availabilty</button>
-                    </div>
                 </div>
             </form>
 
@@ -58,23 +55,25 @@
                     <div class="col-12">
                         <p>Table Booking coming soon! Stay tuned.</p>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary btn-block text-white">Check Availabilty</button>
-                    </div>
                 </div>
             </form>
 
             <!-- FOR BAR-->
-            <form class="block-form">
+            <form method="post" class="block-form" novalidate>
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <p>Feature coming soon! Stay tuned.</p>
                     </div>
-                    <div class="col-12">
-                        <button class="btn btn-primary btn-block text-white">Check Availabilty</button>
-                    </div>
                 </div>
             </form>
+
+            <!-- Check Availability Button -->
+            <div class="col-12">
+                <button class="btn btn-primary btn-block text-white text-capitalize mt-md-4" 
+                [disabled]="isLoading" 
+                (click)="click()">
+                <i class="fa" [ngClass]="{'fa-spin fa-circle-notch': isLoading}"></i> {{button}}</button>
+            </div>
 
 
 

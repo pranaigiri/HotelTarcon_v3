@@ -1,7 +1,51 @@
-<section id="section-hotel" class="vh-100">
+<section id="section-hotel" class="container-fluid">
   <div class="container-fluid">
-    <div class="row vh-100">
-      <p class="text-center">HOTEL PAGE GOES HERE</p>
+    
+    <!-- CHECK AVAILABILITY MESSAGE -->
+    <div class="container check-availability-message-container">
+      <div class="alert alert-success" role="alert" *ngIf="roomsAvailable && checkAvailabilty">
+        <strong>Hurray! </strong> Rooms are availaible on the selected dates.
+      </div>
+      <div class="alert alert-primary" role="alert" *ngIf="!roomsAvailable && checkAvailabilty">
+        Not available on the selected date. Please try <strong>changing your date.</strong>
+      </div>
     </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-12 col-lg-8">
+          <div class="container">
+            <div class="row mb-2 category-filter">
+              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                <i class="fa-solid fa-mug-hot text-primary"></i>
+                Standard
+              </div>
+              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                <i class="fa-solid fa-bowl-rice text-primary"></i>
+                Suite
+              </div>
+              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                <i class="fa-solid fa-mountain-sun text-primary"></i>
+                Hill View
+              </div>
+              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                <i class="fa-solid fa-tv text-primary"></i>
+                Deluxe
+              </div>
+            </div>
+          </div>
+          <div class="container gallery-container px-0">
+              <app-gallery-slider></app-gallery-slider>
+          </div>
+        </div>
+        <div class="col-12 col-lg-4">
+          <div class="container px-0">
+              <div id="datepicker"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
   </div>
 </section>

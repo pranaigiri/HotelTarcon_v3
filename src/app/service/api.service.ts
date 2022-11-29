@@ -72,7 +72,11 @@ export class ApiService {
 
     //Handler
     handleError(error: any): any {
-        this.toaster.error("Connection Error !")
+        this.toaster.error('Oops , something went wrong.',
+        {
+          position: 'bottom-center'
+        }
+      )
     }
 
 

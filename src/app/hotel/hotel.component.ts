@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NgxUiLoaderService } from 'ngx-ui-loader';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-hotel',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HotelComponent implements OnInit {
 
-  constructor() { }
+  constructor(private ngxLoader: NgxUiLoaderService,private apiService:ApiService) { 
+    this.getBookedDates();
+  }
+
+  bookedDates:any=[]
+  getBookedDates(){
+    // https://localhost:44332/api/Bookings
+    this.apiService.getData('Bookings').subscribe((res:any)=>{
+      console.log(res.result);
+      this.bookedDates =res.result;
+      sessionStorage.setItem("bookedDates",JSON.stringify(this.bookedDates));
+    })
+  }
+
+  //CHECKIN AVAILABILITY 
+  checkAvailabilty:boolean = true;
+  roomsAvailable:boolean = true;
 
   ngOnInit() {
+    
   }
 
 }
