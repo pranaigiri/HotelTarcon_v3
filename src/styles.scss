@@ -117,25 +117,35 @@ body{
 .ui-datepicker .ui-datepicker-prev,
 .ui-datepicker .ui-datepicker-next {
 	position: absolute;
-	top: 2px;
-	width: 1.8em;
-	height: 1.8em;
+	top: 50%;
+    width: 28px;
+    height: 28px;
 }
 .ui-datepicker .ui-datepicker-prev-hover,
 .ui-datepicker .ui-datepicker-next-hover {
-	top: 1px;
+	
 }
 .ui-datepicker .ui-datepicker-prev {
-	left: 2px;
+	left: 1rem;
+	background-image: url(./assets/png/next-icon.png);
+	background-repeat: no-repeat;
+	filter: invert(89%) sepia(37%) saturate(6686%) hue-rotate(332deg) brightness(101%) contrast(89%);
+	transform: translate(0,-50%) scale(.6) rotate(-180deg);
 }
 .ui-datepicker .ui-datepicker-next {
-	right: 2px;
+	right: 1rem;
+	background-image: url(./assets/png/next-icon.png);
+	background-repeat: no-repeat;
+	filter: invert(89%) sepia(37%) saturate(6686%) hue-rotate(332deg) brightness(101%) contrast(89%);
+	transform: translate(0,-50%) scale(.6);
 }
 .ui-datepicker .ui-datepicker-prev-hover {
-	left: 1px;
+	transform: translate(0,-50%) rotate(-180deg) scale(.7);
+	cursor: pointer;
 }
 .ui-datepicker .ui-datepicker-next-hover {
-	right: 1px;
+	transform: translate(0,-50%) scale(.7);
+	cursor: pointer;
 }
 .ui-datepicker .ui-datepicker-prev span,
 .ui-datepicker .ui-datepicker-next span {
@@ -180,13 +190,15 @@ body{
 }
 
 .ui-datepicker td.ui-datepicker-current-day{
-    background-color: $primary;
     a{
         color: white !important;
+		background-color: $primary;
+		border-radius: 10px;
     }
 }
 
-.ui-datepicker .undefined:not(.ui-state-disabled):hover {
+.ui-datepicker .undefined:not(.ui-state-disabled) a:hover {
+	border-radius: 10px;
 	background-color: #ffffff;
 }
 .ui-datepicker td span,
