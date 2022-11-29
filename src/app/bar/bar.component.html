@@ -265,3 +265,482 @@
     </div>
 
 </section>
+
+
+
+<!-- Menu -->
+<section class="container">
+<!--  List Menu STart -->
+
+<div class="container menu_container" id="menu" #menu>
+    <div class="row justify-content-center mb-5 pb-2">
+      <div class="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
+        <span class="subheading">Specialities</span>
+        <h2 class="mb-4">Our Menu</h2>
+      </div>
+    </div>
+    <ul class="filters_menu">
+      <li data-filter="*" (click)="filterMenu('FEATURED')" [ngClass]="{'active': filterOption=='FEATURED'}"
+        class="my-1">
+        FEATURED</li>
+        
+      <li data-filter=".pasta" (click)="filterMenu('Signature')" [ngClass]="{'active': filterOption=='Signature'}" class="my-1">
+        TARCON SIGNATURE</li>
+      <li data-filter=".burger" (click)="filterMenu('Cocktails')" [ngClass]="{'active': filterOption=='Cocktails'}"
+        class="my-1">COCKTAILS</li>
+      <li data-filter=".pizza" (click)="filterMenu('Mocktails')" [ngClass]="{'active': filterOption=='Mocktails'}"
+        class="my-1">
+        MOCKTAILS</li>
+      <li data-filter=".pasta" (click)="filterMenu('Whisky')" [ngClass]="{'active': filterOption=='Whisky'}"
+        class="my-1">
+        WHISKY</li>
+
+      <li data-filter=".pasta" (click)="filterMenu('OTHERS')" [ngClass]="{'active': filterOption=='OTHERS'}"
+        class="my-1">OTHERS</li>
+
+    </ul>
+    <div class="row first-menu-container">
+
+      <!-- mocktail -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Mocktails'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>mocktail</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of mocktail">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+       <!-- vodkabasedCocktails -->
+       <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Cocktails'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>VODKA BASED COCKTAILS</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of vodkabasedCocktails">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- ginBasedCocktails -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Cocktails'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>GIN BASED COCKTAILS</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of ginBasedCocktails">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- whiskyBasedCocktails -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Cocktails'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>WHISKY BASED COCKTAILS</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of whiskyBasedCocktails">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- winebasedCocktails -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Cocktails'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>WINE BASED COCKTAILS</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of winebasedCocktails">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- rumBasedCocktail -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Cocktails'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>RUM BASED COCKTAILS</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of rumBasedCocktail">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+
+      <!-- superDeluxeScotchWhisky -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Whisky'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>SUPER DELUXE SCOTCH WHISKY</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of superDeluxeScotchWhisky">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- blendedScotchWhisky -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Whisky'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>BELNDED SCOTCH WHISKY</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of blendedScotchWhisky">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- premiumDeluxeWhisky -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Whisky'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>PREMIUM DELUXE WHISKY</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of premiumDeluxeWhisky">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- tarconBarSignature -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Signature'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>TARCON BAR SIGNATURE</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of tarconBarSignature">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+
+      
+      <!-- wine -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>WINE</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of wine">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- vodka -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>VODKA</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of vodka">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+
+      <!-- beer -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>BEER</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of beer">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+       <!-- rum -->
+       <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>RUM</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of rum">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+      <!-- brandy -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>BRANDY</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of brandy">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+      
+
+      <!-- gin -->
+      <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'OTHERS'">
+        <div class="menu-wrap">
+          <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
+            <h3>GIN</h3>
+          </div>
+          <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
+            *ngFor="let item of gin">
+            <div class="menu-img img options-blue">
+              <i class="fa fa-cocktail text-white fa-1x"></i>
+            </div>
+            <div class="text">
+              <div class="d-flex">
+                <div class="one-half">
+                  <h3>{{item.name | uppercase}}</h3>
+                </div>
+                <div class="one-forth ms-auto">
+                  <span class="price">₹{{item.price}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <span class="flat flaticon-bread" style="left: 0;"></span>
+          <span class="flat flaticon-breakfast" style="right: 0;"></span>
+        </div>
+      </div>
+
+
+
+      <!-- row end -->
+    </div>
+  </div>
+</section>
