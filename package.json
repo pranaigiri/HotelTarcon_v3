@@ -25,6 +25,7 @@
     "@ngneat/overview": "^2.0.2",
     "bootstrap": "^5.2.2",
     "firebase": "^9.13.0",
+    "ngx-ui-loader": "^13.0.0",
     "node": "^16.18.1",
     "rxjs": "~7.5.0",
     "swiper": "^8.4.4",

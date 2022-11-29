@@ -46,11 +46,22 @@ export class CheckinformComponent implements OnInit {
         allCheckInForms[1].parentElement?.setAttribute("style","width:auto");
         allCheckInForms[2].classList.add("active");
       }
+    }
 
 
+    button = 'Check Availability';
+    isLoading = false;
+    click() {
+      this.isLoading = true;
+      this.button = 'Hold your bags..';
+  
+      setTimeout(() => {
+        this.isLoading = false;
+        this.button = 'Check Availability';
 
+        console.log('Done loading');
 
-
+      }, 2000)
     }
 
 }

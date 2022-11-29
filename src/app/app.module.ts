@@ -36,11 +36,39 @@ import { EventEmitterService } from './event-emitter.service';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { ApiService } from './service/api.service';
+import { GallerySliderComponent } from './hotel/gallery-slider/gallery-slider.component';
+import { NgxUiLoaderConfig,SPINNER,POSITION,PB_DIRECTION, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-
+const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+  "bgsColor": "#dfba16",
+  "bgsOpacity": 0.5,
+  "bgsPosition": "center-center",
+  "bgsSize": 40,
+  "bgsType": "square-loader",
+  "blur": 12,
+  "delay": 0,
+  "fastFadeOut": true,
+  "fgsColor": "#ffb705",
+  "fgsPosition": "center-center",
+  "fgsSize": 40,
+  "fgsType": "square-loader",
+  "gap": 19,
+  "logoPosition": "center-center",
+  "logoSize": 120,
+  "logoUrl": "",
+  "masterLoaderId": "master",
+  "overlayBorderRadius": "0",
+  "overlayColor": "rgba(255,255,255,0.9)",
+  "pbColor": "#ffb705",
+  "pbDirection": "ltr",
+  "pbThickness": 3,
+  "hasProgressBar": true,
+  "maxTime": -1,
+  "minTime": 300
+}
 @NgModule({
   declarations: [																			
     AppComponent,
@@ -51,6 +79,7 @@ import { ApiService } from './service/api.service';
       RestaurantComponent,
       BarComponent,
       HomeComponent,
+      GallerySliderComponent,
       RazorpaytestComponent,
       CheckinformComponent,
       TarconservicesComponent,
@@ -69,7 +98,12 @@ import { ApiService } from './service/api.service';
     AppRoutingModule,
     SwiperModule,
     HttpClientModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig)
   ],
+
+  
+
   providers: [EventEmitterService,ApiService,HttpClient],
   bootstrap: [AppComponent]
 })
