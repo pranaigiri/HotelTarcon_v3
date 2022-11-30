@@ -1,38 +1,11 @@
-<div class="row justify-content-center mb-5 pb-2">
+<div class="row justify-content-center mt-5 pb-2">
     <div class="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
         <span class="subheading">Featuring Bar</span>
         <h2 class="fs-5 mb-0">Explore drinks including organic wines</h2>
     </div>
 </div>
 
-<!-- Services We Provide Start -->
-<section class="section bg-light element-animate fadeInUp element-animated p-5">
-    <div class="container bar-category-container">
-        <div class="row">
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
-                <i class="fa-solid fa-wine-glass fs-1 mb-4"></i>
-                <h4 class="mb-4 primary-dark">Premium Drinks</h4>
-                <p>Featuring all popular Drinks including Classics , Premium and Organic wines.</p>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
-                <i class="fa-solid fa-utensils fs-1 mb-4"></i>
-                <h4 class="mb-4 primary-dark">Quality Foods</h4>
-                <p>Most of the popular sea food availaible on demand.</p>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
-                <i class="fa-solid fa-music fs-1 mb-4"></i>
-                <h4 class="mb-4 primary-dark">Music</h4>
-                <p>Our in house Caffeteria offers wide range of products.</p>
-            </div>
-            <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
-                <i class="fa-solid fa-bong fs-1 mb-4"></i>
-                <h4 class="mb-4 primary-dark">Hookah</h4>
-                <p>Include fresh Salad to your day.</p>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- Services We Provide End -->
+
 <section id="section-bar">
     <section class="ftco-section">
         <div class="container">
@@ -78,22 +51,12 @@
             </div>
         </div>
     </section>
-    <div class="container">
+    <!-- <div class="container">
         <div class="row p-5">
             <div class="col-md-3 d-flex">
                 <div class="product ftco-animate fadeInUp ftco-animated">
                     <div class="img d-flex align-items-center justify-content-center"
                         style="background-image: url(assets/bar-images/prod-1.jpg);">
-                        <!-- <div class="desc">
-                        <p class="meta-prod d-flex">
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="flaticon-shopping-bag"></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="flaticon-heart"></span></a>
-                            <a href="#" class="d-flex align-items-center justify-content-center"><span
-                                    class="flaticon-visibility"></span></a>
-                        </p>
-                    </div> -->
                     </div>
                     <div class="text text-center">
                         <span class="sale">Sale</span>
@@ -262,9 +225,9 @@
                 </div>
             </div>
         </div>
-    </div>
-
-</section>
+    </div> -->
+<!-- 
+</section> -->
 
 
 
@@ -273,7 +236,7 @@
 <!--  List Menu STart -->
 
 <div class="container menu_container" id="menu" #menu>
-    <div class="row justify-content-center mb-5 pb-2">
+    <div class="row justify-content-center mb-2 pb-2">
       <div class="col-md-7 text-center heading-section ftco-animate fadeInUp ftco-animated">
         <span class="subheading">Specialities</span>
         <h2 class="mb-4">Our Menu</h2>
@@ -310,7 +273,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of mocktail">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-martini-glass text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -386,7 +349,7 @@
       <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Cocktails'">
         <div class="menu-wrap">
           <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-            <h3>WHISKY BASED COCKTAILS</h3>
+            <h3>WHISKEY BASED COCKTAILS</h3>
           </div>
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of whiskyBasedCocktails">
@@ -468,12 +431,12 @@
       <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Whisky'">
         <div class="menu-wrap">
           <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-            <h3>SUPER DELUXE SCOTCH WHISKY</h3>
+            <h3>SUPER DELUXE SCOTCH WHISKEY</h3>
           </div>
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of superDeluxeScotchWhisky">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-whiskey-glass text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -495,12 +458,12 @@
       <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Whisky'">
         <div class="menu-wrap">
           <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-            <h3>BELNDED SCOTCH WHISKY</h3>
+            <h3>BELNDED SCOTCH WHISKEY</h3>
           </div>
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of blendedScotchWhisky">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-whiskey-glass text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -522,12 +485,12 @@
       <div class="col-md-6 col-lg-4" *ngIf="filterOption == 'FEATURED' || filterOption == 'Whisky'">
         <div class="menu-wrap">
           <div class="heading-menu text-center ftco-animate fadeInUp ftco-animated">
-            <h3>PREMIUM DELUXE WHISKY</h3>
+            <h3>PREMIUM DELUXE WHISKEY</h3>
           </div>
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of premiumDeluxeWhisky">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-whiskey-glass text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -554,7 +517,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of tarconBarSignature">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-champagne-glasses text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -583,7 +546,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of wine">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-wine-glass text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -610,7 +573,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of vodka">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-whiskey-glass text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -638,7 +601,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of beer">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-beer-mug-empty text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -665,7 +628,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of rum">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-beer-mug-empty text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -692,7 +655,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of brandy">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-beer-mug-empty text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -720,7 +683,7 @@
           <div class="menus d-flex ftco-animate fadeInUp ftco-animated align-items-center"
             *ngFor="let item of gin">
             <div class="menu-img img options-blue">
-              <i class="fa fa-cocktail text-white fa-1x"></i>
+              <i class="fa fa-beer-mug-empty text-white fa-1x"></i>
             </div>
             <div class="text">
               <div class="d-flex">
@@ -744,3 +707,32 @@
     </div>
   </div>
 </section>
+
+<!-- Services We Provide Start -->
+<section class="section bg-light element-animate fadeInUp element-animated p-5 my-5">
+  <div class="container bar-category-container">
+      <div class="row">
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+              <i class="fa-solid fa-wine-glass fs-1 mb-4"></i>
+              <h4 class="mb-4 primary-dark">Premium Drinks</h4>
+              <p>Featuring all popular Drinks including Classics , Premium and Organic wines.</p>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+              <i class="fa-solid fa-utensils fs-1 mb-4"></i>
+              <h4 class="mb-4 primary-dark">Quality Foods</h4>
+              <p>Most of the popular sea food availaible on demand.</p>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+              <i class="fa-solid fa-music fs-1 mb-4"></i>
+              <h4 class="mb-4 primary-dark">Music</h4>
+              <p>Our in house Caffeteria offers wide range of products.</p>
+          </div>
+          <div class="col-md-6 mb-4 mb-lg-0 col-lg-3 text-center">
+              <i class="fa-solid fa-bong fs-1 mb-4"></i>
+              <h4 class="mb-4 primary-dark">Hookah</h4>
+              <p>Include fresh Salad to your day.</p>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- Services We Provide End -->
