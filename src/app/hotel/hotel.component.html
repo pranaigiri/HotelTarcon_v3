@@ -13,36 +13,115 @@
 
     <div class="container">
       <div class="row">
+
+        <!-- HOTEL CATEGORY INFO CONTAINER -->
         <div class="col-12 col-lg-8">
-          <div class="container">
-            <div class="row mb-2 category-filter">
-              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                <i class="fa-solid fa-mug-hot text-primary"></i>
-                Standard
+
+              <!-- CATEGORY FILTER CONTAINER -->
+              <div class="container category-filter-container tarcon-gradient-bg">
+                <div class="row category-filter">
+                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center active">
+                    <i class="fa-solid fa-mug-hot text-primary"></i>
+                    Standard
+                  </div>
+                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                    <i class="fa-solid fa-bowl-rice text-primary"></i>
+                    Suite
+                  </div>
+                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                    <i class="fa-solid fa-mountain-sun text-primary"></i>
+                    Hill View
+                  </div>
+                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center">
+                    <i class="fa-solid fa-tv text-primary"></i>
+                    Deluxe
+                  </div>
+                </div>
               </div>
-              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                <i class="fa-solid fa-bowl-rice text-primary"></i>
-                Suite
+
+              <!-- CATEGORY WISE GALLERY -->
+              <div class="container px-0">
+                <div class="container gallery-title-container">
+                  <h1 class="category-title px-5 py-2 mt-2 text-center m-auto fw-bold">Standard Rooms</h1>
+                </div>
+                <div class="container gallery-container px-0">
+                  <app-gallery-slider></app-gallery-slider>
+                </div>
               </div>
-              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                <i class="fa-solid fa-mountain-sun text-primary"></i>
-                Hill View
+
+              <!-- CATEGORY DETAILS CONTAINER -->
+              <div class="contanier category-details-container">
+                <div class="row">
+                  <h1 class="title">Features</h1>
+                  <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
+                    <div class="col">
+                      <i class="fa-solid fa-chalkboard-user"></i>
+                        Balcony
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-bread-slice"></i>
+                        Breakfast
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-couch"></i>
+                        Sitting Area
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-shower"></i>
+                        Shower
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-bath"></i>
+                        Separate Bath
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-bed"></i>
+                        King Size Bed
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-clock"></i>
+                        24/7 Room Service
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-wifi"></i>
+                        Internet Access - WiFi
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-mug-hot"></i>
+                        Tea / Coffee
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-tv"></i>
+                        TV
+                    </div>
+                    <div class="col">
+                      <i class="fa-solid fa-wind"></i>
+                      Hair Dryer
+                  </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <h1 class="title">Description</h1>
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, libero tempora quo et magnam beatae reprehenderit inventore ex qui quidem.</p>
+                </div>
               </div>
-              <div class="col-6 col-lg-3 p-4 border d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                <i class="fa-solid fa-tv text-primary"></i>
-                Deluxe
-              </div>
-            </div>
-          </div>
-          <div class="container gallery-container px-0">
-              <app-gallery-slider></app-gallery-slider>
-          </div>
+
         </div>
+        <!-- END HOTEL CATEGORY INFO CONTAINER -->
+
+
+        <!-- CALENDAR CONTAINER -->
         <div class="col-12 col-lg-4">
-          <div class="container px-0">
-              <div id="datepicker"></div>
-          </div>
+            
+              <!-- CALENDAR CONTAINER -->
+              <div class="container px-0">
+                  <div id="datepicker"></div>
+              </div>
+              
         </div>
+        <!-- END CALENDAR CONTAINER -->
+
       </div>
     </div>
 

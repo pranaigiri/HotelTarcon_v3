@@ -43,8 +43,8 @@ import { NgxUiLoaderConfig,SPINNER,POSITION,PB_DIRECTION, NgxUiLoaderHttpModule,
 
 
 const ngxUiLoaderConfig: NgxUiLoaderConfig = {
-  "bgsColor": "#dfba16",
-  "bgsOpacity": 0.5,
+  "bgsColor": "#ffb705",
+  "bgsOpacity": 1,
   "bgsPosition": "center-center",
   "bgsSize": 40,
   "bgsType": "square-loader",

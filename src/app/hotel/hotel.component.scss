@@ -1,10 +1,64 @@
 .gallery-container{
-    height: 380px;
+    height: 500px;
+}
+.category-title{
+    font-family: "Playfair Display", serif;
+    color: #9c7c45;
+    background: #fff6e7;
+    width: fit-content;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+.category-filter-container{
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid #ffeed1;
 }
 .category-filter div{
     height: 60px;
     white-space: nowrap;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.category-filter div:hover{
+    background-color: #ffffff88;
+}
+.category-filter div.active{
+    background: white;
+    box-shadow: 0px 0rem 1rem 0px rgb(0 0 0 / 15%);
 }
 
+.category-details-container .title{
+    font-family: "Playfair Display", serif;
+    color: #cb9c4b;
+}
+.features-container div{
+    display: flex;
+    min-width: fit-content;
+    min-height: 3rem;
+    max-height: fit-content;
+    align-items: center;
+    gap: .3rem;
+    border: 1px solid #cb9c4bde;
+    font-size: .8rem;
+    flex: 1;
+}
+.features-container i{
+    color: #cb9c4b;
+}
+
+
+@media screen and (max-width: 600px) {
+    .category-filter div{
+        height: 40px;
+    }
+    .category-filter div.active{
+        box-shadow: 0 0.1rem 0.1rem rgb(0 0 0 / 15%);
+    }
+
+    .gallery-container{
+        height: 500px;
+    }
+  }
 
 // Calender

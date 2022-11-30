@@ -27,8 +27,12 @@ export class HotelComponent implements OnInit {
   checkAvailabilty:boolean = true;
   roomsAvailable:boolean = true;
 
+
   ngOnInit() {
-    
+    setTimeout(() => {
+      this.checkAvailabilty = false;
+      this.roomsAvailable = false;
+    }, 4000);
   }
 
 }

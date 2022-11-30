@@ -36,7 +36,7 @@ export class CheckinformComponent implements OnInit {
       allCheckInForms.forEach(checkInForm => {
        checkInForm.classList.remove("active");
       });
-      allCheckInForms[1].parentElement?.setAttribute("style","width:90%");
+      allCheckInForms[1].parentElement?.setAttribute("style","width:100%");
       if(paginationName == "swiper-pagination-bullet0" || paginationName == "swiper-pagination-bullet1" || location.pathname == "/" || location.pathname == "/hotel" && paginationName != undefined || ""){
         allCheckInForms[0].classList.add("active");
       }else if(paginationName == "swiper-pagination-bullet2" || location.pathname == "/restaurant"){
