@@ -11,6 +11,10 @@ import { EventEmitterService } from 'src/app/event-emitter.service';
 export class CheckinformComponent implements OnInit {
 
 
+    //VARIABLES FOR CALENDAR
+    yesterday = new Date();
+
+
   constructor(public router: Router, private eventEmitterService: EventEmitterService) { 
 
   }

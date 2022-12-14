@@ -1,3 +1,8 @@
+.tarcon-hr{
+    border-color: #926b25;
+    width: 50%;
+    margin: auto;
+}
 .gallery-container{
     height: 500px;
 }
@@ -15,7 +20,6 @@
     border: 1px solid #ffeed1;
 }
 .category-filter div{
-    height: 60px;
     white-space: nowrap;
     cursor: pointer;
     border-radius: 10px;
@@ -25,12 +29,13 @@
 }
 .category-filter div.active{
     background: white;
-    box-shadow: 0px 0rem 1rem 0px rgb(0 0 0 / 15%);
+    box-shadow: 0 0.125rem 0.25rem rgb(0 0 0 / 8%);
 }
 
 .category-details-container .title{
     font-family: "Playfair Display", serif;
-    color: #cb9c4b;
+    color: #2a2a2a;
+    font-size: 1.3rem;
 }
 .features-container div{
     display: flex;
@@ -48,6 +53,72 @@
 }
 
 
+
+//CHECKOUT WINDOW
+.checkout-title{
+    text-align: center;
+    font-size: 2rem;
+    font-family: 'Playfair Display';
+    color: #926b25;
+}
+
+
+// PRICE CONTAINER
+.price-container{
+    
+}
+.total-cost, .plan-title{
+    font-family: 'Playfair Display', sans-serif;
+    color: #926b25;
+    font-size: 1.5rem;
+}
+.price-tag{
+    background: -webkit-linear-gradient(342deg,#ffb532, #7c2600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 600;
+}
+
+.dark-title-cursive{
+    font-family: serif;
+    color: #926b25;
+    font-size: 1.3rem;
+}
+.from-to-container{
+    border:1px solid #926b25;
+    padding: 1rem 0rem;
+}
+
+.from-to-container div:last-child{
+    border-color: 1px solid #926b25 !important;
+}
+
+
+.form-check.plan-radio{
+	padding: 0.5rem 1rem;
+    border-bottom: 1px solid #eeeeee;
+}
+
+.form-check.plan-radio.active{
+	background-color: #f8f8f8;
+}
+.label-container i, .plan-icons-container i{
+    color: #cb9c4b;
+}
+
+.plan-icons-container{
+    background: #fffaf2;
+    z-index: 2;
+}
+.plan-container.active{
+    background-color: #965e000f;
+}
+
+.text-primary-dark{
+    color: #cb9c4b;
+}
+
+
 @media screen and (max-width: 600px) {
     .category-filter div{
         height: 40px;
@@ -61,4 +132,16 @@
     }
   }
 
-// Calender
+
+
+  ::ng-deep .mat-calendar-body-disabled > .mat-calendar-body-cell-content:not(.mat-calendar-body-selected):not(.mat-calendar-body-comparison-identical) {
+    color: rgb(0 0 0 / 19%);
+    text-decoration: line-through;
+}
+
+
+
+//FOR ADDITIONAL PLAN MODULE
+.plan-cost{
+    font-size: .7rem;
+}

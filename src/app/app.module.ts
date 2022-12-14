@@ -38,6 +38,16 @@ import { getAnalytics } from "firebase/analytics";
 import { ApiService } from './service/api.service';
 import { GallerySliderComponent } from './hotel/gallery-slider/gallery-slider.component';
 import { NgxUiLoaderConfig,SPINNER,POSITION,PB_DIRECTION, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+import { MatNativeDateModule } from '@angular/material/core';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
+
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -99,7 +109,14 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     SwiperModule,
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
-    NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig)
+    NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig),
+    BrowserAnimationsModule,
+
+    MatNativeDateModule,
+    MatCardModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatSelectModule
   ],
 
   

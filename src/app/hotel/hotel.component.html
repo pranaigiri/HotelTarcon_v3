@@ -1,15 +1,6 @@
 <section id="section-hotel" class="container-fluid">
   <div class="container-fluid">
-    
-    <!-- CHECK AVAILABILITY MESSAGE -->
-    <div class="container check-availability-message-container">
-      <div class="alert alert-success" role="alert" *ngIf="roomsAvailable && checkAvailabilty">
-        <strong>Hurray! </strong> Rooms are availaible on the selected dates.
-      </div>
-      <div class="alert alert-primary" role="alert" *ngIf="!roomsAvailable && checkAvailabilty">
-        Not available on the selected date. Please try <strong>changing your date.</strong>
-      </div>
-    </div>
+
 
     <div class="container">
       <div class="row">
@@ -17,110 +8,321 @@
         <!-- HOTEL CATEGORY INFO CONTAINER -->
         <div class="col-12 col-lg-8">
 
-              <!-- CATEGORY FILTER CONTAINER -->
-              <div class="container category-filter-container tarcon-gradient-bg">
-                <div class="row category-filter">
-                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center active">
-                    <i class="fa-solid fa-mug-hot text-primary"></i>
-                    Standard
-                  </div>
-                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                    <i class="fa-solid fa-bowl-rice text-primary"></i>
-                    Suite
-                  </div>
-                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                    <i class="fa-solid fa-mountain-sun text-primary"></i>
-                    Hill View
-                  </div>
-                  <div class="col-6 col-lg-3 p-3 p-lg-4 d-flex gap-2 text-uppercase justify-content-center align-items-center">
-                    <i class="fa-solid fa-tv text-primary"></i>
-                    Deluxe
-                  </div>
-                </div>
+          <!-- CATEGORY FILTER CONTAINER -->
+          <div class="container category-filter-container tarcon-gradient-bg mb-2 px-4 py-1">
+            <div class="row category-filter">
+              <div (click)="changeCategory(1)" [ngClass]="{'active' : selectedCategory == 1}"
+                class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
+                <i class="fa-solid fa-mug-hot text-primary"></i>
+                Standard
               </div>
+              <div (click)="changeCategory(2)" [ngClass]="{'active' : selectedCategory == 2}"
+                class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
+                <i class="fa-solid fa-bowl-rice text-primary"></i>
+                Suite
+              </div>
+              <div (click)="changeCategory(3)" [ngClass]="{'active' : selectedCategory == 3}"
+                class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
+                <i class="fa-solid fa-mountain-sun text-primary"></i>
+                Hill View
+              </div>
+              <div (click)="changeCategory(4)" [ngClass]="{'active' : selectedCategory == 4}"
+                class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
+                <i class="fa-solid fa-tv text-primary"></i>
+                Deluxe
+              </div>
+            </div>
+          </div>
 
-              <!-- CATEGORY WISE GALLERY -->
-              <div class="container px-0">
-                <div class="container gallery-title-container">
-                  <h1 class="category-title px-5 py-2 mt-2 text-center m-auto fw-bold">Standard Rooms</h1>
-                </div>
-                <div class="container gallery-container px-0">
-                  <app-gallery-slider></app-gallery-slider>
-                </div>
-              </div>
+          <!-- CATEGORY WISE GALLERY -->
+          <div class="container gallery-container px-0">
+            <app-gallery-slider></app-gallery-slider>
+          </div>
 
-              <!-- CATEGORY DETAILS CONTAINER -->
-              <div class="contanier category-details-container">
-                <div class="row">
-                  <h1 class="title">Features</h1>
-                  <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
-                    <div class="col">
-                      <i class="fa-solid fa-chalkboard-user"></i>
-                        Balcony
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-bread-slice"></i>
-                        Breakfast
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-couch"></i>
-                        Sitting Area
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-shower"></i>
-                        Shower
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-bath"></i>
-                        Separate Bath
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-bed"></i>
-                        King Size Bed
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-clock"></i>
-                        24/7 Room Service
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-wifi"></i>
-                        Internet Access - WiFi
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-mug-hot"></i>
-                        Tea / Coffee
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-tv"></i>
-                        TV
-                    </div>
-                    <div class="col">
-                      <i class="fa-solid fa-wind"></i>
-                      Hair Dryer
-                  </div>
-                  </div>
+
+          <!-- CATEGORY DETAILS CONTAINER -->
+          <div class="contanier category-details-container">
+
+            <!-- FEATURES CONTAINER -->
+            <div class="row my-5 gap-2">
+              <h1 class="title">Features</h1>
+              <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
+                <div class="col">
+                  <i class="fa-solid fa-chalkboard-user"></i>
+                  Balcony
                 </div>
-                <hr>
-                <div class="row">
-                  <h1 class="title">Description</h1>
-                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, libero tempora quo et magnam beatae reprehenderit inventore ex qui quidem.</p>
+                <div class="col">
+                  <i class="fa-solid fa-bread-slice"></i>
+                  Breakfast
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-couch"></i>
+                  Sitting Area
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-shower"></i>
+                  Shower
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-bath"></i>
+                  Separate Bath
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-bed"></i>
+                  King Size Bed
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-clock"></i>
+                  24/7 Room Service
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-wifi"></i>
+                  Internet Access - WiFi
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-mug-hot"></i>
+                  Tea / Coffee
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-tv"></i>
+                  TV
+                </div>
+                <div class="col">
+                  <i class="fa-solid fa-wind"></i>
+                  Hair Dryer
                 </div>
               </div>
+            </div>
+
+
+            <hr class="hr-class">
+
+            <!-- DESCRIPTION CONTAINER -->
+            <div class="row my-5 gap-2">
+              <h1 class="title">Description</h1>
+              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, libero tempora quo et magnam beatae
+                reprehenderit inventore ex qui quidem.</p>
+            </div>
+          </div>
 
         </div>
         <!-- END HOTEL CATEGORY INFO CONTAINER -->
 
 
-        <!-- CALENDAR CONTAINER -->
+        <!-- RIGHT CONTAINER -->
         <div class="col-12 col-lg-4">
-            
-              <!-- CALENDAR CONTAINER -->
-              <div class="container px-0">
-                  <div id="datepicker"></div>
+
+          <h1 class="checkout-title">Checkout</h1>
+
+
+          <!-- CALENDAR CONTAINER -->
+          <div class="container px-0 my-3">
+            <mat-card>
+              <mat-calendar [dateFilter]="disableDateFilter" [selected]="selectedRangeValue"
+                (selectedChange)="selectedChange($event)" [minDate]="yesterday"></mat-calendar>
+            </mat-card>
+          </div>
+
+          <div class="container" *ngIf="!selectedRangeValue.start && !selectedRangeValue.end">
+            <p class="text-primary text-center fw-light">When would you like to stay?</p>
+          </div>
+
+          <!-- UNHIDE OP PLANS, SUMMARY, PRICE DETAILS IF DATE SELECTED-->
+          <div class="container" *ngIf="selectedRangeValue.start || selectedRangeValue.end">
+
+            <!-- FROM TO CONTAINER -->
+            <div class="container mb-5">
+
+              <div class="row from-to-container" *ngIf="selectedRangeValue.start && noOfDaysSelected <= 1">
+                <div class="col-12 text-center d-flex flex-column align-content-center">
+                  <p class="mb-0">ON</p>
+                  <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
+                </div>
               </div>
-              
+
+              <div class="row from-to-container" *ngIf="selectedRangeValue.start && selectedRangeValue.end && noOfDaysSelected > 1">
+                <div class="col-6 text-center d-flex flex-column align-content-center">
+                  <p class="mb-0">FROM</p>
+                  <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
+                </div>
+                <div class="col-6 text-center d-flex flex-column align-content-center border-start">
+                  <p class="mb-0">TO</p>
+                  <p class="dark-title-cursive mb-0">{{(selectedRangeValue.end ? selectedRangeValue.end :
+                    selectedRangeValue.start ) | date:'d MMM y'}}</p>
+                </div>
+              </div>              
+            </div>
+
+
+            <!-- EP, CP, AP, PLAN CONTAINER -->
+            <div class="container my-5">
+              <div class="row">
+
+                <h1 class="plan-title text-center px-4 mb-1">Optional Plans</h1>
+                <p class="plan-cost text-center mb-3">BREAKFAST - LUNCH - DINNER</p>
+
+                <!-- HEADER -->
+                <div class="container plan-icons-container shadow-sm py-3">
+                  <div class="row justify-content-between px-4">
+                    <div class="col-5 col-lg-4 text-primary-dark"><small><b>PLAN</b></small></div>
+                    <div class="col px-0"><small><i class="fa-solid fa-bread-slice"></i></small></div>
+                    <div class="col px-0"><small><i class="fa-solid fa-burger"></i></small></div>
+                    <div class="col px-0"><small><i class="fa-solid fa-utensils"></i></small></div>
+                    <div class="col px-0"></div>
+                  </div>
+                </div>
+
+
+                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 1}"
+                  for="flexRadioDefault1">
+                  <div class="row justify-content-between px-4">
+                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">EP<small
+                        class="plan-cost">(+300)</small></div>
+                    <div class="col px-0">
+                      <small>
+                        <i class="fa-solid fa-check text-success"></i>
+                      </small>
+                    </div>
+                    <div class="col px-0">
+                      <small>
+                        <i class="fa-solid fa-xmark text-danger"></i>
+                      </small>
+                    </div>
+                    <div class="col px-0">
+                      <small>
+                        <i class="fa-solid fa-xmark text-danger"></i>
+                      </small>
+                    </div>
+                    <div class="col px-0 text-end">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                        value="1" (click)="changePlan(1)" checked>
+                    </div>
+                  </div>
+                </label>
+
+                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 2}"
+                  for="flexRadioDefault2">
+                  <div class="row justify-content-between px-4" for="flexRadioDefault2">
+                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">CP<small
+                        class="plan-cost">(+500)</small></div>
+                    <div class="col px-0"><small>
+                        <i class="fa-solid fa-check text-success"></i>
+                      </small></div>
+                    <div class="col px-0"><small>
+                        <i class="fa-solid fa-check text-success"></i>
+                      </small></div>
+                    <div class="col px-0"><small>
+                        <i class="fa-solid fa-xmark text-danger"></i>
+                      </small></div>
+                    <div class="col px-0 text-end">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                        value="2" (click)="changePlan(2)">
+                    </div>
+                  </div>
+                </label>
+
+                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 3}"
+                  for="flexRadioDefault3">
+                  <div class="row justify-content-between px-4" for="flexRadioDefault3">
+                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">AP<small
+                        class="plan-cost">(+1000)</small></div>
+                    <div class="col px-0"><small>
+                        <i class="fa-solid fa-check text-success"></i>
+                      </small></div>
+                    <div class="col px-0"><small>
+                        <i class="fa-solid fa-check text-success"></i>
+                      </small></div>
+                    <div class="col px-0"><small>
+                        <i class="fa-solid fa-check text-success"></i>
+                      </small></div>
+                    <div class="col px-0 text-end">
+                      <input class="form-check-input" type="radio" name="flexRadioDefault" value="3"
+                        id="flexRadioDefault3" (click)="changePlan(3)">
+                    </div>
+                  </div>
+                </label>
+
+
+              </div>
+            </div>
+
+
+            <!-- PRICE SUMMARY -->
+            <div class="container mt-5 mb-3 mx-0 px-0 border-bottom">
+              <h1 class="plan-title text-center px-4 mb-3">Summary</h1>
+
+              <div class="row container mx-0 plan-icons-container shadow-sm py-3 px-4">
+                <div class="col text-primary-dark">
+                  <small><b>ITEMS</b></small>
+                </div>
+                <div class="col text-end text-primary-dark">
+                  <small><b>PRICE</b></small>
+                </div>
+              </div>
+
+              <div class="container price-summary-container">
+                <div class="row px-4 py-2">
+                  <div class="col">
+                    <small>{{selectedRoomDetails.categoryName}} Room</small><br>
+                    <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}} Day{{noOfDaysSelected <= 0 ? '' : 's'}} ) </small></small>
+                  </div>
+                  <div class="col text-end">
+                    <small><del>{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) + (selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) * 0.1)}}</del>
+                      {{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
+                      <br>
+                      <small><small class="text-muted"> ( Flat 10% Off ) </small></small>
+                  </div>
+                </div>
+                <div class="row px-4 py-2">
+                  <div class="col">
+                    <small>Optional Plan ({{selectedOpPlanDetails.opName}})</small><br>
+                    <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}} Day{{noOfDaysSelected <= 0 ? '' : 's'}} ) </small></small>
+                  </div>
+                  <div class="col text-end">
+                    <small>{{selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
+                  </div>
+                </div>
+                <div class="row px-4 py-2">
+                  <div class="col">
+                    <small>Taxes & Charges</small>
+                  </div>
+                  <div class="col text-end">
+                    <small>{{TAX}}</small>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
+            <!-- PRICE CONTAINER -->
+            <div class="row flex-row gap-2 mb-5 justify-content-center align-items-center">
+
+              <div class="col-5 d-flex flex-column justify-content-center ps-4">
+                <h1 class="mb-0 total-cost">Total Cost</h1>
+                <p class="my-0 ms-1"><small>incl. all charges.</small></p>
+              </div>
+
+              <div class="col-6">
+                <div class="container price-container text-center">
+                  <h1 class="price-tag float-end mb-0 text-nowrap">₹ {{(selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected))}}/-</h1>
+                </div>
+              </div>
+
+
+            </div>
+
+
+            <!-- CHECKOUT BUTTON -->
+            <div class="container px-2">
+              <button class="btn btn-primary w-100 py-3"><i class="fa-regular fa-money-bill-1 me-2"></i><b>Checkout</b></button>
+            </div>
+
+          </div>
+
+
         </div>
-        <!-- END CALENDAR CONTAINER -->
+        <!-- END RIGHT CONTAINER -->
 
       </div>
     </div>

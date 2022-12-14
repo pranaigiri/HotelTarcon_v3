@@ -39,3 +39,28 @@ input:focus, select:focus{
     outline: 0;
     box-shadow: 0 0 0 0.25rem rgb(255 211 146 / 25%);
 }
+
+
+
+::ng-deep .mat-form-field-appearance-legacy .mat-form-field-wrapper {
+    padding-bottom: 1.25em;
+    margin-bottom: -1.25em;
+}
+
+::ng-deep .mat-form-field-infix {
+    background: white;
+    border-radius: 10px;
+    padding-left: 1rem !important;
+    border-top: 0 !important;
+    text-align: center;
+    padding-bottom: 0.7rem !important;
+    overflow: hidden;
+}
+
+::ng-deep .mat-form-field mat-label{
+    margin-left: 1rem !important;
+}
+
+::ng-deep .mat-form-field label {
+
+}

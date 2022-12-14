@@ -1,3 +1,40 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$HotelTarcon_v2-primary: mat.define-palette(mat.$brown-palette);
+$HotelTarcon_v2-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$HotelTarcon_v2-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$HotelTarcon_v2-theme: mat.define-light-theme((
+  color: (
+    primary: $HotelTarcon_v2-primary,
+    accent: $HotelTarcon_v2-accent,
+    warn: $HotelTarcon_v2-warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($HotelTarcon_v2-theme);
+
+
+
 @import "../node_modules/bootstrap/scss/functions";
 @import "../node_modules/bootstrap/scss/variables";
 
@@ -23,6 +60,7 @@ $font-primary: 'Nunito', sans-serif;
 *{
     transition: .4s ease;
     font-family: 'Nunito', sans-serif;
+	user-select: none;
 }
 body{
     overflow-x: hidden;
@@ -54,7 +92,6 @@ body{
 }
 
 .btn:hover{
-    transform: scale(1.02);
     filter: brightness(1.1);
 }
 
@@ -62,7 +99,6 @@ body{
     border-color: #ffe4b6;
     box-shadow: 0 0 0 0.25rem rgb(236 212 168 / 11%);
 }
-
 
 
 /*
@@ -108,8 +144,16 @@ body{
 }
 
 
+.hr-class{
+	border-color: #ffe5b6;
+    border-width: 5px;
+    margin: auto;
+    border-style: double;
+}
 
-//Calendar
+
+
+//Calendar Style
 .ui-datepicker {
 	width: 100%;
 	display: none;
@@ -326,4 +370,30 @@ body{
 	background-repeat: no-repeat;
 	left: .5em;
 	top: .3em;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+
+
+
+//CALENDAR
+// Calender
+.mat-card:not([class*=mat-elevation-z]) {
+    background: #fffaf2;
+}
+
+   .cdk-overlay-container {
+    position: fixed;
+    z-index: 10;
+}
+
+.form-check-input:checked {
+	background-color: #eeac36;
+    border-color: #cb9c4b;
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgb(253 144 13 / 25%);
 }
