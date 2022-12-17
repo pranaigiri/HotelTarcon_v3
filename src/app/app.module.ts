@@ -117,7 +117,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatCardModule,
     MatDatepickerModule,
     MatInputModule,
-    MatSelectModule,
+    MatSelectModule
     FormsModule,
     ReactiveFormsModule
   ],
