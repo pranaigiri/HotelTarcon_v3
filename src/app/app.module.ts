@@ -45,6 +45,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -111,7 +112,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig),
     BrowserAnimationsModule,
-
+    FormsModule,
     MatNativeDateModule,
     MatCardModule,
     MatDatepickerModule,

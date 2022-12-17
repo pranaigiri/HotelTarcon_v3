@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api.service';
 
 @Component({
   selector: 'app-contactus',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactusComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private apiService:ApiService) { }
+  form:any={};
   ngOnInit() {
+  }
+
+  postForm(){
+    this.apiService.postData("ContactUs/PostContactUs",this.form).subscribe((res:any)=>{
+      console.log(res);
+    })
+  }
+
+  formSubmit(){
+    alert(this.form.name);
   }
 
 }

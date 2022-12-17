@@ -88,7 +88,16 @@ export class ApiService {
       )
     }
 
-
+    async getDataPromise(url: any) {
+        return this.http.get(`${this.baseUrl}/${url}`).pipe(
+            map((res: any) => {
+                return res;
+            }),
+            catchError((error) => {
+                return this.handleError(error);
+            })
+        ).toPromise();
+    }
 
 
 
