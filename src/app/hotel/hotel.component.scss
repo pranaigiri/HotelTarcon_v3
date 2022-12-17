@@ -205,8 +205,9 @@
 //OPTIONAL PLANS - MAP
 
 .map-checkbox:checked{
-    background-color: #1b8855;
-    border-color: #7aba9c;
+    background-color: transparent;
+    border-color: white;
+    filter: invert(58%) sepia(93%) saturate(385%) hue-rotate(100deg) brightness(93%) contrast(87%);
 }
 
 .map-checkbox:focus{
