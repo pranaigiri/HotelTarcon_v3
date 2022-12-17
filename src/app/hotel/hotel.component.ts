@@ -1,10 +1,16 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
 import { DateRange } from '@angular/material/datepicker';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from '../service/api.service';
 import { HotToastService } from '@ngneat/hot-toast';
 import { DatePipe } from '@angular/common';
+import {
+  AbstractControl,
+  FormBuilder,
+  FormGroup,
+  FormControl,
+  Validators,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-hotel',
@@ -15,7 +21,7 @@ import { DatePipe } from '@angular/common';
 export class HotelComponent implements OnInit {
 
   //DISABLED DATES FOR CALENDAR
-  disabledDatesArray = ["12/12/2022", "30/12/2022"];
+  disabledDatesArray = ["12/12/2022", "30/12/2022", "16/12/2022"];
 
   //ALL ROOM DETAILS
   roomDetails = [
@@ -40,6 +46,7 @@ export class HotelComponent implements OnInit {
       amount: 4000
     }
   ]
+
   //SELECTED ROOM DETAILS
   selectedRoomDetails: any = this.roomDetails[0];
 
@@ -59,6 +66,16 @@ export class HotelComponent implements OnInit {
       opId: 3,
       opName: "AP",
       opAmount: 1000
+    },
+    {
+      opId: 4,
+      opName: "MAP",
+      opSelection: {
+        breakfast: false,
+        lunch: false,
+        dinner: false,
+      },
+      opAmount: 1000
     }
   ];
   //DEFAULT SELECTED OP DETAILS - EP
@@ -72,7 +89,8 @@ export class HotelComponent implements OnInit {
   constructor(private ngxLoader: NgxUiLoaderService,
     private apiService: ApiService,
     private hotToast: HotToastService,
-    public datepipe: DatePipe) {
+    public datepipe: DatePipe,
+    private formBuilder: FormBuilder) {
     this.getBookedDates();
   }
 
@@ -187,11 +205,174 @@ export class HotelComponent implements OnInit {
   changePlan(value: number) {
     this.selectedPlan = value;
     this.selectedOpPlanDetails = this.OpPlanDetails[--value];
+    console.log(this.selectedOpPlanDetails);
   }
 
 
+  checkOutForm: boolean = false;
+  checkOutBtn = 'Checkout';
+  isLoading = false;
+  loadingBtnAnimate() {
+    this.isLoading = true;
+    this.checkOutBtn = 'Processing...';
+
+    setTimeout(() => {
+      this.isLoading = false;
+      this.checkOutBtn = 'Checkout';
+    }, 1000)
+
+    //SHOW CHECKOUT FORM ON SCREEN
+    this.checkOutForm = true;
+  }
+
+
+  //CHECKOUT FORM
+  contactInfoForm:any;
+
+  contactInfoComplete: boolean = false;
+  closeCheckOutForm() {
+    this.checkOutForm = false;
+  }
+
+
+  //RAZORPAY RADIO CHECK
+  paymentOptions = {
+    paymentMethod: {
+      razorPay: false
+    }
+  }
+
+
+  //MAP PLAN CHECKBOX COUNTER
+  mapCount:number = 0;
+
+
+
+  //FOR CONTACT INFO FORM
+  form: FormGroup = new FormGroup({
+    fullname: new FormControl(''),
+    email: new FormControl(''),
+    phone: new FormControl(''),
+    totalperson: new FormControl(0),
+    children: new FormControl(0),
+  });
+  submitted = false;
+
   ngOnInit() {
 
+
+    //LISTEN TO MAPPLAN CHECKBOX CHANGE
+    let mapPlanCheckBoxes: any = document.querySelectorAll(
+      '.map-li input[type="checkbox"]'
+    );
+    
+    mapPlanCheckBoxes.forEach((checkbox: any) => {
+
+      checkbox.addEventListener("change", () => {
+
+        //counter to keep track of selected map plan checkboxes
+        checkbox.checked ? this.mapCount++ : this.mapCount--;
+
+        //map radio select if min 2 checkbox selected
+        this.mapCount > 1 ? mapPlanRadio.checked = true : mapPlanRadio.checked = false;
+
+
+        if(this.mapCount == 2){
+          mapPlanCheckBoxes.forEach((checkbox:any) => {
+            !checkbox.checked ? checkbox.disabled = true : null;
+          })
+        }else{
+          mapPlanCheckBoxes.forEach((checkbox:any) => {
+            checkbox.disabled = false;
+          })
+        }
+
+      });
+
+    });
+
+    //LISTEN IF OP PLAN IS MAP
+    let mapPlanRadio: any = document.querySelector("#mapPlan");
+    mapPlanRadio.addEventListener("change", () => {
+      if(mapPlanRadio.checked && this.mapCount < 2){
+        mapPlanRadio.checked = false;
+      }
+    });
+
+
+    //SELECT RADIO BUTTON OF OP PLANS
+    let opPlanRadios:any = document.querySelectorAll('.opPlanRadio');
+
+    //CLEAR OPPLAN CHECKBOXES & MAP PLAN CHECKBOXES
+    opPlanRadios.forEach((radio: any) => {
+      radio.addEventListener('change', () => {
+          
+          //reset count for map checkboxes
+          opPlanRadios[3] != radio ? this.mapCount = 0 : null;
+
+          //RESET ALL CHECKED PLANS
+          if(radio.value != this.selectedPlan)
+            radio.checked = false;
+          
+          //CLEAR MAP PLAN CHECKBOXES
+          if(radio.value != 4){
+            mapPlanCheckBoxes.forEach((checkbox: any) => {
+                  checkbox.checked = false;
+                  this.OpPlanDetails[3].opSelection = {
+                    breakfast: false,
+                    lunch: false,
+                    dinner: false
+                  };
+                  checkbox.disabled = false;
+          })
+          }
+
+      });
+    });
+
+    //FOR CONTACT INFO FORM VALIDATION
+    this.form = this.formBuilder.group({
+      fullname: ['', Validators.required],
+
+      email: ['', [Validators.required, Validators.email]],
+
+      phone: [
+        '',
+        [
+          Validators.required,
+          Validators.minLength(10),
+          Validators.maxLength(10),
+        ],
+      ],
+
+      totalperson: ['', [Validators.required, Validators.max(50)]],
+
+      children: ['', [Validators.required, Validators.max(50)]],
+
+    });
+
+
+  } //ngOnInit END
+
+
+  get f(): { [key: string]: any } {
+    return this.form.controls;
+  }
+  onContactInfoSubmit(): void {
+    this.submitted = true;
+    if (this.form.invalid) {
+      this.contactInfoComplete = false;
+      return;
+    }else{
+      this.contactInfoComplete = true;
+    }
+
+    console.log(JSON.stringify(this.form.value, null, 2));
+  }
+  onReset(): void {
+    this.submitted = false;
+    this.contactInfoComplete = false;
+    this.form.reset();
   }
 
 }

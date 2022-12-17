@@ -45,6 +45,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -101,7 +102,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       PopulardestinationComponent,
       ContactusComponent,
       PrivacypolicyComponent,
-      TermsandconditionsComponent
+      TermsandconditionsComponent,
    ],
   imports: [
     BrowserModule,
@@ -116,7 +117,9 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatCardModule,
     MatDatepickerModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
 
   

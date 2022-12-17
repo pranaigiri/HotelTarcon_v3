@@ -1,5 +1,5 @@
 <section id="section-hotel" class="container-fluid">
-  <div class="container-fluid">
+  <div class="container-fluid px-0 px-md-2">
 
 
     <div class="container">
@@ -110,7 +110,7 @@
 
 
         <!-- RIGHT CONTAINER -->
-        <div class="col-12 col-lg-4">
+        <div class="col-12 col-lg-4 px-0 px-md-2">
 
           <h1 class="checkout-title">Checkout</h1>
 
@@ -123,12 +123,8 @@
             </mat-card>
           </div>
 
-          <div class="container" *ngIf="!selectedRangeValue.start && !selectedRangeValue.end">
-            <p class="text-primary text-center fw-light">When would you like to stay?</p>
-          </div>
-
           <!-- UNHIDE OP PLANS, SUMMARY, PRICE DETAILS IF DATE SELECTED-->
-          <div class="container" *ngIf="selectedRangeValue.start || selectedRangeValue.end">
+          <div class="container px-0 px-md-2">
 
             <!-- FROM TO CONTAINER -->
             <div class="container mb-5">
@@ -140,7 +136,8 @@
                 </div>
               </div>
 
-              <div class="row from-to-container" *ngIf="selectedRangeValue.start && selectedRangeValue.end && noOfDaysSelected > 1">
+              <div class="row from-to-container"
+                *ngIf="selectedRangeValue.start && selectedRangeValue.end && noOfDaysSelected > 1">
                 <div class="col-6 text-center d-flex flex-column align-content-center">
                   <p class="mb-0">FROM</p>
                   <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
@@ -150,7 +147,7 @@
                   <p class="dark-title-cursive mb-0">{{(selectedRangeValue.end ? selectedRangeValue.end :
                     selectedRangeValue.start ) | date:'d MMM y'}}</p>
                 </div>
-              </div>              
+              </div>
             </div>
 
 
@@ -168,13 +165,12 @@
                     <div class="col px-0"><small><i class="fa-solid fa-bread-slice"></i></small></div>
                     <div class="col px-0"><small><i class="fa-solid fa-burger"></i></small></div>
                     <div class="col px-0"><small><i class="fa-solid fa-utensils"></i></small></div>
-                    <div class="col px-0"></div>
+                    <div class="col-1 px-0"></div>
                   </div>
                 </div>
 
 
-                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 1}"
-                  for="flexRadioDefault1">
+                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 1}" for="epPlan">
                   <div class="row justify-content-between px-4">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">EP<small
                         class="plan-cost">(+300)</small></div>
@@ -193,16 +189,15 @@
                         <i class="fa-solid fa-xmark text-danger"></i>
                       </small>
                     </div>
-                    <div class="col px-0 text-end">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
-                        value="1" (click)="changePlan(1)" checked>
+                    <div class="col-1 px-0 text-end">
+                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" id="epPlan" value="1"
+                        (click)="changePlan(1)" checked>
                     </div>
                   </div>
                 </label>
 
-                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 2}"
-                  for="flexRadioDefault2">
-                  <div class="row justify-content-between px-4" for="flexRadioDefault2">
+                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 2}" for="cpPlan">
+                  <div class="row justify-content-between px-4" for="cpPlan">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">CP<small
                         class="plan-cost">(+500)</small></div>
                     <div class="col px-0"><small>
@@ -214,16 +209,15 @@
                     <div class="col px-0"><small>
                         <i class="fa-solid fa-xmark text-danger"></i>
                       </small></div>
-                    <div class="col px-0 text-end">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
-                        value="2" (click)="changePlan(2)">
+                    <div class="col-1 px-0 text-end">
+                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" id="cpPlan" value="2"
+                        (click)="changePlan(2)">
                     </div>
                   </div>
                 </label>
 
-                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 3}"
-                  for="flexRadioDefault3">
-                  <div class="row justify-content-between px-4" for="flexRadioDefault3">
+                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 3}" for="apPlan">
+                  <div class="row justify-content-between px-4" for="apPlan">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">AP<small
                         class="plan-cost">(+1000)</small></div>
                     <div class="col px-0"><small>
@@ -235,12 +229,42 @@
                     <div class="col px-0"><small>
                         <i class="fa-solid fa-check text-success"></i>
                       </small></div>
-                    <div class="col px-0 text-end">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" value="3"
-                        id="flexRadioDefault3" (click)="changePlan(3)">
+                    <div class="col-1 px-0 text-end">
+                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" value="3" id="apPlan"
+                        (click)="changePlan(3)">
                     </div>
                   </div>
                 </label>
+
+
+                <label class="container plan-container py-3 map-plan-label" [ngClass]="{'active' : selectedPlan == 4}"
+                  for="mapPlan">
+                  <div class="row justify-content-between px-4" for="mapPlan">
+                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">MAP<small
+                        class="plan-cost">(+1000)</small></div>
+
+                    <div class="col px-0 map-li" (click)="changePlan(4)">
+                      <input type="checkbox" id="breakfast" value="1" class="form-check-input map-checkbox"
+                        [(ngModel)]="OpPlanDetails[3].opSelection.breakfast">
+                    </div>
+                    <div class="col px-0 map-li" (click)="changePlan(4)">
+                      <input type="checkbox" id="lunch" value="2" class="form-check-input map-checkbox"
+                        [(ngModel)]="OpPlanDetails[3].opSelection.lunch">
+                    </div>
+                    <div class="col px-0 map-li" (click)="changePlan(4)">
+                      <input type="checkbox" id="dinner" value="3" class="form-check-input map-checkbox"
+                        [(ngModel)]="OpPlanDetails[3].opSelection.dinner">
+                    </div>
+
+
+                    <div class="col-1 px-0 text-end">
+                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" value="4" id="mapPlan"
+                        (click)="changePlan(4)">
+                    </div>
+                  </div>
+                </label>
+                <small class="text-danger px-4 text-end" *ngIf="selectedPlan == 4 && mapCount < 2"><small>Select at
+                    least 2 option.</small></small>
 
 
               </div>
@@ -251,7 +275,7 @@
             <div class="container mt-5 mb-3 mx-0 px-0 border-bottom">
               <h1 class="plan-title text-center px-4 mb-3">Summary</h1>
 
-              <div class="row container mx-0 plan-icons-container shadow-sm py-3 px-4">
+              <div class="row container mx-0 plan-icons-container shadow-sm py-3 px-2 px-md-4">
                 <div class="col text-primary-dark">
                   <small><b>ITEMS</b></small>
                 </div>
@@ -261,28 +285,31 @@
               </div>
 
               <div class="container price-summary-container">
-                <div class="row px-4 py-2">
+                <div class="row px-2 px-md-4 py-2">
                   <div class="col">
                     <small>{{selectedRoomDetails.categoryName}} Room</small><br>
-                    <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}} Day{{noOfDaysSelected <= 0 ? '' : 's'}} ) </small></small>
+                    <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
+                          Day{{noOfDaysSelected <=0 ? '' : 's' }} ) </small></small>
                   </div>
                   <div class="col text-end">
-                    <small><del>{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) + (selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) * 0.1)}}</del>
-                      {{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
-                      <br>
-                      <small><small class="text-muted"> ( Flat 10% Off ) </small></small>
+                    <small><del>{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) +
+                          (selectedRoomDetails.amount * (noOfDaysSelected <=0 ? 1 : noOfDaysSelected) * 0.1)}}</del>
+                          {{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
+                            <br>
+                            <small><small class="text-muted"> ( Flat 10% Off ) </small></small>
                   </div>
                 </div>
-                <div class="row px-4 py-2">
+                <div class="row px-2 px-md-4 py-2">
                   <div class="col">
                     <small>Optional Plan ({{selectedOpPlanDetails.opName}})</small><br>
-                    <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}} Day{{noOfDaysSelected <= 0 ? '' : 's'}} ) </small></small>
+                    <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
+                          Day{{noOfDaysSelected <=0 ? '' : 's' }} ) </small></small>
                   </div>
                   <div class="col text-end">
                     <small>{{selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
                   </div>
                 </div>
-                <div class="row px-4 py-2">
+                <div class="row px-2 px-md-4 py-2">
                   <div class="col">
                     <small>Taxes & Charges</small>
                   </div>
@@ -298,24 +325,39 @@
             <!-- PRICE CONTAINER -->
             <div class="row flex-row gap-2 mb-5 justify-content-center align-items-center">
 
-              <div class="col-5 d-flex flex-column justify-content-center ps-4">
-                <h1 class="mb-0 total-cost">Total Cost</h1>
-                <p class="my-0 ms-1"><small>incl. all charges.</small></p>
+              <div class="col-5 d-flex flex-column justify-content-center ps-3 ps-md-4">
+                <h1 class="mb-0 total-cost ps-2">Total Cost</h1>
+                <p class="my-0 ms-1 ps-2"><small>incl. all charges.</small></p>
               </div>
 
-              <div class="col-6">
+              <div class="col-6 pe-3 pe-md-4">
                 <div class="container price-container text-center">
-                  <h1 class="price-tag float-end mb-0 text-nowrap">₹ {{(selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected))}}/-</h1>
+                  <h1 class="price-tag float-end mb-0 text-nowrap">₹ {{(selectedRoomDetails.amount * (noOfDaysSelected
+                    <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <=0 ? 1 :
+                      noOfDaysSelected))}}/-</h1>
                 </div>
               </div>
 
 
             </div>
 
-
             <!-- CHECKOUT BUTTON -->
             <div class="container px-2">
-              <button class="btn btn-primary w-100 py-3"><i class="fa-regular fa-money-bill-1 me-2"></i><b>Checkout</b></button>
+              <button class="btn btn-primary w-100 py-3"
+                [disabled]="isLoading || (selectedPlan == 4 && mapCount < 2) || !(selectedRangeValue.start || selectedRangeValue.end)"
+                (click)="loadingBtnAnimate()">
+                <i class="fa me-2" [ngClass]="isLoading ? 'fa-spin fa-circle-notch' : 'fa-regular fa-money-bill-1'"></i>
+                <b>{{checkOutBtn}}</b>
+              </button>
+
+              <div class="container text-end">
+                <p class="mb-0" *ngIf="selectedPlan == 4 && mapCount < 2">
+                  <small><small class="text-danger">* Optional Plan required.</small></small>
+                </p>
+                <p class="mb-0" *ngIf="!(selectedRangeValue.start || selectedRangeValue.end)">
+                  <small><small class="text-danger">* Date required.</small></small>
+                </p>
+              </div>
             </div>
 
           </div>
@@ -330,3 +372,268 @@
 
   </div>
 </section>
+
+<div class="checkout-form overflow-y-scroll" *ngIf="checkOutForm">
+  <!-- HEADER -->
+  <div class="container-fluid position-fixed checkout-header px-4 py-3 py-md-3 mb-5 shadow-sm bg-white text-primary">
+    <div class="container d-flex justify-content-between align-items-center">
+      <h2 class="my-0">Checkout</h2>
+      <i class="fa fa-x my-0" (click)="closeCheckOutForm()"></i>
+    </div>
+  </div>
+
+  <!-- CHECKOUT FORM ACCORDION -->
+  <div class="container my-5 pt-4 pb-3 py-md-5">
+    <div class="accordion" id="accordionPanelsStayOpenExample">
+
+      <!-- ORDER SUMMARY -->
+      <div class="accordion-item">
+        <h2 class="accordion-header d-flex align-items-center half-opacity" id="panelsStayOpen-headingOne">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse"
+            data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne"
+            disabled>
+            <i class="fa-solid fa-circle-check text-success me-2"></i>
+            <b>Order Summary</b>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+          aria-labelledby="panelsStayOpen-headingOne">
+          <div class="accordion-body">
+
+
+            <table class="table table-sm checkout-table">
+              <thead class="text-muted">
+                <tr>
+                  <th scope="col">Item</th>
+                  <th scope="col">From</th>
+                  <th scope="col">To</th>
+                  <th scope="col">Total Days</th>
+                  <th scope="col">Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Suite Room</th>
+                  <td>02 Dec 2022</td>
+                  <td>04 Dec 2022</td>
+                  <td>2 Days</td>
+                  <td>2000</td>
+                </tr>
+              </tbody>
+            </table>
+
+
+
+          </div>
+        </div>
+      </div>
+
+      <!-- CONTACT DETAILS -->
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
+          <button class="accordion-button" [ngClass]="!contactInfoComplete ? '':' collapsed'" type="button"
+            data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseTwo" (click)="onContactInfoSubmit(); contactInfoComplete = false;">
+            <i class="fa-solid me-2"
+              [ngClass]="contactInfoComplete ? 'fa-circle-check text-success':'fa-hourglass-end text-warning'"></i>
+            <b>Contact Details</b>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse"
+          [ngClass]="!contactInfoComplete ? 'show':''" aria-labelledby="panelsStayOpen-headingTwo">
+          <div class="accordion-body">
+            <!-- FORM CONTAINER -->
+            <div class="container">
+
+
+              <!--------------------------- CONTACT INFO FORM -------------------------->
+
+              <form [formGroup]="form" (ngSubmit)="onContactInfoSubmit()" class="row gy-3">
+                <!-- FULL NAME -->
+                <div class="form-group col-12 col-md-6 col-xl-4">
+                  <input type="text" placeholder="Full Name" formControlName="fullname" class="form-control"
+                    [ngClass]="{ 'is-invalid': submitted && f['fullname'].errors }" />
+                  <div *ngIf="submitted && f['fullname'].errors" class="invalid-feedback">
+                    <div *ngIf="f['fullname'].errors['required']">Fullname is required</div>
+                  </div>
+                </div>
+                <!-- EMAIL -->
+                <div class="form-group col-12 col-md-6 col-xl-4">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text h-100">
+                        <i class="fa-solid fa-envelope text-muted"></i>
+                      </span>
+                    </div>
+  
+                    <input type="text" placeholder="Email Address" formControlName="email" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
+                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                      <div *ngIf="f['email'].errors['required']">Email is required</div>
+                      <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- PHONE -->
+                <div class="form-group col-12 col-md-6 col-xl-4">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text h-100">
+                        <i class="fa-solid fa-phone text-muted"></i>
+                      </span>
+                    </div>
+  
+                    <input type="tel" placeholder="Phone Number" formControlName="phone" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }" />
+                    <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+                      <div *ngIf="f['phone'].errors['required']">
+                        Phone number is required
+                      </div>
+                      <div *ngIf="f['phone'].errors['phone']">Phone Number is invalid</div>
+                      <div *ngIf="
+                          f['phone'].errors['minlength'] || f['phone'].errors['maxlength']
+                        ">
+                        Phone number needs to be exactly 10
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- TOTAL PERSON -->
+                <div class="form-group col-12 col-md-6 col-xl-4">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text h-100">
+                        <i class="fa-solid fa-user text-muted"></i>
+                      </span>
+                    </div>
+                    <input type="number" placeholder="Total No. of Person" formControlName="totalperson" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['totalperson'].errors }" />
+                    <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+                      <div *ngIf="f['totalperson'].errors['required']">
+                        Total No. of Person is required
+                      </div>
+                      <div *ngIf="f['totalperson'].errors['totalperson']">
+                        Total Person is invalid
+                      </div>
+                      <div *ngIf="f['totalperson'].errors['max']">
+                        Maximum 50 Person Allowed
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- CHILDREN -->
+                <div class="form-group col-12 col-md-6 col-xl-4">
+
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text h-100">
+                        <i class="fa-solid fa-child text-muted"></i>
+                      </span>
+                    </div>
+                    <input type="number" placeholder="Total No. of Childrens" formControlName="children" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['children'].errors }" />
+                    <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
+                      <div *ngIf="f['children'].errors['required']">
+                        Total No. of Children is required
+                      </div>
+                      <div *ngIf="f['children'].errors['children']">
+                        Total Children is invalid
+                      </div>
+                      <div *ngIf="f['children'].errors['max']">
+                        Maximum 50 Children Allowed
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="form-group d-flex gap-2 col-12 justify-content-end">
+                  <button type="button" (click)="onReset()" class="btn btn-light">
+                    Clear
+                  </button>
+                  <button type="submit" class="btn btn-primary">Save & Proceed</button>
+                </div>
+
+              </form>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- PAYMENT -->
+      <div class="accordion-item" [ngClass]="{'half-opacity' : !contactInfoComplete}">
+        <h2 class="accordion-header" id="panelsStayOpen-headingThree">
+          <button class="accordion-button" [ngClass]="!contactInfoComplete ? 'collapsed':''" type="button"
+            data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false"
+            aria-controls="panelsStayOpen-collapseThree" [disabled]="!contactInfoComplete">
+            <i class="fa-solid me-2"
+              [ngClass]="contactInfoComplete ? 'fa-circle-check text-success':'fa-hourglass-end text-warning'"></i>
+            <b>Payment Options</b>
+          </button>
+        </h2>
+        <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse"
+          [ngClass]="{'show' : contactInfoComplete}" aria-labelledby="panelsStayOpen-headingThree">
+          <div class="accordion-body">
+
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+
+                  <div class="form-check d-flex align-items-center justify-content-center gap-2">
+                    <input class="form-check-input" type="radio" name="razorpayRadio" id="razorpayRadio" checked>
+                    <label class="form-check-label d-flex flex-wrap justify-content-center gap-2" for="razorpayRadio">
+
+                      <img src="assets/payment-logos/upi.svg" width="65">
+                      <img src="assets/payment-logos/visa.svg" width="50">
+                      <img src="assets/payment-logos/mastercard.svg" width="50">
+                      <img src="assets/payment-logos/gpay.svg" width="30">
+                      <img src="assets/payment-logos/phonepe.svg" width="30">
+                      <img src="assets/payment-logos/paytm.svg" width="50">
+
+
+                    </label>
+                  
+                  
+                  </div>
+
+                  <p class="text-muted text-center small"><small>powered by Razorpay</small></p>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- CHECKOUT FORM ACCORDION END-->
+
+  <!-- FOOTER -->
+  <div class="container-fluid checkout-footer p-2 position-fixed bottom-0 bg-white shadow mt-5">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-8">
+          <div class="row">
+            <p class="mb-0 text-muted"><small>You are paying</small></p>
+          </div>
+          <div class="row">
+            <h4 class="mb-0 text-primary">Rs.2000</h4>
+          </div>
+        </div>
+        <div class="col"><button class="btn btn-primary float-end py-2 py-md-3 w-100"
+            [disabled]="!contactInfoComplete">Pay Now</button></div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,5 +1,5 @@
 .tarcon-hr{
-    border-color: #926b25;
+    border-color: #795548;
     width: 50%;
     margin: auto;
 }
@@ -59,7 +59,7 @@
     text-align: center;
     font-size: 2rem;
     font-family: 'Playfair Display';
-    color: #926b25;
+    color: #795548;
 }
 
 
@@ -69,7 +69,7 @@
 }
 .total-cost, .plan-title{
     font-family: 'Playfair Display', sans-serif;
-    color: #926b25;
+    color: #795548;
     font-size: 1.5rem;
 }
 .price-tag{
@@ -81,16 +81,16 @@
 
 .dark-title-cursive{
     font-family: serif;
-    color: #926b25;
+    color: #795548;
     font-size: 1.3rem;
 }
 .from-to-container{
-    border:1px solid #926b25;
+    border:1px solid #795548;
     padding: 1rem 0rem;
 }
 
 .from-to-container div:last-child{
-    border-color: 1px solid #926b25 !important;
+    border-color: 1px solid #795548 !important;
 }
 
 
@@ -144,4 +144,72 @@
 //FOR ADDITIONAL PLAN MODULE
 .plan-cost{
     font-size: .7rem;
+}
+
+
+.checkout-form{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: white;
+    top: 0;
+    z-index: 200;
+    animation: slideIn .6s ease;
+    overflow-y: scroll;
+    padding-bottom: 2rem;
+
+    .checkout-header,
+    .checkout-footer{
+        z-index: 201;
+        background-image: linear-gradient(141deg, rgb(255, 248, 235), rgb(255, 236, 204));
+    }
+}
+@keyframes slideIn{
+    from{
+        transform: translateX(100%);
+    }to{
+        transform: translateX(0);
+    }
+}
+
+.half-opacity{
+    opacity: .5;
+}
+.checkout-table{
+    @media (max-width:768px) {
+        
+        display: flex;
+        justify-content: space-between;
+        thead,tbody{
+            width: 50%;
+        }
+        thead{
+            background-color: transparent !important;
+        }
+        tbody{
+            text-align: end;
+        }
+        tr{
+            display: flex;
+            flex-flow: column;
+        }
+        th{
+            font-weight: 500;
+        }
+    }
+}
+
+
+
+
+//OPTIONAL PLANS - MAP
+
+.map-checkbox:checked{
+    background-color: #1b8855;
+    border-color: #7aba9c;
+}
+
+.map-checkbox:focus{
+    box-shadow: 0 0 0 0.25rem rgba(165, 255, 149, 0.25);
+    border-color: #abfe86;
 }

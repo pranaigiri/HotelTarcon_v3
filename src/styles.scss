@@ -49,6 +49,20 @@ $primary-dark: #87672d;
 $dark: #202C39;
 $font-primary: 'Nunito', sans-serif;
 
+//REPLACE ACCORDION STYLE
+.accordion{
+	--bs-accordion-active-bg: #fff7ea !important;
+	--bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem #fff7ea !important;
+	--bs-accordion-active-color: $primary-dark !important;
+
+	.accordion-button:not(.collapsed)::after {
+		filter: brightness(0);
+	}
+}
+
+
+
+
 @import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 
@@ -394,6 +408,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     border-color: #cb9c4b;
 }
 
+.form-check-input[type=checkbox] {
+    border-radius: 100%;
+}
+
 .form-check-input:focus {
     box-shadow: 0 0 0 0.25rem rgb(253 144 13 / 25%);
+	border-color: #feca86;
 }
