@@ -46,6 +46,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FaqComponent } from './footer/faq/faq.component';
 
 
 
@@ -103,6 +104,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       ContactusComponent,
       PrivacypolicyComponent,
       TermsandconditionsComponent,
+      FaqComponent
    ],
   imports: [
     BrowserModule,
