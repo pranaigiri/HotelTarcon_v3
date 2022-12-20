@@ -205,7 +205,7 @@ export class HotelComponent implements OnInit {
   }
 
   //CHANGE OPTIONAL PLAN ON SELECT
-  selectedPlan: number = 1;
+  selectedPlan: number = 0;
   changePlan(value: number) {
     this.selectedPlan = value;
     this.selectedOpPlanDetails = this.OpPlanDetails[--value];
