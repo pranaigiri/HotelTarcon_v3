@@ -1,8 +1,8 @@
-   <!-- ======= Contact Section ======= -->
-   <section id="contact" class="contact">
+<!-- ======= Contact Section ======= -->
+<section id="contact" class="contact">
     <div class="container">
 
-        
+
 
         <div class="row">
             <div class="col-lg-6">
@@ -34,9 +34,9 @@
         <div class="row">
 
             <div class="col-lg-6 ">
-                <iframe class="mb-4 mb-lg-0"
-                    src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=hotel tarcon&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-                    frameborder="0" style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
+                <iframe class="mb-4 mb-lg-0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=27.342277491499537,
+                    88.61256586520905&amp;t=&amp;z=14&amp;output=embed" frameborder="0"
+                    style="border:0; width: 100%; height: 384px;" allowfullscreen></iframe>
             </div>
 
             <div class="col-lg-6">
@@ -44,11 +44,11 @@
                     <div class="row">
                         <div class="col-md-6 form-group">
                             <input type="text" name="name" class="form-control" id="name" placeholder="Your Name"
-                                required [(ngModel)]="form.name" >
+                                required [(ngModel)]="form.name">
                         </div>
                         <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email"
-                                placeholder="Your Email" required [(ngModel)]="form.email">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required [(ngModel)]="form.email">
                         </div>
                     </div>
                     <div class="form-group mt-3">
@@ -56,15 +56,16 @@
                             required [(ngModel)]="form.subject">
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message"
-                            required [(ngModel)]="form.message"></textarea>
+                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required
+                            [(ngModel)]="form.message"></textarea>
                     </div>
                     <div class="my-3">
                         <div class="loading">Loading</div>
                         <div class="error-message"></div>
                         <div class="sent-message">Your message has been sent. Thank you!</div>
                     </div>
-                    <div class="text-end"><button type="submit" class="btn btn-sm btn-primary px-2 py-1" (click)="postForm()">Send Message</button></div>
+                    <div class="text-end"><button type="submit" class="btn btn-sm btn-primary px-2 py-1"
+                            (click)="postForm()">Send Message</button></div>
                 </form>
             </div>
 

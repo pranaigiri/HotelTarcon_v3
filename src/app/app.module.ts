@@ -48,6 +48,7 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 import { OrdersuccessComponent } from './hotel/ordersuccess/ordersuccess.component';
+import { FaqComponent } from './footer/faq/faq.component';
 
 
 
@@ -105,7 +106,8 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
       ContactusComponent,
       PrivacypolicyComponent,
       TermsandconditionsComponent,
-      OrdersuccessComponent
+      OrdersuccessComponent,
+      FaqComponent
    ],
   imports: [
     BrowserModule,

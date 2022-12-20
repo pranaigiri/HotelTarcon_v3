@@ -84,6 +84,7 @@ export class HotelComponent implements OnInit {
       opAmount: 1000
     }
   ];
+  openTab=1;
   //DEFAULT SELECTED OP DETAILS - EP
   selectedOpPlanDetails: any = this.OpPlanDetails[0];
 
@@ -204,10 +205,13 @@ export class HotelComponent implements OnInit {
   changeCategory(value: number) {
     this.selectedCategory = value;
     this.selectedRoomDetails = this.roomDetails[--value];
+    console.log(this.selectedCategory);
+    this.openTab=this.selectedCategory
+    
   }
 
   //CHANGE OPTIONAL PLAN ON SELECT
-  selectedPlan: number = 1;
+  selectedPlan: number = 0;
   changePlan(value: number) {
     this.selectedPlan = value;
     this.selectedOpPlanDetails = this.OpPlanDetails[--value];
