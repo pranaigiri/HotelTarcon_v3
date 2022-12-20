@@ -18,7 +18,8 @@ SwiperCore.use([Pagination, Navigation, Virtual]);
 })
 export class SliderComponent implements OnInit {
 
-  constructor(private router: Router, private eventEmitterService: EventEmitterService, private ngZone: NgZone,private scroller:ViewportScroller) {
+  constructor(private router: Router, private eventEmitterService: EventEmitterService,
+    private ngZone: NgZone, private scroller: ViewportScroller) {
 
   }
 
@@ -84,7 +85,7 @@ export class SliderComponent implements OnInit {
   updateSlideAndPage(slideIndex: any) {
     console.log("ru", this.router.url);
     console.log("lp", location.pathname);
-    console.log("slideindex",slideIndex);
+    console.log("slideindex", slideIndex);
     slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : this.router.navigate(['/', '/']);
   }
 
@@ -97,8 +98,8 @@ export class SliderComponent implements OnInit {
   }
 
 
-  scrollFunc(obj:any){
-this.scroller.scrollToAnchor(obj)
+  scrollFunc(obj: any) {
+    this.scroller.scrollToAnchor(obj)
   }
 
 
