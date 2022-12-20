@@ -1,21 +1,23 @@
 .nearby-container {
   // background: url('../../assets/pattern-flower.png'); 
   background-attachment: fixed !important;
-  }
-  
-  .nearby-container:before {
-    content: "";
-    position: fixed;
-    top: calc(50% - 1000px);
-    left: 0;
-    width: 50%;
-    height: 1000vh;
-    background: #fffcf8;
-    transform: skew(21deg);
-    transform-origin: top;
-    z-index: -1;
-  }
+}
 
-  .contactus-container{
-    background: linear-gradient(273deg, #fffefc, #fff4e1) !important;
-  }
+.nearby-container:before {
+  content: "";
+  position: fixed;
+  top: calc(50% - 1000px);
+  left: 0;
+  width: 50%;
+  height: 1000vh;
+  background: #fffcf8;
+  transform: skew(21deg);
+  transform-origin: top;
+  z-index: -1;
+}
+#section-about{
+  padding-top: 80px;
+}
+.contactus-container {
+  background: linear-gradient(273deg, #fffefc, #fff4e1) !important;
+}
