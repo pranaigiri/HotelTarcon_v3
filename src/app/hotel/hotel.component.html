@@ -144,8 +144,7 @@
                 </div>
                 <div class="col-6 text-center d-flex flex-column align-content-center border-start">
                   <p class="mb-0">TO</p>
-                  <p class="dark-title-cursive mb-0">{{(selectedRangeValue.end ? selectedRangeValue.end :
-                    selectedRangeValue.start ) | date:'d MMM y'}}</p>
+                  <p class="dark-title-cursive mb-0">{{selectedRangeValue.end | date:'d MMM y'}}</p>
                 </div>
               </div>
             </div>
@@ -191,7 +190,7 @@
                     </div>
                     <div class="col-1 px-0 text-end">
                       <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" id="epPlan" value="1"
-                        (click)="changePlan(1)" checked>
+                        (click)="changePlan(1)">
                     </div>
                   </div>
                 </label>
@@ -404,8 +403,6 @@
         <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
           aria-labelledby="panelsStayOpen-headingOne">
           <div class="accordion-body">
-
-
             <table class="table table-sm checkout-table">
               <thead class="text-muted">
                 <tr>
@@ -419,9 +416,8 @@
               <tbody>
                 <tr>
                   <th scope="row">{{selectedRoomDetails.categoryName}}</th>
-                  <td>{{selectedRangeValue.start | date:'d MMM y'}}</td>
-                  <td>{{(selectedRangeValue.end ? selectedRangeValue.end :
-                    selectedRangeValue.start ) | date:'d MMM y'}}</td>
+                  <td>{{tempFromDate}}</td>
+                  <td>{{tempTodate}}</td>
                   <td>{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
                     Day{{noOfDaysSelected <=0 ? '' : 's' }}</td>
                   <td>₹ {{(selectedRoomDetails.amount * (noOfDaysSelected

@@ -93,6 +93,24 @@
           <td></td>
           <td style="text-align: right;">{{expectedSuccessRes.orderRes.notes.selectedopamount}}</td>
         </tr>
+        <tr class="invoice-items">
+          <td>From</td>
+          <td></td>
+          <td></td>
+          <td style="text-align: right;">{{expectedSuccessRes.orderRes.notes.fromdate | date:'d MMM y'}}</td>
+        </tr>
+        <tr class="invoice-items">
+          <td>To</td>
+          <td></td>
+          <td></td>
+          <td style="text-align: right;">{{expectedSuccessRes.orderRes.notes.todate | date:'d MMM y'}}</td>
+        </tr>
+        <tr class="invoice-items">
+          <td>Total Days</td>
+          <td></td>
+          <td></td>
+          <td style="text-align: right;">{{expectedSuccessRes.orderRes.notes.totaldays}}</td>
+        </tr>
       </tbody>
     </table>
     <table style="width: 100%;
@@ -770,20 +788,20 @@
               <td class="text-end">{{expectedSuccessRes.orderRes.id}}</td>
               <td class="text-end">{{expectedSuccessRes.paymentRes.response.razorpay_payment_id}}</td>
               <td class="text-end">{{expectedSuccessRes.orderRes.notes.selectedroomname}}</td>
-              <td class="text-end">{{expectedSuccessRes.orderRes.notes.fromdate}}</td>
-              <td class="text-end">{{expectedSuccessRes.orderRes.notes.todate}}</td>
+              <td class="text-end">{{expectedSuccessRes.orderRes.notes.fromdate | date:'d MMM y'}}</td>
+              <td class="text-end">{{expectedSuccessRes.orderRes.notes.todate | date:'d MMM y'}}</td>
               <td class="text-end">{{expectedSuccessRes.orderRes.notes.totaldays}}</td>
               <td class="text-end">{{expectedSuccessRes.orderRes.notes.adults}}</td>
               <td class="text-end">{{expectedSuccessRes.orderRes.notes.children}}</td>
-              <td class="text-end">{{expectedSuccessRes.paymentRes.amount}}</td>
+              <td class="text-end">{{expectedSuccessRes.paymentRes.amount / 100}}</td>
             </tr>
           </tbody>
         </table>
       </div>
       <div class="row row-cols-2 flex-nowrap px-3 px-md-5">
-        <button class="btn btn-sm btn-secondary rounded me-2" (click)="saveOrderDiv()"> <i class="fa fa-download me-2"></i> <small>Download</small></button>
-        <button class="btn btn-sm btn-primary rounded ms-2" printSectionId="print-order-success" [useExistingCss]="true"
-          ngxPrint><i class="fa fa-print me-2"></i><small>Print</small></button>
+        <button class="btn btn-sm btn-secondary rounded me-2" printSectionId="print-order-success" [useExistingCss]="true"
+        ngxPrint><i class="fa fa-print me-2"></i><small>Print</small></button>
+        <button class="btn btn-sm btn-primary rounded ms-2" (click)="saveOrderDiv()"> <i class="fa fa-download me-2"></i> <small>Download</small></button>
       </div>
     </div>
   </div>
