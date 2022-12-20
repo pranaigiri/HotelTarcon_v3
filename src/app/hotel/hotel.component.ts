@@ -137,7 +137,13 @@ export class HotelComponent implements OnInit {
   @Input() selectedRangeValue: DateRange<Date> | undefined | any = {};
   @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
   noOfDaysSelected: number = 0;
+
+  tempFromDate:any;
+  tempTodate:any;
+
   selectedChange(m: any) {
+
+    debugger
 
     if (!this.selectedRangeValue?.start || this.selectedRangeValue?.end) {
       this.selectedRangeValue = new DateRange<Date>(m, null);
@@ -170,13 +176,17 @@ export class HotelComponent implements OnInit {
                 secondary: '#FFFAEE',
               },
             });
+
           this.selectedRangeValue = {};
         }
       }
     }, 1);
 
     // To calculate the no. of days selected
-    this.noOfDaysSelected = (this.selectedRangeValue.end - this.selectedRangeValue.start) / (1000 * 3600 * 24) + 1;
+    this.noOfDaysSelected = ((this.selectedRangeValue.end ? this.selectedRangeValue.end : this.selectedRangeValue.start) - this.selectedRangeValue.start) / (1000 * 3600 * 24) + 1;
+
+    this.tempFromDate = this.datepipe.transform(this.selectedRangeValue.start, 'd MMM, y');
+    this.tempTodate = this.datepipe.transform(this.selectedRangeValue.end, 'd MMM, y');
 
   }
 
@@ -421,8 +431,8 @@ export class HotelComponent implements OnInit {
       selectedRoomAmount: this.selectedRoomDetails.amount,
       selectedOpPlan: this.selectedOpPlanDetails.opName,
       selectedOpAmount: this.selectedOpPlanDetails.opAmount,
-      fromDate: this.selectedRangeValue.start || this.datepipe.transform(new Date, 'dd/MM/yyyy'),
-      toDate: this.selectedRangeValue.end ? this.selectedRangeValue.end : this.selectedRangeValue.start || this.datepipe.transform(new Date, 'dd/MM/yyyy'),
+      fromDate: this.tempFromDate,
+      toDate: this.tempTodate,
       totalCost: this.selectedRoomDetails.amount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected) + this.selectedOpPlanDetails.opAmount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected),
       totalDays: this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected,
       adults: this.customerDetails.adults || 0,
@@ -561,13 +571,16 @@ export class HotelComponent implements OnInit {
 
     if(this.child.downloadedFlag){
       this.showingInvoice = false;
+      window.scrollTo(0,0);
     }else{
       Swal.fire({
         title: 'Do you want to save invoice?',
+        text:'Close if already did!',
         showDenyButton: true,
         showCancelButton: true,
-        confirmButtonText: 'Save',
-        denyButtonText: `No`,
+        confirmButtonText: 'Download',
+        confirmButtonColor: '#76d07b',
+        denyButtonText: `Close Invoice`,
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {
@@ -578,7 +591,11 @@ export class HotelComponent implements OnInit {
       })
     }
 
-
+    if(this.child.downloadedFlag && this.showingInvoice == false){
+      setTimeout(() => {
+        location.reload();
+      }, 1000);
+    }
 
   }
 
