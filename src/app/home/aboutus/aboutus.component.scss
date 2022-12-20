@@ -1,0 +1,9 @@
+.about-img{
+    transform: rotate(-3deg) scale(.9);
+    border-radius: 50px;
+    border: 10px solid white;
+}
+
+.about-img.invert{
+    transform: rotate(3deg) scale(.9);
+}

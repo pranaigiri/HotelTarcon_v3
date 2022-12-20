@@ -263,168 +263,28 @@ p {
     outline: medium none;
 }
 
-
-/* <!-- Travels Guide Start --> */
-
-/* .travel-guid-outer {
-    float: left;
-    width: 100%;
-    padding-bottom: 50px;
-    position: relative;
-}
-
-.travel-main h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 1.5;
-    letter-spacing: normal;
-    color: #24272c;
-    margin-bottom: 25px;
-}
-
-.travel-main .bx-wrapper .bx-viewport {
-    height: auto !important;
-}
-
-.travel-guid-outer .bx-wrapper .bx-pager {
-    display: none;
-}
-
-.travel-guid-outer .bx-wrapper .bx-controls-direction a {
-    width: 52px;
-    height: 52px;
-    margin-top: -27px;
-}
-
-.travel-guid-outer .bx-wrapper .bx-prev {
-    background: url(../../assets/home-componenet/populardestination/arrow-slide1.png) no-repeat;
-    font-size: 0px;
-    color: transparent;
-    opacity: 1 !important;
-    left: -19px !important;
-    -webkit-box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
-    -moz-box-shadow: 0px 0px 33px -8px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
-    border-radius: 50%;
-    height: 20px;
-}
-
-.travel-guid-outer .bx-wrapper .bx-next {
-    background: url(../../assets/home-componenet/populardestination/arrow-slide.png) no-repeat;
-    font-size: 0px;
-    color: transparent;
-    opacity: 1 !important;
-    right: -19px !important;
-    -webkit-box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
-    -moz-box-shadow: 0px 0px 33px -8px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 33px -8px rgb(0 0 0 / 75%);
-    border-radius: 50%;
-}
-
-.travel-guid-outer .bx-controls-auto {
-    display: none;
-}
-
-.travel-guid-outer .slides2 li {
-    position: relative;
-    -webkit-box-shadow: 0px 0px 12px -2px rgb(0 0 0 / 24%);
-    -moz-box-shadow: 0px 0px 12px -2px rgba(0, 0, 0, 0.24);
-    box-shadow: 0px 0px 12px -2px rgb(0 0 0 / 24%);
-}
-
-.travel-guid-outer .slides2 li figure {
-    border-radius: 6px;
-    overflow: hidden;
-    width: 234px;
-    height: auto;
-}
-
-.travel-guid-outer .slides2 li figure img {
-    width: 100%;
-    max-width: inherit;
-    border-radius: 6px;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-    object-fit: cover;
-    height: 100%;
-}
-
-.travel-guid-outer .slides2 li figcaption {
-    background-color: rgba(0, 0, 0, 0.3);
-    border-radius: 6px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
-
-.travel-guid-outer .slides2 li figcaption a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-}
-
-.travel-guid-outer .slides2 li figcaption h3 {
-    font-family: Montserrat;
-    font-size: 20px;
-    font-weight: normal;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: normal;
-    letter-spacing: -1px;
-    text-align: center;
-    color: #ffffff;
-}
-
-.container:before {
-    display: table;
-    content: " ";
-}
-
-.container:after {
-    clear: both;
-} */
-
-
-/* <!-- Travels Guide End --> */
-
-
-/* <!-- Reservation Area Start --> */
-
 .section-padding {
     padding: 130px 0;
 }
 
 .reservation-area {
-    /* background-image: url(../../assets/home-componenet/populardestination/restaurant-menu/reservation-bg.jpg); */
-    background-image: url(../../../assets/home-componenet/populardestination/wallpaperflare.co.jpg);
+    background-image: url('assets/home-componenet/populardestination/sikkim-mountain.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 
 .reservation-area h2 {
-    color: rgb(250, 144, 45);
+    color: rgb(255 250 241);
     font-family: "Playfair Display", serif;
-    font-size: 42px !important;
+    font-size: 3rem;
     font-weight: 700;
 }
 
 .reservation-area h4 {
-    color: #fff;
-    font-family: "Roboto", sans-serif;
-    font-size: 24px !important;
-    font-weight: 400;
-    font-style: italic;
-    text-transform: capitalize;
+    color: #eeac36;
+    font-size: 1rem;
+    text-transform: initial;
 }
 
 .template-btn {

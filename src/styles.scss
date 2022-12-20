@@ -79,6 +79,10 @@ $font-primary: 'Nunito', sans-serif;
 body{
     overflow-x: hidden;
 }
+html{
+    width: 100vw;
+    overflow-x: hidden;
+}
 .tarcon-gradient-bg{
 	background-image: linear-gradient(208deg, rgb(255, 248, 235), rgb(255, 236, 204));
 }
@@ -90,6 +94,7 @@ body{
 .btn-outline-primary{
     color: white!important;
     border: 1px solid #eeac36 !important;
+	background-color: transparent !important;
 }
 .btn-outline-primary:hover{
     background-color: #eeac36 !important;
@@ -385,10 +390,6 @@ body{
 	left: .5em;
 	top: .3em;
 }
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-
 
 
 
