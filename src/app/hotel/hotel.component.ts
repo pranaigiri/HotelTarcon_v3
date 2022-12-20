@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
 import { DateRange } from '@angular/material/datepicker';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { ApiService } from '../service/api.service';
@@ -11,6 +11,12 @@ import {
   FormControl,
   Validators,
 } from '@angular/forms';
+import { WindowRefService } from '../service/window-ref.service';
+import { PaymentService } from '../service/payment.service';
+import { catchError, finalize, throwError } from 'rxjs';
+
+import Swal from 'sweetalert2';
+import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
 
 @Component({
   selector: 'app-hotel',
@@ -86,7 +92,9 @@ export class HotelComponent implements OnInit {
   TAX: number = 0;
 
   //CALCULATE TOTAL COST
-  constructor(private ngxLoader: NgxUiLoaderService,
+  constructor(private paymentApi: PaymentService,
+    private ngxLoader: NgxUiLoaderService,
+    private winRef: WindowRefService,
     private apiService: ApiService,
     private hotToast: HotToastService,
     public datepipe: DatePipe,
@@ -98,7 +106,6 @@ export class HotelComponent implements OnInit {
   getBookedDates() {
     // https://localhost:44332/api/Bookings
     this.apiService.getData('Bookings').subscribe((res: any) => {
-      console.log(res.result);
       this.bookedDates = res.result;
       sessionStorage.setItem("bookedDates", JSON.stringify(this.bookedDates));
     })
@@ -169,7 +176,6 @@ export class HotelComponent implements OnInit {
 
     // To calculate the no. of days selected
     this.noOfDaysSelected = (this.selectedRangeValue.end - this.selectedRangeValue.start) / (1000 * 3600 * 24) + 1;
-    console.log("no of days", this.noOfDaysSelected);
 
   }
 
@@ -205,7 +211,6 @@ export class HotelComponent implements OnInit {
   changePlan(value: number) {
     this.selectedPlan = value;
     this.selectedOpPlanDetails = this.OpPlanDetails[--value];
-    console.log(this.selectedOpPlanDetails);
   }
 
 
@@ -227,7 +232,7 @@ export class HotelComponent implements OnInit {
 
 
   //CHECKOUT FORM
-  contactInfoForm:any;
+  contactInfoForm: any;
 
   contactInfoComplete: boolean = false;
   closeCheckOutForm() {
@@ -244,7 +249,7 @@ export class HotelComponent implements OnInit {
 
 
   //MAP PLAN CHECKBOX COUNTER
-  mapCount:number = 0;
+  mapCount: number = 0;
 
 
 
@@ -253,19 +258,18 @@ export class HotelComponent implements OnInit {
     fullname: new FormControl(''),
     email: new FormControl(''),
     phone: new FormControl(''),
-    totalperson: new FormControl(0),
+    adults: new FormControl(0),
     children: new FormControl(0),
   });
   submitted = false;
 
   ngOnInit() {
 
-
     //LISTEN TO MAPPLAN CHECKBOX CHANGE
     let mapPlanCheckBoxes: any = document.querySelectorAll(
       '.map-li input[type="checkbox"]'
     );
-    
+
     mapPlanCheckBoxes.forEach((checkbox: any) => {
 
       checkbox.addEventListener("change", () => {
@@ -277,12 +281,12 @@ export class HotelComponent implements OnInit {
         this.mapCount > 1 ? mapPlanRadio.checked = true : mapPlanRadio.checked = false;
 
 
-        if(this.mapCount == 2){
-          mapPlanCheckBoxes.forEach((checkbox:any) => {
+        if (this.mapCount == 2) {
+          mapPlanCheckBoxes.forEach((checkbox: any) => {
             !checkbox.checked ? checkbox.disabled = true : null;
           })
-        }else{
-          mapPlanCheckBoxes.forEach((checkbox:any) => {
+        } else {
+          mapPlanCheckBoxes.forEach((checkbox: any) => {
             checkbox.disabled = false;
           })
         }
@@ -294,38 +298,38 @@ export class HotelComponent implements OnInit {
     //LISTEN IF OP PLAN IS MAP
     let mapPlanRadio: any = document.querySelector("#mapPlan");
     mapPlanRadio.addEventListener("change", () => {
-      if(mapPlanRadio.checked && this.mapCount < 2){
+      if (mapPlanRadio.checked && this.mapCount < 2) {
         mapPlanRadio.checked = false;
       }
     });
 
 
     //SELECT RADIO BUTTON OF OP PLANS
-    let opPlanRadios:any = document.querySelectorAll('.opPlanRadio');
+    let opPlanRadios: any = document.querySelectorAll('.opPlanRadio');
 
     //CLEAR OPPLAN CHECKBOXES & MAP PLAN CHECKBOXES
     opPlanRadios.forEach((radio: any) => {
       radio.addEventListener('change', () => {
-          
-          //reset count for map checkboxes
-          opPlanRadios[3] != radio ? this.mapCount = 0 : null;
 
-          //RESET ALL CHECKED PLANS
-          if(radio.value != this.selectedPlan)
-            radio.checked = false;
-          
-          //CLEAR MAP PLAN CHECKBOXES
-          if(radio.value != 4){
-            mapPlanCheckBoxes.forEach((checkbox: any) => {
-                  checkbox.checked = false;
-                  this.OpPlanDetails[3].opSelection = {
-                    breakfast: false,
-                    lunch: false,
-                    dinner: false
-                  };
-                  checkbox.disabled = false;
+        //reset count for map checkboxes
+        opPlanRadios[3] != radio ? this.mapCount = 0 : null;
+
+        //RESET ALL CHECKED PLANS
+        if (radio.value != this.selectedPlan)
+          radio.checked = false;
+
+        //CLEAR MAP PLAN CHECKBOXES
+        if (radio.value != 4) {
+          mapPlanCheckBoxes.forEach((checkbox: any) => {
+            checkbox.checked = false;
+            this.OpPlanDetails[3].opSelection = {
+              breakfast: false,
+              lunch: false,
+              dinner: false
+            };
+            checkbox.disabled = false;
           })
-          }
+        }
 
       });
     });
@@ -345,7 +349,7 @@ export class HotelComponent implements OnInit {
         ],
       ],
 
-      totalperson: ['', [Validators.required, Validators.max(50)]],
+      adults: ['', [Validators.required, Validators.max(50)]],
 
       children: ['', [Validators.required, Validators.max(50)]],
 
@@ -363,16 +367,216 @@ export class HotelComponent implements OnInit {
     if (this.form.invalid) {
       this.contactInfoComplete = false;
       return;
-    }else{
+    } else {
       this.contactInfoComplete = true;
     }
 
-    console.log(JSON.stringify(this.form.value, null, 2));
+    this.customerDetails = this.form.value;
   }
   onReset(): void {
     this.submitted = false;
     this.contactInfoComplete = false;
     this.form.reset();
   }
+
+
+
+
+  //------------------------------------------------------ FOR ORDER & PAYMENT ONLY ---------------------------------
+
+  customerDetails: any = {};
+  paymentStateStarted: boolean = false;
+
+
+  //Store all response on completion
+  successResponse: any = {
+    orderRes: {},
+
+    paymentRes: {
+      response:{}
+    }
+  };
+
+
+  //get random integer
+  getRandomInt(min: number, max: number) {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
+  }
+
+  //Create Order
+  createOrder() {
+
+    console.log("-------START - createOrder")
+
+    let orderDetails: any = {
+      customerPhone: this.customerDetails.phone || "",
+      selectedRoomCategory: this.selectedRoomDetails.categoryId,
+      selectedRoomName: this.selectedRoomDetails.categoryName,
+      selectedRoomAmount: this.selectedRoomDetails.amount,
+      selectedOpPlan: this.selectedOpPlanDetails.opName,
+      selectedOpAmount: this.selectedOpPlanDetails.opAmount,
+      fromDate: this.selectedRangeValue.start || this.datepipe.transform(new Date, 'dd/MM/yyyy'),
+      toDate: this.selectedRangeValue.end ? this.selectedRangeValue.end : this.selectedRangeValue.start || this.datepipe.transform(new Date, 'dd/MM/yyyy'),
+      totalCost: this.selectedRoomDetails.amount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected) + this.selectedOpPlanDetails.opAmount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected),
+      totalDays: this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected,
+      adults: this.customerDetails.adults || 0,
+      children: this.customerDetails.children || 0
+    };
+
+    let orderOptions: any = {
+      amount: orderDetails.totalCost * 100, // need to convert to paise
+      currency: "INR",
+      notes: orderDetails,
+      receipt: "invoice_" + new Date().valueOf() + "_" + this.getRandomInt(1, 1000),
+      payment_capture: false
+    }
+
+    this.paymentApi.createOrder(orderOptions).pipe(
+      finalize(() => (this.ngxLoader.stop())),
+      catchError(error => {
+        this.hotToast.error("Server not ready!");
+        return throwError(() => (error));
+      })
+    ).subscribe((res: any) => {
+      this.paymentStateStarted = true;
+      console.log("Created Order:", res);
+      this.successResponse.orderRes = res;
+      this.payWithRazor(res);
+    });
+
+  }
+
+
+  //initiate payment using generated order_id
+  payWithRazor(order: any) {
+
+    console.log("-------START - payWithRazor")
+    const options: any = {
+      key: 'rzp_test_KCwmTAShZCfbDS',
+      amount: order.amount, // amount should be in paise format to display Rs 1255 without decimal point
+      currency: 'INR',
+      name: "Hotel Tarcon Sikkim", // company name or product name
+      description: this.selectedRoomDetails.categoryName,  // product description
+      image: 'assets/tarcon_logo_colored.png', // company logo or product image
+      order_id: order.id, // order_id created by you in backend
+      prefill: {
+        name: this.customerDetails.fullname,
+        email: this.customerDetails.email,
+        contact: this.customerDetails.phone
+      },
+      modal: {
+        // We should prevent closing of the form when esc key is pressed.
+        escape: false,
+      },
+      notes: {
+        // include notes if any
+      },
+      theme: {
+        color: "#eeac36",
+        backdrop_color: "rgba(0,0,0,.2)"
+      }
+    };
+    options.handler = ((response: any, error: any) => {
+
+      options.response = response;
+      // console.log(response);
+      // console.log(options);
+      // console.log(error);
+
+      if (response) {
+
+        this.successResponse.paymentRes = options;
+
+        let customAttr: any = {
+          razorpay_order_id: order.id,
+          razorpay_payment_id: response.razorpay_payment_id,
+          razorpay_signature: response.razorpay_signature,
+          currency: order.currency,
+          amount: order.amount
+        }
+
+        // call your backend api to verify payment signature & capture transaction
+        //verify payment on response
+        this.paymentApi.verifyPayment(customAttr).pipe(
+          finalize(() => (
+            this.ngxLoader.stop()
+          )),
+          catchError(error => {
+            return throwError(() => (error));
+          })
+        ).subscribe((res: any) => {
+          if (res) {
+            this.checkOutForm = false;
+            this.hotToast.success('Payment Received!');
+            this.loadInvoice();
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Payment Failed!',
+              text: 'Any amount debited will be refunded within 3-7 days.',
+            })
+          }
+          this.paymentStateStarted = false;
+        });
+
+
+
+      }
+
+    });
+    options.modal.ondismiss = (() => {
+      // handle the case when user closes the form while transaction is in progress
+
+      this.hotToast.warning('Transaction Cancelled!')
+
+      this.ngxLoader.stop();
+
+      this.paymentStateStarted = false;
+    });
+
+    const rzp = new this.winRef.nativeWindow.Razorpay(options);
+    rzp.open();
+  }
+
+  //Variable for invoice toggle
+  showingInvoice: boolean = false;
+  loadInvoice() {
+    console.log("------------res", this.successResponse);
+    console.log("Loading Invoice");
+    this.showingInvoice = true;
+  }
+
+
+
+  @ViewChild(OrdersuccessComponent) child: any;
+
+
+  closeInvoice() {
+
+    if(this.child.downloadedFlag){
+      this.showingInvoice = false;
+    }else{
+      Swal.fire({
+        title: 'Do you want to save invoice?',
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: 'Save',
+        denyButtonText: `No`,
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          this.child.saveOrderDiv();
+        } else if (result.isDenied) {
+          this.showingInvoice = false;
+        }
+      })
+    }
+
+
+
+  }
+
 
 }

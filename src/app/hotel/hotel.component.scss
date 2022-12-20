@@ -1,3 +1,6 @@
+@import '@sweetalert2/theme-material-ui/material-ui.scss';
+
+
 .tarcon-hr{
     border-color: #795548;
     width: 50%;
@@ -175,6 +178,9 @@
 .half-opacity{
     opacity: .5;
 }
+
+
+//checkout table
 .checkout-table{
     @media (max-width:768px) {
         
@@ -213,4 +219,21 @@
 .map-checkbox:focus{
     box-shadow: 0 0 0 0.25rem rgba(165, 255, 149, 0.25);
     border-color: #abfe86;
+}
+
+
+
+//custom-laoder
+.custom-loader{
+    position: fixed;
+    z-index: 999;
+    backdrop-filter: blur(.8px) brightness(.8);
+    height: 100%;
+    width: 100%;
+}
+.custom-loader i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

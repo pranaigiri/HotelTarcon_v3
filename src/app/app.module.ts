@@ -37,7 +37,7 @@ import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { ApiService } from './service/api.service';
 import { GallerySliderComponent } from './hotel/gallery-slider/gallery-slider.component';
-import { NgxUiLoaderConfig,SPINNER,POSITION,PB_DIRECTION, NgxUiLoaderHttpModule, NgxUiLoaderModule } from 'ngx-ui-loader';
+import { NgxUiLoaderConfig,SPINNER,POSITION,PB_DIRECTION, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { MatNativeDateModule } from '@angular/material/core';
@@ -46,6 +46,8 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxPrintModule } from 'ngx-print';
+import { OrdersuccessComponent } from './hotel/ordersuccess/ordersuccess.component';
 
 
 
@@ -53,7 +55,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 
-const ngxUiLoaderConfig: NgxUiLoaderConfig = {
+let ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "bgsColor": "#ffb705",
   "bgsOpacity": 1,
   "bgsPosition": "center-center",
@@ -103,6 +105,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
       ContactusComponent,
       PrivacypolicyComponent,
       TermsandconditionsComponent,
+      OrdersuccessComponent
    ],
   imports: [
     BrowserModule,
@@ -111,6 +114,7 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig),
+    NgxUiLoaderRouterModule,
     BrowserAnimationsModule,
 
     MatNativeDateModule,
@@ -119,7 +123,8 @@ const ngxUiLoaderConfig: NgxUiLoaderConfig = {
     MatInputModule,
     MatSelectModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPrintModule
   ],
 
   

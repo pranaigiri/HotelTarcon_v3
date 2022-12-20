@@ -352,10 +352,10 @@
 
               <div class="container text-end">
                 <p class="mb-0" *ngIf="selectedPlan == 4 && mapCount < 2">
-                  <small><small class="text-danger">* Optional Plan required.</small></small>
+                 <small class="text-danger">* Optional Plan required.</small>
                 </p>
                 <p class="mb-0" *ngIf="!(selectedRangeValue.start || selectedRangeValue.end)">
-                  <small><small class="text-danger">* Date required.</small></small>
+                  <small class="text-danger">* Date required.</small>
                 </p>
               </div>
             </div>
@@ -374,6 +374,11 @@
 </section>
 
 <div class="checkout-form overflow-y-scroll" *ngIf="checkOutForm">
+
+  <div class="custom-loader m-0 p-0" *ngIf="paymentStateStarted">
+    <i class="fa fa-spin fa-circle-notch fs-4 m-0 p-0 text-white"></i>
+  </div>
+
   <!-- HEADER -->
   <div class="container-fluid position-fixed checkout-header px-4 py-3 py-md-3 mb-5 shadow-sm bg-white text-primary">
     <div class="container d-flex justify-content-between align-items-center">
@@ -413,11 +418,15 @@
               </thead>
               <tbody>
                 <tr>
-                  <th scope="row">Suite Room</th>
-                  <td>02 Dec 2022</td>
-                  <td>04 Dec 2022</td>
-                  <td>2 Days</td>
-                  <td>2000</td>
+                  <th scope="row">{{selectedRoomDetails.categoryName}}</th>
+                  <td>{{selectedRangeValue.start | date:'d MMM y'}}</td>
+                  <td>{{(selectedRangeValue.end ? selectedRangeValue.end :
+                    selectedRangeValue.start ) | date:'d MMM y'}}</td>
+                  <td>{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
+                    Day{{noOfDaysSelected <=0 ? '' : 's' }}</td>
+                  <td>₹ {{(selectedRoomDetails.amount * (noOfDaysSelected
+                    <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <=0 ? 1 :
+                      noOfDaysSelected))}}/-</td>
                 </tr>
               </tbody>
             </table>
@@ -511,16 +520,16 @@
                         <i class="fa-solid fa-user text-muted"></i>
                       </span>
                     </div>
-                    <input type="number" placeholder="Total No. of Person" formControlName="totalperson" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f['totalperson'].errors }" />
+                    <input type="number" placeholder="Total No. of Person" formControlName="adults" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
                     <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
-                      <div *ngIf="f['totalperson'].errors['required']">
+                      <div *ngIf="f['adults'].errors['required']">
                         Total No. of Person is required
                       </div>
-                      <div *ngIf="f['totalperson'].errors['totalperson']">
+                      <div *ngIf="f['adults'].errors['adults']">
                         Total Person is invalid
                       </div>
-                      <div *ngIf="f['totalperson'].errors['max']">
+                      <div *ngIf="f['adults'].errors['max']">
                         Maximum 50 Person Allowed
                       </div>
                     </div>
@@ -627,13 +636,17 @@
             <p class="mb-0 text-muted"><small>You are paying</small></p>
           </div>
           <div class="row">
-            <h4 class="mb-0 text-primary">Rs.2000</h4>
+            <h4 class="mb-0 text-primary">₹ {{(selectedRoomDetails.amount * (noOfDaysSelected
+              <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <=0 ? 1 :
+                noOfDaysSelected))}}/-</h4>
           </div>
         </div>
-        <div class="col"><button class="btn btn-primary float-end py-2 py-md-3 w-100"
-            [disabled]="!contactInfoComplete">Pay Now</button></div>
+        <div class="col"><button class="btn float-end py-2 py-md-3 w-100"
+            [disabled]="!contactInfoComplete" [ngClass]="!contactInfoComplete ? 'btn-secondary' : 'btn-primary'" (click)="createOrder()">Pay Now</button></div>
       </div>
     </div>
   </div>
 
 </div>
+
+<app-ordersuccess *ngIf="showingInvoice" (childTrigger)="closeInvoice()" [expectedSuccessRes] = "successResponse"></app-ordersuccess>
