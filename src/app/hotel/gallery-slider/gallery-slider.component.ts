@@ -74,7 +74,10 @@ export class GallerySliderComponent implements OnInit {
 
   changeGalleryCategory(categoryid:number){
     document.querySelector(".image-progress-loader")?.setAttribute("style", "display: block");
-    this.activeCategory = this.allCategories[categoryid - 1];
+    setTimeout(() => {
+      this.activeCategory = this.allCategories[categoryid - 1];
+    }, 10);
+
   }
 
   loadMessage(){

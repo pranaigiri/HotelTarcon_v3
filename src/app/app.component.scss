@@ -2,6 +2,8 @@
     position: fixed; /* Fixed/sticky position */
   bottom: 30px; /* Place the button at the bottom of the page */
   right: 30px; /* Place the button 30px from the right */
+  width: 40px;
+  height: 40px;
   z-index: 100; /* Make sure it does not overlap */
   background-color: #59b050;
   color: white;
@@ -16,7 +18,7 @@
 
 @media (max-width: 1200px) {
     .whatsapp-icon {
-        bottom: 50px;
-        right: 5%;
+        bottom: 5%;
+        right: 10%;
     }
 }
