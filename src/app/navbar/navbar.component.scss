@@ -21,6 +21,12 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+.c-navbar.expand .nav-title{
+    background: linear-gradient(360deg, #ab804c, #e3c89a);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
 .nav-menu, .navmenu-items{
     text-transform: uppercase;
     font-size: .8rem;

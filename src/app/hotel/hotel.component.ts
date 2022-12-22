@@ -143,7 +143,6 @@ export class HotelComponent implements OnInit {
 
   selectedChange(m: any) {
 
-    debugger
 
     if (!this.selectedRangeValue?.start || this.selectedRangeValue?.end) {
       this.selectedRangeValue = new DateRange<Date>(m, null);
@@ -211,13 +210,12 @@ export class HotelComponent implements OnInit {
 
 
   //CHANGE ROOM CATEGORY ON SELECT
-  selectedCategory: number = 1;
+  selectedCategory: number = 4;
   changeCategory(value: number) {
     this.selectedCategory = value;
     this.selectedRoomDetails = this.roomDetails[--value];
     console.log(this.selectedCategory);
     this.openTab=this.selectedCategory
-    
   }
 
   //CHANGE OPTIONAL PLAN ON SELECT

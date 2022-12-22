@@ -1,15 +1,19 @@
+<i class="fa fa-spin fa-circle-notch image-progress-loader text-white fs-4"></i>
+
 <swiper style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff" [loop]="true" [spaceBetween]="10"
   [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/1.JPG" /></ng-template>
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/2.JPG" /></ng-template>
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/3.JPG" /></ng-template>
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/4.JPG" /></ng-template>
+
+  <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
+    <img src="../../../{{src}}" (load)="loadMessage()"   class="fadeIn"/>
+  </ng-template>
+
 
 </swiper>
 <swiper (swiper)="thumbsSwiper = $event" [loop]="true" [spaceBetween]="10" [slidesPerView]="4" [freeMode]="true"
   [watchSlidesProgress]="true" class="mySwiper">
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/1.JPG" /></ng-template>
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/2.JPG" /></ng-template>
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/3.JPG" /></ng-template>
-  <ng-template swiperSlide><img src="../../../assets/deluxe-images/4.JPG" /></ng-template>
+
+  <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
+    <img src="../../../{{src}}" class="fadeIn"/>
+  </ng-template>
+
 </swiper>

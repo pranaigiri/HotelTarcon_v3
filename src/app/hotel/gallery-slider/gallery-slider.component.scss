@@ -53,6 +53,20 @@
   width: 100%;
 }
 
+@media (max-width: 767.98px) {
+  .mySwiper2 {
+    height: 200px;
+  }
+
+  .mySwiper2 .swiper-button-next:after, .mySwiper2 .swiper-button-prev:after {
+    font-size: 1.5rem;
+  }
+
+  .mySwiper .swiper-slide {
+    height: 60px !important;
+  }
+}
+
 .mySwiper {
   height: 20%;
   box-sizing: border-box;
@@ -74,4 +88,23 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+
+.image-progress-loader{
+    position: absolute;
+    top: 1rem;
+    z-index: 2;
+    right: 1rem;
+    display: none;
+}
+.fadeIn{
+  animation: fadeIn 1s ease forwards;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }100%{
+    opacity: 1;
+  }
 }
