@@ -1,4 +1,4 @@
-<section id="section-hotel" class="container-fluid mb-5">
+<section id="section-hotel" class="container-fluid">
   <div class="container-fluid px-0 px-md-2">
 
 
@@ -11,22 +11,22 @@
           <!-- CATEGORY FILTER CONTAINER -->
           <div class="container category-filter-container tarcon-gradient-bg mb-2 px-4 py-1">
             <div class="row category-filter">
-              <div (click)="changeCategory(1) ; child.changeGalleryCategory(1)" [ngClass]="{'active' : selectedCategory == 1}"
+              <div (click)="changeCategory(1)" [ngClass]="{'active' : selectedCategory == 1}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-mug-hot text-primary"></i>
                 Standard
               </div>
-              <div (click)="changeCategory(2) ; child.changeGalleryCategory(2)" [ngClass]="{'active' : selectedCategory == 2}"
+              <div (click)="changeCategory(2)" [ngClass]="{'active' : selectedCategory == 2}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-bowl-rice text-primary"></i>
                 Suite
               </div>
-              <div (click)="changeCategory(3); child.changeGalleryCategory(3)" [ngClass]="{'active' : selectedCategory == 3}"
+              <div (click)="changeCategory(3)" [ngClass]="{'active' : selectedCategory == 3}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-mountain-sun text-primary"></i>
                 Hill View
               </div>
-              <div (click)="changeCategory(4); child.changeGalleryCategory(4)" [ngClass]="{'active' : selectedCategory == 4}"
+              <div (click)="changeCategory(4)" [ngClass]="{'active' : selectedCategory == 4}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-tv text-primary"></i>
                 Deluxe
@@ -36,7 +36,7 @@
 
           <!-- CATEGORY WISE GALLERY -->
           <div class="container gallery-container px-0">
-            <app-gallery-slider #child class="position-relative"></app-gallery-slider>
+            <app-gallery-slider></app-gallery-slider>
           </div>
 
 
@@ -154,13 +154,14 @@
             <div class="container my-5">
               <div class="row">
 
-                <h1 class="plan-title text-center px-4 mb-1">Meal Plans</h1>
-                <p class="plan-cost text-center mb-3">BREAKFAST - LUNCH - DINNER</p>
+                <h1 class="plan-title text-center px-4 mb-">Meal Plans</h1>
+                <p class="plan-cost text-center mb-3">BREAKFAST &nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
+                  LUNCH &nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; DINNER</p>
 
                 <!-- HEADER -->
                 <div class="container plan-icons-container shadow-sm py-3">
                   <div class="row justify-content-between px-4">
-                    <div class="col-5 col-lg-4 text-primary-dark"><small><b>PLAN</b></small></div>
+                    <div class="col-5 col-lg-4 text-primary-dark"><small><b>MEAL</b></small></div>
                     <div class="col px-0"><small><i class="fa-solid fa-bread-slice"></i></small></div>
                     <div class="col px-0"><small><i class="fa-solid fa-burger"></i></small></div>
                     <div class="col px-0"><small><i class="fa-solid fa-utensils"></i></small></div>
@@ -172,7 +173,7 @@
                 <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 1}" for="epPlan">
                   <div class="row justify-content-between px-4">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">EP<small
-                        class="plan-cost">(+300)</small></div>
+                        class="plan-cost">(+ ₹300)</small></div>
                     <div class="col px-0">
                       <small>
                         <i class="fa-solid fa-check text-success"></i>
@@ -198,7 +199,7 @@
                 <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 2}" for="cpPlan">
                   <div class="row justify-content-between px-4" for="cpPlan">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">CP<small
-                        class="plan-cost">(+500)</small></div>
+                        class="plan-cost">(+ ₹500)</small></div>
                     <div class="col px-0"><small>
                         <i class="fa-solid fa-check text-success"></i>
                       </small></div>
@@ -218,7 +219,7 @@
                 <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 3}" for="apPlan">
                   <div class="row justify-content-between px-4" for="apPlan">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">AP<small
-                        class="plan-cost">(+1000)</small></div>
+                        class="plan-cost">(+ ₹1000)</small></div>
                     <div class="col px-0"><small>
                         <i class="fa-solid fa-check text-success"></i>
                       </small></div>
@@ -240,7 +241,7 @@
                   for="mapPlan">
                   <div class="row justify-content-between px-4" for="mapPlan">
                     <div class="col-5 col-lg-4 d-flex align-items-center gap-2">MAP<small
-                        class="plan-cost">(+1000)</small></div>
+                        class="plan-cost">(+ ₹1000)</small></div>
 
                     <div class="col px-0 map-li" (click)="changePlan(4)">
                       <input type="checkbox" id="breakfast" value="1" class="form-check-input map-checkbox"
@@ -291,9 +292,9 @@
                           Day{{noOfDaysSelected <=0 ? '' : 's' }} ) </small></small>
                   </div>
                   <div class="col text-end">
-                    <small><del>{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) +
+                    <small><del>₹{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) +
                           (selectedRoomDetails.amount * (noOfDaysSelected <=0 ? 1 : noOfDaysSelected) * 0.1)}}</del>
-                          {{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
+                          ₹{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
                             <br>
                             <small><small class="text-muted"> ( Flat 10% Off ) </small></small>
                   </div>
@@ -305,7 +306,7 @@
                           Day{{noOfDaysSelected <=0 ? '' : 's' }} ) </small></small>
                   </div>
                   <div class="col text-end">
-                    <small>{{selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
+                    <small>₹{{selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
                   </div>
                 </div>
                 <div class="row px-2 px-md-4 py-2">
@@ -313,7 +314,7 @@
                     <small>Taxes & Charges</small>
                   </div>
                   <div class="col text-end">
-                    <small>{{TAX}}</small>
+                    <small>₹{{TAX}}</small>
                   </div>
                 </div>
               </div>
@@ -351,7 +352,7 @@
 
               <div class="container text-end">
                 <p class="mb-0" *ngIf="selectedPlan == 4 && mapCount < 2">
-                 <small class="text-danger">* Optional Plan required.</small>
+                  <small class="text-danger">* Optional Plan required.</small>
                 </p>
                 <p class="mb-0" *ngIf="!(selectedRangeValue.start || selectedRangeValue.end)">
                   <small class="text-danger">* Date required.</small>
@@ -418,8 +419,7 @@
                   <th scope="row">{{selectedRoomDetails.categoryName}}</th>
                   <td>{{tempFromDate}}</td>
                   <td>{{tempTodate}}</td>
-                  <td>{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
-                    Day{{noOfDaysSelected <=0 ? '' : 's' }}</td>
+                  <td>{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}} Day{{noOfDaysSelected <=0 ? '' : 's' }}</td>
                   <td>₹ {{(selectedRoomDetails.amount * (noOfDaysSelected
                     <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <=0 ? 1 :
                       noOfDaysSelected))}}/-</td>
@@ -471,7 +471,7 @@
                         <i class="fa-solid fa-envelope text-muted"></i>
                       </span>
                     </div>
-  
+
                     <input type="text" placeholder="Email Address" formControlName="email" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f['email'].errors }" />
                     <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
@@ -490,7 +490,7 @@
                         <i class="fa-solid fa-phone text-muted"></i>
                       </span>
                     </div>
-  
+
                     <input type="tel" placeholder="Phone Number" formControlName="phone" class="form-control"
                       [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }" />
                     <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
@@ -541,8 +541,8 @@
                         <i class="fa-solid fa-child text-muted"></i>
                       </span>
                     </div>
-                    <input type="number" placeholder="Total No. of Childrens" formControlName="children" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f['children'].errors }" />
+                    <input type="number" placeholder="Total No. of Childrens" formControlName="children"
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f['children'].errors }" />
                     <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
                       <div *ngIf="f['children'].errors['required']">
                         Total No. of Children is required
@@ -605,8 +605,8 @@
 
 
                     </label>
-                  
-                  
+
+
                   </div>
 
                   <p class="text-muted text-center small"><small>powered by Razorpay</small></p>
@@ -637,12 +637,14 @@
                 noOfDaysSelected))}}/-</h4>
           </div>
         </div>
-        <div class="col"><button class="btn float-end py-2 py-md-3 w-100"
-            [disabled]="!contactInfoComplete" [ngClass]="!contactInfoComplete ? 'btn-secondary' : 'btn-primary'" (click)="createOrder()">Pay Now</button></div>
+        <div class="col"><button class="btn float-end py-2 py-md-3 w-100" [disabled]="!contactInfoComplete"
+            [ngClass]="!contactInfoComplete ? 'btn-secondary' : 'btn-primary'" (click)="createOrder()">Pay Now</button>
+        </div>
       </div>
     </div>
   </div>
 
 </div>
 
-<app-ordersuccess *ngIf="showingInvoice" (childTrigger)="closeInvoice()" [expectedSuccessRes] = "successResponse"></app-ordersuccess>
+<app-ordersuccess *ngIf="showingInvoice" (childTrigger)="closeInvoice()"
+  [expectedSuccessRes]="successResponse"></app-ordersuccess>

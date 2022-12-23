@@ -1,183 +1,11 @@
-/*--------------------------------------------------------------
-# About Sikkim
---------------------------------------------------------------*/
-.about {
-    margin-top: 72px;
-}
+/* <!-- Popular Destination Start--> */
 
-.about h3 {
-    font-weight: 700;
-    font-size: 34px;
-    color: #4e4039;
-}
-
-.about h4 {
-    font-size: 20px;
-    font-weight: 700;
-    margin-top: 5px;
-    color: #7a6960;
-}
-
-.about i {
-    font-size: 48px;
-    margin-top: 15px;
-    color: #f39e7a;
-}
-
-.about p {
-    font-size: 15px;
-    color: #5a6570;
-}
-
-@media (max-width: 991px) {
-    .about .about-img img {
-        max-width: 70%;
-    }
-}
-
-@media (max-width: 767px) {
-    .about .about-img img {
-        max-width: 90%;
-    }
-}
-
-
-/* <!-- Explore Sikkim Start --> */
 a {
     text-decoration: none;
 }
 
-.visit-country .item {
-    position: relative;
-    margin-bottom: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
-}
-
-.visit-country .item .image img {
-    border-radius: 23px;
-}
-
-img {
-    width: 100%;
-    overflow: hidden;
-}
-
-.visit-country .item .right-content h4 {
-    font-size: 20px;
-    margin-bottom: 5px;
-    color: #2a2a2a;
-    font-weight: 700;
-}
-
-.visit-country .item .right-content span {
-    font-size: 15px;
-    color: #afafaf;
-    display: block;
-}
-
-.visit-country .item .right-content .main-button {
-    position: absolute;
-    right: 0;
-    top: -16px;
-}
-
-.main-button a {
-    font-size: 14px;
-    color: #fff;
-    background-color: #22b3c1;
-    border: 1px solid #22b3c1;
-    padding: 12px 30px;
-    display: inline-block;
-    border-radius: 25px;
-    font-weight: 500;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    text-decoration: none;
-}
-
-.visit-country .item .right-content p {
-    margin: 18px 0px;
-}
-
-p {
-    font-size: 15px;
-    line-height: 30px;
-    color: #afafaf;
-}
-
-.visit-country .item .right-content ul {
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
-    padding: 15px 0px;
-}
-
-.visit-country .item .right-content ul li {
-    display: inline-block;
-    width: 32%;
-    color: #afafaf;
-    font-size: 14px;
-    list-style: none;
-}
-
-.visit-country .item .right-content ul li i {
-    margin-right: 5px;
-    font-size: 16px;
-}
-
-.visit-country .item .right-content ul li:nth-child(2) {
-    text-align: center;
-}
-
-.visit-country .item .right-content .text-button {
-    margin-top: 20px;
-}
-
-.visit-country ul.page-numbers {
-    text-align: center;
-}
-
-.visit-country ul.page-numbers li {
-    display: inline-block;
-    margin: 0px 5px;
-}
-
-.visit-country ul.page-numbers li:first-child a {
-    border: none;
-}
-
-.visit-country ul.page-numbers li:first-child a,
-.visit-country ul.page-numbers li:last-child a {
-    border: none;
-}
-
-.visit-country ul.page-numbers li a {
-    display: inline-block;
-    width: 46px;
-    height: 46px;
-    border: 1px solid #22b3c1;
-    line-height: 44px;
-    color: #22b3c1;
-    text-align: center;
-    font-size: 18px;
-    font-weight: 500;
-    border-radius: 50%;
-    transition: all .3s;
-    text-decoration: none;
-}
-
-/* <!-- Explore Sikkim End --> */
-
-/* <!-- Popular Destination Start--> */
 .popular_destination_area {
     padding-bottom: 120px;
-}
-
-.mb_70 {
-    margin-bottom: 62px;
 }
 
 .section_title h3 {
@@ -245,23 +73,23 @@ p {
     transition: 0.3s;
 }
 
-.popular_destination_area .single_destination .content p a {
-    display: inline-block;
-    background: #eeac36;
-    font-size: 12px;
-    border-radius: 30px;
-    font-weight: 400;
-    padding: 0px 12px;
-    height: 25px;
-    line-height: 25px;
-    color: #fff;
-    margin-left: 10px;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    transition: 0.3s;
-    outline: medium none;
-}
+// .popular_destination_area .single_destination .content p a {
+//     display: inline-block;
+//     background: #eeac36;
+//     font-size: 12px;
+//     border-radius: 30px;
+//     font-weight: 400;
+//     padding: 0px 12px;
+//     height: 25px;
+//     line-height: 25px;
+//     color: #fff;
+//     margin-left: 10px;
+//     -webkit-transition: 0.3s;
+//     -moz-transition: 0.3s;
+//     -o-transition: 0.3s;
+//     transition: 0.3s;
+//     outline: medium none;
+// }
 
 .section-padding {
     padding: 130px 0;
