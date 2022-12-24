@@ -7,3 +7,14 @@
 .about-img.invert{
     transform: scale(.9);
 }
+
+@media (min-width: 768px) {
+    .about-img{
+        transform: rotate(-3deg) scale(.9);
+    }
+    
+    .about-img.invert{
+        transform: rotate(3deg) scale(.9);
+    }
+  }
+  

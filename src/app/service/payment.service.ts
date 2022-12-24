@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 
 
-const API_URL = 'https://localhost:44332/api/Payments';
+const API_URL = 'https://tarconsikkimazure.azurewebsites.net/api/Payments';
 
 @Injectable({
   providedIn: 'root'

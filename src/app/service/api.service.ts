@@ -5,7 +5,7 @@ import { HotToastService } from '@ngneat/hot-toast';
 
 @Injectable()
 export class ApiService {
-    private readonly baseUrl: any = "https://localhost:44332/api";
+    private readonly baseUrl: any = "https://tarconsikkimazure.azurewebsites.net/api";
     constructor(private http: HttpClient,private toaster:HotToastService) {
         // var check:any = window["baseUrl"];
     }

@@ -83,9 +83,9 @@ export class SliderComponent implements OnInit {
 
   //UPDATE SLIDE AND PAGE ON PAGINATION CLICK
   updateSlideAndPage(slideIndex: any) {
-    console.log("ru", this.router.url);
-    console.log("lp", location.pathname);
-    console.log("slideindex", slideIndex);
+    // console.log("ru", this.router.url);
+    // console.log("lp", location.pathname);
+    // console.log("slideindex", slideIndex);
     slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : this.router.navigate(['/', '/']);
   }
 

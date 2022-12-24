@@ -51,7 +51,7 @@ export class OrdersuccessComponent implements OnInit {
 
   ngOnInit() {
 
-    console.log("EXPECTED RES", this.expectedSuccessRes);
+    //console.log("EXPECTED RES", this.expectedSuccessRes);
 
   }
 

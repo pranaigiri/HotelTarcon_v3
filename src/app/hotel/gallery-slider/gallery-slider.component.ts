@@ -82,7 +82,7 @@ export class GallerySliderComponent implements OnInit {
 
   loadMessage(){
     document.querySelector(".image-progress-loader")?.setAttribute("style", "display: none");
-    console.log("loaded");
+    //console.log("loaded");
   }
 
 

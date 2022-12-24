@@ -185,7 +185,7 @@ export class HotelComponent implements OnInit {
     this.noOfDaysSelected = ((this.selectedRangeValue.end ? this.selectedRangeValue.end : this.selectedRangeValue.start) - this.selectedRangeValue.start) / (1000 * 3600 * 24) + 1;
 
     this.tempFromDate = this.datepipe.transform(this.selectedRangeValue.start, 'd MMM, y');
-    this.tempTodate = this.datepipe.transform(this.selectedRangeValue.end, 'd MMM, y');
+    this.tempTodate = this.selectedRangeValue.end ? this.datepipe.transform(this.selectedRangeValue.end, 'd MMM, y') : this.tempFromDate;
 
   }
 
@@ -214,7 +214,7 @@ export class HotelComponent implements OnInit {
   changeCategory(value: number) {
     this.selectedCategory = value;
     this.selectedRoomDetails = this.roomDetails[--value];
-    console.log(this.selectedCategory);
+    //console.log(this.selectedCategory);
     this.openTab=this.selectedCategory
   }
 
@@ -420,7 +420,7 @@ export class HotelComponent implements OnInit {
   //Create Order
   createOrder() {
 
-    console.log("-------START - createOrder")
+    //console.log("-------START - createOrder")
 
     let orderDetails: any = {
       customerPhone: this.customerDetails.phone || "",
@@ -453,7 +453,7 @@ export class HotelComponent implements OnInit {
       })
     ).subscribe((res: any) => {
       this.paymentStateStarted = true;
-      console.log("Created Order:", res);
+      //console.log("Created Order:", res);
       this.successResponse.orderRes = res;
       this.payWithRazor(res);
     });
@@ -464,12 +464,12 @@ export class HotelComponent implements OnInit {
   //initiate payment using generated order_id
   payWithRazor(order: any) {
 
-    console.log("-------START - payWithRazor")
+    //console.log("-------START - payWithRazor")
     const options: any = {
       key: 'rzp_test_KCwmTAShZCfbDS',
       amount: order.amount, // amount should be in paise format to display Rs 1255 without decimal point
       currency: 'INR',
-      name: "Hotel Tarcon Sikkim", // company name or product name
+      name: "Tarcon Sikkim", // company name or product name
       description: this.selectedRoomDetails.categoryName,  // product description
       image: 'assets/tarcon_logo_colored.png', // company logo or product image
       order_id: order.id, // order_id created by you in backend
@@ -555,8 +555,8 @@ export class HotelComponent implements OnInit {
   //Variable for invoice toggle
   showingInvoice: boolean = false;
   loadInvoice() {
-    console.log("------------res", this.successResponse);
-    console.log("Loading Invoice");
+    //console.log("------------res", this.successResponse);
+    //console.log("Loading Invoice");
     this.showingInvoice = true;
   }
 
