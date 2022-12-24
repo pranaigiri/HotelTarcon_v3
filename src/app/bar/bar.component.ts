@@ -9,37 +9,37 @@ export class BarComponent implements OnInit {
 
   vodkabasedCocktails:any=[
     {
-      name:"screwdriver",
+      name:"Screwdriver",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"martini",
+      name:"Martini",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"sex on the beach",
+      name:"Sex on the Beach",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"cosmopolition",
+      name:"Cosmopolition",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"bloody merry",
+      name:"Bloody Merry",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"blue lagoon",
+      name:"Blue Lagoon",
       category:"",
       price:"200",
       icon:"",
@@ -47,25 +47,25 @@ export class BarComponent implements OnInit {
   ]
     ginBasedCocktails:any=[
     {
-      name:"gim late",
+      name:"Gim Late",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"tom collins",
+      name:"Tom Collins",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"monkey gland",
+      name:"Monkey Gland",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"gin tonic",
+      name:"Gin tonic",
       category:"",
       price:"200",
       icon:"",
@@ -73,13 +73,13 @@ export class BarComponent implements OnInit {
   ]
     whiskyBasedCocktails:any=[
     {
-      name:"old fashion",
+      name:"Old Fashion",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"manhattan",
+      name:"Manhattan",
       category:"",
       price:"200",
       icon:"",
@@ -88,7 +88,7 @@ export class BarComponent implements OnInit {
 
   winebasedCocktails:any=[
     {
-      name:"sangria",
+      name:"Sangria",
       category:"",
       price:"300",
       icon:"",
@@ -97,34 +97,34 @@ export class BarComponent implements OnInit {
 
   rum:any=[
     {
-      name:"old monk 30/60ml",
+      name:"Old Monk 30/60 ml",
       category:"",
       price:"50/90",
       icon:"",
     },
     {
-      name:"bacardi 30/60ml",
+      name:"Bacardi 30/60 ml",
       category:"",
-      price:"90/100",
+      price:"80/100",
       icon:"",
     }
   ]
 
   brandy:any=[
     {
-      name:"honey bee 30/60ml",
+      name:"Honey Bee 30/60 ml",
       category:"",
       price:"50/90",
       icon:"",
     },
     {
-      name:"morpheus 30/60ml",
+      name:"Morpheus 30/60 ml",
       category:"",
       price:"60/120",
       icon:"",
     },
     {
-      name:"mansion house 30/60ml",
+      name:"Mansion House 30/60 ml",
       category:"",
       price:"50/90",
       icon:"",
@@ -133,13 +133,13 @@ export class BarComponent implements OnInit {
 
   gin:any=[
     {
-      name:"blue riband gin 30/60ml",
+      name:"Blue Riband Gin 30/60 ml",
       category:"",
       price:"80/150",
       icon:"",
     },
     {
-      name:"bombay sapphire gin 30/60ml",
+      name:"Bombay Sapphire Gin 30/60 ml",
       category:"",
       price:"80/150",
       icon:"",
@@ -148,19 +148,19 @@ export class BarComponent implements OnInit {
 
   wine:any=[
     {
-      name:"white wine 150/750ml",
+      name:"White Wine 150/750 ml",
       category:"",
       price:"200/1000",
       icon:"",
     },
     {
-      name:"red wine 150/750ml",
+      name:"Red Wine 150/750 ml",
       category:"",
       price:"200/1000",
       icon:"",
     },
     {
-      name:"peach wine 150/750ml",
+      name:"Peach Wine 150/750 ml",
       category:"",
       price:"200/1000",
       icon:"",
@@ -169,13 +169,13 @@ export class BarComponent implements OnInit {
 
   superDeluxeScotchWhisky:any=[
     {
-      name:"j&w black label scotch whisky 30/60ml",
+      name:"J&W Black Label Scotch Whisky 30/60 ml",
       category:"",
       price:"250/400",
       icon:"",
     },
     {
-      name:"j&w red label scotch whisky 30/60ml",
+      name:"J&W Red Label Scotch Whisky 30/60 ml",
       category:"",
       price:"250/400",
       icon:"",
@@ -184,48 +184,48 @@ export class BarComponent implements OnInit {
 
   blendedScotchWhisky:any=[
     {
-      name:"teachers origin 30/60ml",
+      name:"Teachers Origin 30/60 ml",
       category:"",
       price:"220/430",
       icon:"",
     },
     {
-      name:"teachers hi lands cream 30/60ml",
+      name:"Teachers Hi Lands Cream 30/60 ml",
       category:"",
       price:"120/250",
       icon:"",
     }
     ,
     {
-      name:"teachers 50 30/60ml",
+      name:"Teachers 50 30/60ml",
       category:"",
       price:"220/400",
       icon:"",
     }
     ,
     {
-      name:"black&white 30/60ml",
+      name:"Black&white 30/60 ml",
       category:"",
       price:"200/350",
       icon:"",
     }
     ,
     {
-      name:"vat 69 30/60ml",
+      name:"Vat 69 30/60 ml",
       category:"",
       price:"150/250",
       icon:"",
     }
     ,
     {
-      name:"black dog gold reserve 30/60ml",
+      name:"Black Dog Gold Reserve 30/60 ml",
       category:"",
       price:"210/400",
       icon:"",
     }
     ,
     {
-      name:"black dog centenary 30/60ml",
+      name:"Black Dog Centenary 30/60 ml",
       category:"",
       price:"150/250",
       icon:"",
@@ -234,37 +234,37 @@ export class BarComponent implements OnInit {
 
   premiumDeluxeWhisky:any=[
     {
-      name:"blenders pride 30/60ml",
+      name:"Blenders Pride 30/60 ml",
       category:"",
       price:"80/150",
       icon:"",
     },
     {
-      name:"100 pipers 30/60ml",
+      name:"100 Pipers 30/60 ml",
       category:"",
       price:"130/250",
       icon:"",
     },
     {
-      name:"signature 30/60ml",
+      name:"Signature 30/60 ml",
       category:"",
       price:"100/150",
       icon:"",
     },
     {
-      name:"antiquity blue 30/60ml",
+      name:"Antiquity Blue 30/60 ml",
       category:"",
       price:"100/150",
       icon:"",
     },
     {
-      name:"royal stag barrel select 30/60ml",
+      name:"Royal Stag Barrel Select 30/60 ml",
       category:"",
       price:"60/100",
       icon:"",
     },
     {
-      name:"royal challenge 30/60ml",
+      name:"Royal Challenge 30/60 ml",
       category:"",
       price:"60/100",
       icon:"",
@@ -273,25 +273,25 @@ export class BarComponent implements OnInit {
 
   vodka:any=[
     {
-      name:"smirnoff 30/60ml",
+      name:"Smirnoff 30/60 ml",
       category:"",
       price:"60/100",
       icon:"",
     },
     {
-      name:"magic moment 30/60ml",
+      name:"Magic Moment 30/60 ml",
       category:"",
       price:"50/100",
       icon:"",
     },
     {
-      name:"absolut vodka 30/60ml",
+      name:"Absolute Vodka 30/60 ml",
       category:"",
       price:"150/250",
       icon:"",
     },
     {
-      name:"graygos vodka 30/60ml",
+      name:"Graygoos Vodka 30/60 ml",
       category:"",
       price:"300/500",
       icon:"",
@@ -300,31 +300,31 @@ export class BarComponent implements OnInit {
 
   beer:any=[
     {
-      name:"kingfisher premium 650ml",
+      name:"Kingfisher Premium 650 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"kingfisher strong 650ml",
+      name:"Kingfisher Strong 650 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"sikkim hit beer 650ml",
+      name:"Sikkim Hit Beer 650 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"dansberg blue 650ml",
+      name:"Dansberg Blue 650 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"tuborg beer",
+      name:"Tuborg Beer",
       category:"",
       price:"200",
       icon:"",
@@ -333,25 +333,25 @@ export class BarComponent implements OnInit {
 
   breezer:any=[
     {
-      name:"jamaican passion 275ml",
+      name:"Jamaican Passion 275 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"blackberry crush 275ml",
+      name:"Blackberry Crush 275 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"blueberry 275ml",
+      name:"Blueberry 275 ml",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"cranberry 275ml",
+      name:"Cranberry 275 ml",
       category:"",
       price:"150",
       icon:"",
@@ -366,25 +366,25 @@ export class BarComponent implements OnInit {
 
   rumBasedCocktail:any=[
     {
-      name:"pinacolada",
+      name:"Pinacolada",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"mojito",
+      name:"Mojito",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"daiquiri",
+      name:"Daiquiri",
       category:"",
       price:"200",
       icon:"",
     },
     {
-      name:"liit",
+      name:"Liit",
       category:"",
       price:"300",
       icon:"",
@@ -393,49 +393,49 @@ export class BarComponent implements OnInit {
 
   mocktail:any=[
     {
-      name:"fruit punch",
+      name:"Fruit Punch",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"jed garden",
+      name:"Jed Garden",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"orange blossome",
+      name:"Orange Blossome",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"coconut mint coolar",
+      name:"Coconut Mint Coolar",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"mango mania",
+      name:"Mango Mania",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"flavour of ice tea",
+      name:"Flavour of Ice Tea",
       category:"",
       price:"100",
       icon:"",
     },
     {
-      name:"humpi dumpi",
+      name:"Humpi Dumpi",
       category:"",
       price:"150",
       icon:"",
     },
     {
-      name:"guava mint coolar",
+      name:"Guava Mint Coolar",
       category:"",
       price:"150",
       icon:"",
@@ -444,19 +444,19 @@ export class BarComponent implements OnInit {
 
   tarconBarSignature:any=[
     {
-      name:"roasted panner",
+      name:"Roasted Paneer",
       category:"",
       price:"250",
       icon:"",
     },
     {
-      name:"cheery pineapple stick",
+      name:"Cheese Cheery Pineapple Stick",
       category:"",
       price:"300",
       icon:"",
     },
     {
-      name:"golden fried prawns",
+      name:"Golden Fried Prawns",
       category:"",
       price:"350",
       icon:"",

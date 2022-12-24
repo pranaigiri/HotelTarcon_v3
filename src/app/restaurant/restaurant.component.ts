@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RestaurantComponent implements OnInit {
 
-  breakFastArr:any=[]
+  breakFastArr: any = []
   breakFast: any = [
     {
       title: "Toast With Butter",
@@ -20,97 +20,97 @@ export class RestaurantComponent implements OnInit {
       category: "options-green"
     },
     {
-      title: "Buffet With Sambar",
+      title: "Buffet Breakfast",
       price: "250",
       category: "options-green"
     },
     {
-      title: "idli with sambar (3PCS)",
+      title: "Idli with Sambar (3 PCS)",
       price: "120",
       category: "options-green"
     },
     {
-      title: "allo paratha (1PCS)",
+      title: "Aloo Paratha (1 PCS)",
       price: "60",
       category: "options-green"
     },
     {
-      title: "panner paratha (1PCS)",
+      title: "Panner Paratha (1 PCS)",
       price: "80",
       category: "options-green"
     },
     {
-      title: "gobi paratha (1PCS)",
+      title: "Gobi Paratha (1 PCS)",
       price: "60",
       category: "options-green"
     },
     {
-      title: "chole with bhature (2PCS)",
+      title: "Chole with Bhature (2 PCS)",
       price: "150",
       category: "options-green"
     },
     {
-      title: "cheese uttapum (1PCS)",
-      price: "50",
+      title: "Cheese Uttapum (1 PCS)",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "bread omelette (2PCS)",
-      price: "50",
+      title: "Bread Omelette (2 PCS)",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "poori with bhaji (4PCS)",
+      title: "Poori with Bhaji (4 PCS)",
       price: "120",
       category: "options-green"
     },
     {
-      title: "plain paratha with bhaji (1PCS)",
+      title: "Plain Paratha with Bhaji (1 PCS)",
       price: "60",
       category: "options-green"
     },
     {
-      title: "poha",
+      title: "Poha",
       price: "120",
       category: "options-green"
     },
     {
-      title: "upma",
+      title: "Upma",
       price: "120",
       category: "options-green"
     },
     {
-      title: "plain dosa",
+      title: "Plain Dosa",
       price: "120",
       category: "options-green"
     },
     {
-      title: "masala dosa (1PCS)",
+      title: "Masala Dosa (1 PCS)",
       price: "150",
       category: "options-green"
     },
     {
-      title: "cheese masala dosa (1PCS)",
+      title: "Cheese Masala Dosa (1 PCS)",
       price: "180",
       category: "options-green"
     },
     {
-      title: "plain uttapam (1PCS)",
+      title: "Plain Uttapam (1 PCS)",
       price: "60",
       category: "options-green"
     },
     {
-      title: "masala uttapam (1PCS)",
+      title: "Masala Uttapam (1 PCS)",
       price: "80",
       category: "options-green"
     },
     {
-      title: "midu vada (1PCS)",
+      title: "Midu Vada (1 PCS)",
       price: "120",
       category: "options-green"
     }
   ]
-  hotBeveragesArr:any=[]
+  hotBeveragesArr: any = []
   hotBeverages: any = [
     {
       title: "Milk Tea",
@@ -154,21 +154,21 @@ export class RestaurantComponent implements OnInit {
     },
     {
       title: "Hot Milk (Glass)",
-      price: "50",
+      price: "100",
       category: "options-red"
     },
     {
       title: "Bournvita (Glass)",
-      price: "50",
+      price: "100",
       category: "options-red"
     },
     {
       title: "Hot Chocolate (Glass)",
-      price: "50",
+      price: "100",
       category: "options-red"
     }
   ]
-  coldBeveragesArr:any=[]
+  coldBeveragesArr: any = []
   coldBeverages: any = [
     {
       title: "Cold Coffee",
@@ -187,12 +187,12 @@ export class RestaurantComponent implements OnInit {
     },
     {
       title: "Fresh Lime Soda",
-      price: "50",
+      price: "100",
       category: "options-blue"
     },
     {
       title: "Butter Milk",
-      price: "50",
+      price: "100",
       category: "options-blue"
     },
     {
@@ -207,7 +207,7 @@ export class RestaurantComponent implements OnInit {
     },
     {
       title: "Variety of Ice Tea",
-      price: "50",
+      price: "100",
       category: "options-blue"
     },
     {
@@ -216,370 +216,370 @@ export class RestaurantComponent implements OnInit {
       category: "options-blue"
     },
     {
-      title: "Mocktails Available",
+      title: "Mocktails as per Available",
       price: "150",
       category: "options-blue"
     }
   ]
-  sikkimBreakfastArr:any=[]
+  sikkimBreakfastArr: any = []
   sikkimBreakfast: any = [
     {
-      title: "veg maggi",
+      title: "Veg Maggi",
       price: "60",
       category: "options-green"
     },
     {
-      title: "egg maggi",
+      title: "Egg Maggi",
       price: "80",
       category: "options-red"
     },
     {
-      title: "chicken maggi",
-      price: "50",
+      title: "Chicken Maggi",
+      price: "100",
       category: "options-red"
     },
     {
-      title: "veg momo (8PCS)",
+      title: "Veg Momos (8 PCS)",
       price: "80",
       category: "options-green"
     },
     {
-      title: "veg fried momos (8PCS)",
+      title: "Veg fried Momos (8 PCS)",
       price: "80",
       category: "options-green"
     },
     {
-      title: "veg thukpa",
+      title: "Veg Thukpa",
       price: "70",
       category: "options-green"
     },
     {
-      title: "egg thukpa",
-      price: "50",
+      title: "Egg Thukpa",
+      price: "100",
       category: "options-red"
     },
     {
-      title: "chicken thupka",
+      title: "Chicken Thupka",
       price: "150",
       category: "options-red"
     },
     {
-      title: "chicken momos (8PCS)",
+      title: "Chicken Momos (8 PCS)",
       price: "120",
       category: "options-red"
     },
     {
-      title: "chicken fried momos (8PCS)",
+      title: "Chicken Fried Momos (8 PCS)",
       price: "120",
       category: "options-red"
     }
   ]
-  sandwichArr:any=[]
+  sandwichArr: any = []
   sandwich: any = [
     {
-      title: "plain veg sandwich (4PCS)",
-      price: "50",
+      title: "Plain Veg Sandwich (4 PCS)",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "veg grilled sandwich (4PCS)",
-      price: "50",
+      title: "Veg Grilled Sandwich (4 PCS)",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "veg coleslaw sandwich",
+      title: "Veg Coleslaw Sandwich",
       price: "150",
       category: "options-green"
     },
     {
-      title: "cheese sandwich (4PCS)",
+      title: "Cheese Sandwich (4 PCS)",
       price: "150",
       category: "options-green"
     },
     {
-      title: "chicken sandwich (4PCS)",
-      price: "150",
-      category: "options-red"
-    },
-    {
-      title: "chicken grilled sandwich",
+      title: "Chicken Sandwich (4 PCS)",
       price: "150",
       category: "options-red"
     },
     {
-      title: "chicken club sandwich",
+      title: "Chicken Grilled Sandwich",
+      price: "150",
+      category: "options-red"
+    },
+    {
+      title: "Chicken Club Sandwich",
       price: "200",
       category: "options-red"
     },
     {
-      title: "egg grilled sandwich",
+      title: "Egg Grilled Sandwich",
       price: "150",
       category: "options-red"
     }
   ]
-  eggItemArr:any=[]
+  eggItemArr: any = []
   eggItem: any = [
     {
-      title: "boiled egg (2PCS)",
+      title: "Boiled Egg (2 PCS)",
       price: "40",
       category: "options-red"
     },
     {
-      title: "sunny sideup (2PCS)",
+      title: "Sunny Sideup (2 PCS)",
       price: "50",
       category: "options-red"
     },
     {
-      title: "poached egg (2PCS)",
+      title: "Poached Egg (2 PCS)",
       price: "50",
       category: "options-red"
     },
     {
-      title: "cheese omlette (2PCS)",
+      title: "Cheese Omlette (2 PCS)",
       price: "120",
       category: "options-red"
     },
     {
-      title: "masala omlette double egg",
+      title: "Masala Omlette Double Egg",
       price: "60",
       category: "options-red"
     },
     {
-      title: "plain omlette double egg",
+      title: "Plain Omlette Double Egg",
       price: "60",
       category: "options-red"
     },
     {
-      title: "scrambled double egg",
-      price: "50",
+      title: "Scrambled Double Egg",
+      price: "100",
       category: "options-red"
     }
   ]
-  soupArr:any=[]
+  soupArr: any = []
   soup: any = [
     {
-      title: "cream of tomato",
-      price: "0",
-      category: "options-green"
-    },
-    {
-      title: "veg sweet corn",
+      title: "Cream of Tomato Soup",
       price: "120",
       category: "options-green"
     },
     {
-      title: "veg hot & sour",
+      title: "Veg Sweet Corn Soup",
       price: "120",
       category: "options-green"
     },
     {
-      title: "veg manchow",
+      title: "Veg Hot & Sour Soup",
       price: "120",
       category: "options-green"
     },
     {
-      title: "veg won ton",
+      title: "Veg Manchow Soup",
       price: "120",
       category: "options-green"
     },
     {
-      title: "veg clear",
+      title: "Veg Won Ton Soup",
       price: "120",
       category: "options-green"
     },
     {
-      title: "chicken sweet corn",
+      title: "Veg Clear Soup",
+      price: "120",
+      category: "options-green"
+    },
+    {
+      title: "Chicken Sweet Corn Soup",
       price: "150",
       category: "options-red"
     },
     {
-      title: "chicken hot & sour",
+      title: "Chicken Hot & Sour Soup",
       price: "150",
       category: "options-red"
     },
     {
-      title: "chicken manchow",
+      title: "Chicken Manchow Soup",
       price: "150",
       category: "options-red"
     },
     {
-      title: "chicken won ton",
+      title: "Chicken Won Ton Soup",
       price: "150",
       category: "options-red"
     },
     {
-      title: "chicken clear",
+      title: "Chicken Clear Soup",
       price: "150",
       category: "options-red"
     }
   ]
-  vegetableStartersArr:any=[]
+  vegetableStartersArr: any = []
   vegetableStarters: any = [
     {
-      title: "french fry",
+      title: "French Fry",
       price: "120",
       category: "options-green"
     },
     {
-      title: "onion pakoda",
+      title: "Onion Pakoda",
       price: "120",
       category: "options-green"
     },
     {
-      title: "crispy chilli baby corn",
+      title: "Crispy Chilli Baby Corn",
       price: "250",
       category: "options-green"
     },
     {
-      title: "corn salt & pepper",
+      title: "Corn Salt & Pepper",
       price: "250",
       category: "options-green"
     },
     {
-      title: "veg seekh kabab",
+      title: "Veg Seekh Kabab",
       price: "250",
       category: "options-green"
     },
     {
-      title: "hara bhara kabab",
+      title: "Hara Bhara Kabab (8 PCS)",
       price: "250",
       category: "options-green"
     },
     {
-      title: "tandoori aloo",
+      title: "Tandoori Aloo (6 PCS)",
       price: "250",
       category: "options-green"
     },
     {
-      title: "tandoori gobi",
+      title: "Tandoori Gobi (6 PCS)",
       price: "250",
       category: "options-green"
     },
     {
-      title: "vegetable pakoda",
+      title: "Vegetable Pakoda",
       price: "150",
       category: "options-green"
     },
     {
-      title: "paneer pakoda (8PCS)",
+      title: "Paneer Pakoda (8 PCS)",
       price: "150",
       category: "options-green"
     },
     {
-      title: "chilli potato dry",
+      title: "Chilli Potato Dry",
       price: "150",
       category: "options-green"
     },
     {
-      title: "veg manchurian dry (8PCS)",
+      title: "Veg Manchurian Dry (8 PCS)",
       price: "150",
       category: "options-green"
     },
     {
-      title: "tandoori paneer tikka (6PCS)",
+      title: "Tandoori Paneer Tikka (6 PCS)",
       price: "300",
       category: "options-green"
     },
     {
-      title: "malai paneer tikka (6PCS)",
+      title: "Malai Paneer Tikka (6 PCS)",
       price: "300",
       category: "options-green"
     },
     {
-      title: "pahadi paneer tikka (6PCS)",
+      title: "Pahadi Paneer Tikka (6 PCS)",
       price: "300",
       category: "options-green"
     },
     {
-      title: "mixed veg plater (5PCS)",
+      title: "Mixed Veg Plater (10 PCS)",
       price: "450",
       category: "options-green"
     }
   ]
-  nonvegStartersArr:any=[]
+  nonvegStartersArr: any = []
   nonvegStarters: any = [
     {
-      title: "crispy chicken",
+      title: "Crispy Chicken",
       price: "250",
       category: "options-red"
     },
     {
-      title: "chicken seekh kabab",
+      title: "Chicken Seekh Kabab",
       price: "300",
       category: "options-red"
     },
     {
-      title: "tandoori chicken (FULL)",
+      title: "Tandoori Chicken (FULL)",
       price: "600",
       category: "options-red"
     },
     {
-      title: "tandoori chicken (HALF)",
+      title: "Tandoori Chicken (HALF)",
       price: "350",
       category: "options-red"
     },
     {
-      title: "tandoori prawns (6PCS)",
+      title: "Tandoori Prawns (6 PCS)",
       price: "500",
       category: "options-red"
     },
     {
-      title: "tandoori fish tikka (6PCS)",
+      title: "Tandoori Fish Tikka Vasa (6 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "golden fried prawns (6PCS)",
+      title: "Golden Fried Prawns (6 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "chicken dry fry (8PCS)",
+      title: "Chicken Dry Fry (8 PCS)",
       price: "250",
       category: "options-red"
     },
     {
-      title: "chicken pakoda (6PCS)",
+      title: "Chicken Pakoda (6 PCS)",
       price: "250",
       category: "options-red"
     },
     {
-      title: "chicken chilli dry (6PCS)",
+      title: "Chicken Chilli Dry (6 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "chicken manchurian dry(8PCS)",
+      title: "Chicken Manchurian Dry (8 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "tandoori chicken tikka (6PCS)",
+      title: "Tandoori Chicken Tikka (6 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "malai chicken tikka (6PCS)",
+      title: "Malai Chicken Tikka (6 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "pahadi chicken tikka (6PCS)",
+      title: "Pahadi Chicken Tikka (6 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "mixed non veg plater (5PCS)",
+      title: "Mixed Non Veg Plater (10 PCS)",
       price: "600",
       category: "options-red"
     },
     {
-      title: "fish chilli dry",
+      title: "Fish Chilli Dry",
       price: "300",
       category: "options-red"
     }
   ]
-  chineseVegMainCourseArr:any=[]
+  chineseVegMainCourseArr: any = []
   chineseVegMainCourse: any = [
     {
       title: "veggise in chilli sauce",
@@ -642,7 +642,7 @@ export class RestaurantComponent implements OnInit {
       category: "options-green"
     }
   ]
-  chineseNonVegMainCourseArr:any=[]
+  chineseNonVegMainCourseArr: any = []
   chineseNonVegMainCourse: any = [
     {
       title: "fish in chilli sauce",
@@ -725,7 +725,7 @@ export class RestaurantComponent implements OnInit {
       category: "options-red"
     }
   ]
-  noodlesArr:any=[]
+  noodlesArr: any = []
   noodles: any = [
     {
       title: "veg hakka noodles",
@@ -798,7 +798,7 @@ export class RestaurantComponent implements OnInit {
       category: "options-red"
     }
   ]
-  continentalArr:any=[]
+  continentalArr: any = []
   continental: any = [
     {
       title: "penne with arrabiata sauce",
@@ -861,7 +861,7 @@ export class RestaurantComponent implements OnInit {
       category: "options-red"
     }
   ]
-  indianDessertArr:any=[]
+  indianDessertArr: any = []
   indianDessert: any = [
     {
       title: "hot gulabjamun (2PCS)",
@@ -877,7 +877,7 @@ export class RestaurantComponent implements OnInit {
       title: "sandesh (2PCS)",
       price: "150",
       category: "options-green"
-    }, 
+    },
     {
       title: "ice cream (2CUBS)",
       price: "120",
@@ -887,449 +887,453 @@ export class RestaurantComponent implements OnInit {
       title: "browni with ice cream",
       price: "200",
       category: "options-green"
-    }, 
+    },
     {
       title: "ras malai",
       price: "150",
       category: "options-green"
     }
   ]
-  riceArr:any=[]
-  rice:any=[
+  riceArr: any = []
+  rice: any = [
     {
-      title: "steamed rice",
-      price: "50",
+      title: "Steamed Rice",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "jeera rice",
+      title: "Jeera Rice",
       price: "150",
       category: "options-green"
     },
     {
-      title: "green peas pulao",
+      title: "Green Peas Pulao",
       price: "150",
       category: "options-green"
     },
     {
-      title: "vegetable pulao",
+      title: "Veg Pulao",
       price: "150",
       category: "options-green"
     },
     {
-      title: "navrtan pulao",
+      title: "Navrtan Pulao",
       price: "180",
       category: "options-green"
     },
     {
-      title: "veg biryani",
+      title: "Veg Biryani",
       price: "200",
       category: "options-green"
     },
     {
-      title: "chicken biryani",
+      title: "Chicken Biryani",
       price: "250",
       category: "options-red"
     },
     {
-      title: "mutton",
+      title: "Mutton Biryani",
       price: "350",
       category: "options-red"
-    },
+    }
+  ]
+  rotiArr: any = []
+  roti: any = [
     {
-      title: "tawa roti (PLAIN)",
+      title: "Tawa Roti (PLAIN)",
       price: "25",
       category: "options-green"
     },
     {
-      title: "tawa roti (BUTTER)",
+      title: "Tawa Roti (BUTTER)",
       price: "30",
       category: "options-green"
     },
     {
-      title: "tandoori roti (PLAIN)",
+      title: "Tandoori Roti (PLAIN)",
       price: "40",
       category: "options-green"
     },
     {
-      title: "tandoori roti (BUTTER)",
+      title: "Tandoori Roti (BUTTER)",
       price: "45",
       category: "options-green"
     },
     {
-      title: "butter naan",
+      title: "Butter Naan",
       price: "60",
       category: "options-green"
     },
     {
-      title: "masala kulcha",
+      title: "Masala Kulcha",
       price: "70",
       category: "options-green"
     },
     {
-      title: "lachha paratha",
+      title: "Lachha Paratha",
       price: "60",
       category: "options-green"
     },
     {
-      title: "garlic naan",
+      title: "Garlic Naan",
       price: "70",
       category: "options-green"
     }
   ]
-  curryVegArr:any=[]
-  curryVeg:any=[
+  curryVegArr: any = []
+  curryVeg: any = [
     {
-      title: "mixed vegetable",
+      title: "Mixed Veg",
       price: "250",
       category: "options-green"
     },
     {
-      title: "vegetable jalfrezi",
+      title: "Veg Jalfrezi",
       price: "250",
       category: "options-green"
     },
     {
-      title: "malai kofta",
+      title: "Veg Malai Kofta (4 PCS)",
       price: "300",
       category: "options-green"
     },
     {
-      title: "hyderbadi kofta",
+      title: "Veg Hyderbadi Kofta",
       price: "300",
       category: "options-green"
     },
     {
-      title: "hariyali kofta",
+      title: "Veg Hariyali Kofta",
       price: "300",
       category: "options-green"
     },
     {
-      title: "aloo dum panjabi style",
+      title: "Aloo Dum Panjabi Style",
       price: "220",
       category: "options-green"
     },
     {
-      title: "aloo do pyaza",
+      title: "Aloo Do Pyaza",
       price: "220",
       category: "options-green"
     },
     {
-      title: "aloo jeera dry",
+      title: "Aloo Jeera Dry",
       price: "220",
       category: "options-green"
     },
     {
-      title: "chana masala",
+      title: "Chana Masala",
       price: "220",
       category: "options-green"
     },
     {
-      title: "corn masala",
+      title: "Corn Masala",
       price: "250",
       category: "options-green"
     },
     {
-      title: "matar nethi malai",
+      title: "Matar Nethi Malai",
       price: "250",
       category: "options-green"
     },
     {
-      title: "aloo gobi masala",
+      title: "Aloo Gobi Masala",
       price: "220",
       category: "options-green"
     },
     {
-      title: "mushroom masala",
+      title: "Mushroom Masala",
       price: "280",
       category: "options-green"
     },
     {
-      title: "paneer butter masala",
+      title: "Paneer Butter Masala",
       price: "300",
       category: "options-green"
     },
     {
-      title: "paneer tikka masala",
+      title: "Paneer Tikka Masala",
       price: "300",
       category: "options-green"
     },
     {
-      title: "paneer do pyaza",
+      title: "Paneer Do Pyaza",
       price: "300",
       category: "options-green"
     },
     {
-      title: "kadai paneer",
+      title: "Kadai Paneer",
       price: "300",
       category: "options-green"
     },
     {
-      title: "palak paneer",
+      title: "Palak Paneer",
       price: "300",
       category: "options-green"
     },
     {
-      title: "mattar paneer",
+      title: "Mattar Paneer",
       price: "300",
       category: "options-green"
     },
     {
-      title: "shahi paneer",
+      title: "Shahi Paneer",
       price: "300",
       category: "options-green"
     },
     {
-      title: "shahi paneer",
+      title: "Hyderabadi Paneer",
       price: "300",
       category: "options-green"
     },
     {
-      title: "hyderabadi paneer",
-      price: "300",
-      category: "options-green"
-    },
-    {
-      title: "patal aloo dum",
+      title: "Patal Aloo Dum",
       price: "220",
       category: "options-green"
     },
     {
-      title: "aloo posto",
+      title: "Aloo Posto",
       price: "220",
       category: "options-green"
     },
     {
-      title: "shukto",
+      title: "Shukto",
       price: "250",
       category: "options-green"
     }
   ]
-  curryNonVegArr:any=[]
-  curryNonVeg:any=[
+  curryNonVegArr: any = []
+  curryNonVeg: any = [
     {
-      title: "egg curry (2PCS)",
+      title: "Egg Curry (2 PCS)",
       price: "150",
       category: "options-red"
     },
     {
-      title: "katla fish curry (2PCS)",
+      title: "Katla Fish Curry (2 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "ruhi fish curry (2PCS)",
+      title: "Ruhi Fish Curry (2 PCS)",
       price: "250",
       category: "options-red"
     },
     {
-      title: "ruhi fish bhaja (2PCS)",
+      title: "Ruhi Fish Bhaja (2 PCS)",
       price: "200",
       category: "options-red"
     },
     {
-      title: "fish amritsari masala (4PCS)",
+      title: "Fish Amritsari Masala (4 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "dahi katla (2PCS)",
+      title: "Dahi Katla (2 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "prawn masala (6PCS)",
+      title: "Prawn Masala (6 PCS)",
       price: "400",
       category: "options-red"
     },
     {
-      title: "chingri malai curry (6PCS)",
+      title: "Chingri Malai Curry (6 PCS)",
       price: "400",
       category: "options-red"
     },
     {
-      title: "chicken bharta",
+      title: "Chicken Bharta",
       price: "300",
       category: "options-red"
     },
     {
-      title: "chicken curry (4PCS)",
+      title: "Chicken Curry (4 PCS)",
       price: "300",
       category: "options-red"
     },
     {
-      title: "chicken butter masala",
+      title: "Chicken Butter Masala",
       price: "350",
       category: "options-red"
     },
     {
-      title: "chicken do pyaza",
+      title: "Chicken Do Pyaza",
       price: "300",
       category: "options-red"
     },
     {
-      title: "kadai chicken",
+      title: "Kadai Chicken",
       price: "300",
       category: "options-red"
     },
     {
-      title: "palak chicken",
+      title: "Palak Chicken",
       price: "300",
       category: "options-red"
     },
     {
-      title: "chicken kasha",
+      title: "Chicken Kasha",
       price: "300",
       category: "options-red"
     },
     {
-      title: "chicken razala",
+      title: "Chicken Razala",
       price: "300",
       category: "options-red"
     },
     {
-      title: "mutton curry",
+      title: "Mutton Curry",
       price: "400",
       category: "options-red"
     },
     {
-      title: "mutton rogan josh",
+      title: "Mutton Rogan Josh",
       price: "400",
       category: "options-red"
     },
     {
-      title: "mutton razala",
+      title: "Mutton Razala",
       price: "400",
       category: "options-red"
     },
     {
-      title: "mutton kosha",
+      title: "Mutton Kosha",
       price: "400",
       category: "options-red"
     }
   ]
-  dalArr:any=[]
-  dal:any=[
+  dalArr: any = []
+  dal: any = [
     {
-      title: "plain yellow dal",
+      title: "Plain Yellow Dal",
       price: "130",
       category: "options-green"
     },
     {
-      title: "yellow dal fry",
+      title: "Yellow Dal Fry",
       price: "140",
       category: "options-green"
     },
     {
-      title: "yellow dal tadka",
+      title: "Yellow Dal Tadka",
       price: "150",
       category: "options-green"
     },
     {
-      title: "dal makhani",
+      title: "Dal Makhani",
       price: "180",
       category: "options-green"
     },
     {
-      title: "sona moong dal",
+      title: "Sona Moong Dal",
       price: "150",
       category: "options-green"
     },
     {
-      title: "vegetable moong dal",
+      title: "Vegetable Moong Dal",
       price: "150",
       category: "options-green"
-    },
+    }
+  ]
+  bhajaBhujiArr: any = []
+  bhajaBhuji: any = [
     {
-      title: "jhuri aloo bhaja",
-      price: "50",
+      title: "Jhuri Aloo Bhaja",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "karala bhaja",
-      price: "50",
+      title: "Karala Bhaja",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "bagan bhaja (4PCS)",
-      price: "50",
+      title: "Bagan Bhaja (4 PCS)",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "bhendi bhaja",
-      price: "50",
+      title: "Bhendi Bhaja",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "papad bhaja (1PCS)",
+      title: "Papad Bhaja (1 PCS)",
       price: "20",
       category: "options-green"
     },
     {
-      title: "home style aloo bhaja",
+      title: "Home Style Aloo Bhaja",
       price: "120",
       category: "options-green"
     }
   ]
-  curdArr:any=[]
-  curd:any=[
+
+  saladArr:any=[]
+  salad:any=[    {
+    title: "Fresh Green Salad",
+    price: "100",
+    category: "options-green"
+  },
+  {
+    title: "Chinese Salad",
+    price: "120",
+    category: "options-green"
+  },
+  {
+    title: "Onion Salad",
+    price: "100",
+    category: "options-green"
+  },
+  {
+    title: "Aloo Chana Chat",
+    price: "150",
+    category: "options-green"
+  },]
+
+  curdArr: any = []
+  curd: any = [
     {
-      title: "fresh green salad",
-      price: "50",
+      title: "Plain Curd",
+      price: "100",
       category: "options-green"
     },
     {
-      title: "chinese salad",
+      title: "Mix Veg Raita",
       price: "120",
       category: "options-green"
     },
     {
-      title: "onion salad",
-      price: "50",
-      category: "options-green"
-    },
-    {
-      title: "aloo chana",
+      title: "Pineapple Raita",
       price: "150",
       category: "options-green"
     },
     {
-      title: "plain curd",
-      price: "50",
-      category: "options-green"
-    },
-    {
-      title: "mix veg raita",
-      price: "120",
-      category: "options-green"
-    },
-    {
-      title: "pineapple raita",
+      title: "Boondi Raita",
       price: "150",
       category: "options-green"
     },
     {
-      title: "bhondi raita",
-      price: "150",
-      category: "options-green"
-    },
-    {
-      title: "roasted papad (1PCS)",
+      title: "Roasted Papad (1 PCS)",
       price: "20",
       category: "options-green"
     },
     {
-      title: "peanut masala",
+      title: "Peanut Masala",
       price: "120",
       category: "options-green"
     },
     {
-      title: "masala papad (1PCS)",
+      title: "Masala Papad (1 PCS)",
       price: "30",
       category: "options-green"
     },
     {
-      title: "cheeri p/l stick 8 stick",
+      title: "Cheese Cheeri p/l Stick (8 Sticks)",
       price: "300",
       category: "options-green"
     },
@@ -1337,37 +1341,40 @@ export class RestaurantComponent implements OnInit {
   filterOption: any = "FEATURED";
 
 
-  constructor() { 
+  constructor() {
     this.sliceMenu();
   }
 
   ngOnInit() {
   }
-  
+
   filterMenu(category: any) {
     this.filterOption = category;
   }
 
-  sliceMenu(){
-    this.breakFastArr=this.breakFast.slice()
-    this.hotBeveragesArr=this.hotBeverages.slice()
-    this.coldBeveragesArr=this.coldBeverages.slice()
-    this.sikkimBreakfastArr=this.sikkimBreakfast.slice()
-    this.sandwichArr=this.sandwich.slice()
-    this.eggItemArr=this.eggItem.slice()
-    this.soupArr=this.soup.slice()
-    this.vegetableStartersArr=this.vegetableStarters.slice()
-    this.nonvegStartersArr=this.nonvegStarters.slice()
-    this.chineseVegMainCourseArr=this.chineseVegMainCourse.slice()
-    this.chineseNonVegMainCourseArr=this.chineseNonVegMainCourse.slice()
-    this.noodlesArr=this.noodles.slice()
-    this.continentalArr=this.continental.slice()
-    this.indianDessertArr=this.indianDessert.slice()
-    this.riceArr=this.rice.slice()
-    this.curryVegArr=this.curryVeg.slice()
-    this.curryNonVegArr=this.curryNonVeg.slice()
-    this.dalArr=this.dal.slice()
-    this.curdArr=this.curd.slice()
+  sliceMenu() {
+    this.breakFastArr = this.breakFast.slice()
+    this.hotBeveragesArr = this.hotBeverages.slice()
+    this.coldBeveragesArr = this.coldBeverages.slice()
+    this.sikkimBreakfastArr = this.sikkimBreakfast.slice()
+    this.sandwichArr = this.sandwich.slice()
+    this.eggItemArr = this.eggItem.slice()
+    this.soupArr = this.soup.slice()
+    this.vegetableStartersArr = this.vegetableStarters.slice()
+    this.nonvegStartersArr = this.nonvegStarters.slice()
+    this.chineseVegMainCourseArr = this.chineseVegMainCourse.slice()
+    this.chineseNonVegMainCourseArr = this.chineseNonVegMainCourse.slice()
+    this.noodlesArr = this.noodles.slice()
+    this.continentalArr = this.continental.slice()
+    this.indianDessertArr = this.indianDessert.slice()
+    this.riceArr = this.rice.slice()
+    this.rotiArr = this.roti.slice()
+    this.curryVegArr = this.curryVeg.slice()
+    this.curryNonVegArr = this.curryNonVeg.slice()
+    this.dalArr = this.dal.slice()
+    this.bhajaBhujiArr = this.dal.slice()
+    this.saladArr = this.salad.slice()
+    this.curdArr = this.curd.slice()
   }
 
 }
