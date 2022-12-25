@@ -404,6 +404,7 @@ html{
 }
 
 .form-check-input:checked {
+	min-width: 16px;
 	background-color: #eeac36;
     border-color: #cb9c4b;
 }

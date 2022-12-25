@@ -210,7 +210,7 @@ export class HotelComponent implements OnInit {
 
 
   //CHANGE ROOM CATEGORY ON SELECT
-  selectedCategory: number = 4;
+  selectedCategory: number = 1;
   changeCategory(value: number) {
     this.selectedCategory = value;
     this.selectedRoomDetails = this.roomDetails[--value];
@@ -429,6 +429,9 @@ export class HotelComponent implements OnInit {
       selectedRoomAmount: this.selectedRoomDetails.amount,
       selectedOpPlan: this.selectedOpPlanDetails.opName,
       selectedOpAmount: this.selectedOpPlanDetails.opAmount,
+      breakfast:false,
+      lunch:false,
+      dinner:false,
       fromDate: this.tempFromDate,
       toDate: this.tempTodate,
       totalCost: this.selectedRoomDetails.amount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected) + this.selectedOpPlanDetails.opAmount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected),
@@ -436,6 +439,12 @@ export class HotelComponent implements OnInit {
       adults: this.customerDetails.adults || 0,
       children: this.customerDetails.children || 0
     };
+
+    if(this.selectedOpPlanDetails.opName == "MAP"){
+      orderDetails.breakfast = this.OpPlanDetails[3].opSelection.breakfast;
+      orderDetails.lunch = this.OpPlanDetails[3].opSelection.lunch;
+      orderDetails.dinner = this.OpPlanDetails[3].opSelection.dinner;
+    }
 
     let orderOptions: any = {
       amount: orderDetails.totalCost * 100, // need to convert to paise

@@ -4,7 +4,7 @@
   [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
 
   <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
-    <img src="../../../{{src}}" (load)="loadMessage()"   class="fadeIn"/>
+    <img src="../../../{{src}}" (load)="loadMessage()"  class="fadeIn"/>
   </ng-template>
 
 
