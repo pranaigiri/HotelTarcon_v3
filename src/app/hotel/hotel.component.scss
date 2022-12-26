@@ -7,7 +7,8 @@
     margin: auto;
 }
 .gallery-container{
-    height: 450px;
+    height: auto;
+    min-height: 306px;
 }
 .category-title{
     font-family: "Playfair Display", serif;
@@ -182,7 +183,8 @@
 
 @media (max-width:768px){
     .gallery-container{
-        height: auto !important;
+        height: auto;
+        min-height: 270px;
     }
 
 
