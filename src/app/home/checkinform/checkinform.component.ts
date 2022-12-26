@@ -63,7 +63,7 @@ export class CheckinformComponent implements OnInit {
         this.isLoading = false;
         this.button = 'Check Availability';
 
-        console.log('Done loading');
+        //console.log('Done loading');
 
       }, 2000)
     }

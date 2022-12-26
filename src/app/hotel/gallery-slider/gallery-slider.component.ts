@@ -53,7 +53,7 @@ export class GallerySliderComponent implements OnInit {
     }
   ]
 
-  @Input() activeCategoryId:number = 3;
+  @Input() activeCategoryId:number = 0;
 
   activeCategory:any = this.allCategories[this.activeCategoryId] || {
       src:[
@@ -82,7 +82,7 @@ export class GallerySliderComponent implements OnInit {
 
   loadMessage(){
     document.querySelector(".image-progress-loader")?.setAttribute("style", "display: none");
-    console.log("loaded");
+    //console.log("loaded");
   }
 
 

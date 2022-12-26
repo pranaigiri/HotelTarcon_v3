@@ -30,10 +30,6 @@ a {
 }
 
 .popular_destination_area .single_destination:before {
-    background: -moz-linear-gradient(top, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%);
-    background: -webkit-linear-gradient(top, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%);
-    background: linear-gradient(to bottom, rgba(4, 14, 39, 0) 0%, rgba(4, 14, 39, 0.7) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00040e27', endColorstr='#b3040e27', GradientType=0);
     content: '';
     left: 0;
     top: 0;
@@ -44,7 +40,7 @@ a {
 }
 
 .single_destination {
-    height: 300px;
+    height: 250px;
 }
 
 .popular_destination_area .single_destination .thumb img {
@@ -52,44 +48,33 @@ a {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
+    height: 250px;
+    object-fit: cover;
 }
 
 .popular_destination_area .single_destination .content {
     position: absolute;
-    left: 30px;
-    bottom: 30px;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    padding: .5rem .5rem .5rem .5rem;
     z-index: 7;
+    background: rgba(0,0,0,.2);
+    font-weight: bold;
 }
 
 .popular_destination_area .single_destination .content p {
     margin-bottom: 0;
-    font-size: 22px;
+    text-align: center;
+    font-size: 1rem;
     color: #fff;
-    font-weight: 400;
-    font-family: "Rubik", sans-serif;
+    font-weight: 600;
     -webkit-transition: 0.3s;
     -moz-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
 }
 
-// .popular_destination_area .single_destination .content p a {
-//     display: inline-block;
-//     background: #eeac36;
-//     font-size: 12px;
-//     border-radius: 30px;
-//     font-weight: 400;
-//     padding: 0px 12px;
-//     height: 25px;
-//     line-height: 25px;
-//     color: #fff;
-//     margin-left: 10px;
-//     -webkit-transition: 0.3s;
-//     -moz-transition: 0.3s;
-//     -o-transition: 0.3s;
-//     transition: 0.3s;
-//     outline: medium none;
-// }
 
 .section-padding {
     padding: 130px 0;
@@ -109,10 +94,14 @@ a {
     font-weight: 700;
 }
 
-.reservation-area h4 {
+.reservation-area h5 {
     color: #eeac36;
-    font-size: 1rem;
+    font-size: .9rem;
     text-transform: initial;
+    cursor: pointer;
+    &:hover{
+        text-decoration: underline;
+    }
 }
 
 .template-btn {

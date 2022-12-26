@@ -15,7 +15,7 @@ export class ContactusComponent implements OnInit {
 
   postForm(){
     this.apiService.postData("ContactUs/PostContactUs",this.form).subscribe((res:any)=>{
-      console.log(res);
+      //console.log(res);
     })
   }
 

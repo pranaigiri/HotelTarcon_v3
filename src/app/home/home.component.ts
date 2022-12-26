@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../service/api.service';
 import { CheckinformComponent } from './checkinform/checkinform.component';
 
 
@@ -9,7 +10,7 @@ import { CheckinformComponent } from './checkinform/checkinform.component';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiService:ApiService) { }
 
   ngOnInit() {
   }

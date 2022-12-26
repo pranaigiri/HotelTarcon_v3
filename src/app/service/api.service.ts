@@ -1,18 +1,29 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { catchError, map, timeout } from 'rxjs';
 import { HotToastService } from '@ngneat/hot-toast';
+import { environment } from 'src/environments/environment.prod';
 
 @Injectable()
 export class ApiService {
-    private readonly baseUrl: any = "https://localhost:44332/api";
+    private readonly baseUrl: any = environment.apiUrl;
+
+    private readonly httpOptions = {
+        headers: new HttpHeaders({
+            'Content-type': 'application/json',
+            'ApiKey' : 'tarconsikkim@2022'
+        })
+    }
+
     constructor(private http: HttpClient,private toaster:HotToastService) {
         // var check:any = window["baseUrl"];
     }
 
     //GetData Method
     getData(url: any) {
-        return this.http.get(`${this.baseUrl}/${url}`).pipe(
+        return this.http.get(`${this.baseUrl}/${url}`,{
+            headers: this.httpOptions.headers
+        }).pipe(
             map((res: any) => {
                 return res;
             }),
@@ -24,7 +35,9 @@ export class ApiService {
 
     //GetDataById Method
     getDataById(url: any, id: any) {
-        return this.http.get(`${this.baseUrl}/${url}/${id}`).pipe(timeout(300000),
+        return this.http.get(`${this.baseUrl}/${url}/${id}`,{
+            headers: this.httpOptions.headers
+        }).pipe(timeout(300000),
             map((res: any) => {
                 return res;
             }),
@@ -36,7 +49,9 @@ export class ApiService {
 
     //Post Method
     postData(url: any, obj: any) {
-        return this.http.post(`${this.baseUrl}/${url}`, obj).pipe(timeout(300000),
+        return this.http.post(`${this.baseUrl}/${url}`, obj,{
+            headers: this.httpOptions.headers
+        }).pipe(timeout(300000),
             map((res: any) => {
                 return res;
             }),
@@ -48,7 +63,9 @@ export class ApiService {
 
     //Put Method
     putData(url: any, obj: any) {
-        return this.http.put(`${this.baseUrl}/${url}`, obj).pipe(timeout(300000),
+        return this.http.put(`${this.baseUrl}/${url}`, obj,{
+            headers: this.httpOptions.headers
+        }).pipe(timeout(300000),
             map((res: any) => {
                 return res;
             }),
@@ -60,7 +77,9 @@ export class ApiService {
 
     //Delete Method
     deleteDataById(url: any, id: any) {
-        return this.http.delete(`${this.baseUrl}/${url}/${id}`).pipe(timeout(300000),
+        return this.http.delete(`${this.baseUrl}/${url}/${id}`,{
+            headers: this.httpOptions.headers
+        }).pipe(timeout(300000),
             map((res: any) => {
                 return res;
             }),
@@ -89,7 +108,9 @@ export class ApiService {
     }
 
     async getDataPromise(url: any) {
-        return this.http.get(`${this.baseUrl}/${url}`).pipe(
+        return this.http.get(`${this.baseUrl}/${url}`,{
+            headers: this.httpOptions.headers
+        }).pipe(
             map((res: any) => {
                 return res;
             }),
@@ -98,6 +119,7 @@ export class ApiService {
             })
         ).toPromise();
     }
+
 
 
 
