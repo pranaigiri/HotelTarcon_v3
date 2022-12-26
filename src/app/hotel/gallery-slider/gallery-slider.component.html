@@ -1,19 +1,22 @@
-<i class="fa fa-spin fa-circle-notch image-progress-loader text-white fs-4"></i>
-
-<swiper style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff" [loop]="true" [spaceBetween]="10"
+<div class="container-fluid px-0 mx-0 main-img-container">
+  <swiper style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff" [loop]="true" [spaceBetween]="10"
   [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
-
-  <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
-    <img src="../../../{{src}}" (load)="loadMessage()"  class="fadeIn"/>
-  </ng-template>
-
-
-</swiper>
-<swiper (swiper)="thumbsSwiper = $event" [loop]="true" [spaceBetween]="10" [slidesPerView]="4" [freeMode]="true"
-  [watchSlidesProgress]="true" class="mySwiper">
 
   <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
     <img src="../../../{{src}}" class="fadeIn"/>
   </ng-template>
 
+
 </swiper>
+</div>
+
+<div class="container-fluid px-0 mx-0">
+  <swiper (swiper)="thumbsSwiper = $event" [loop]="true" [spaceBetween]="10" [slidesPerView]="4" [freeMode]="true"
+  [watchSlidesProgress]="true" class="mySwiper py-0 my-2">
+
+  <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index" class="skeleton">
+    <img src="../../../{{src}}" (load)="loadMessage()" class="fadeInDelayed"/>
+  </ng-template>
+
+</swiper>
+</div>

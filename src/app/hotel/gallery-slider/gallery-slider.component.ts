@@ -67,22 +67,27 @@ export class GallerySliderComponent implements OnInit {
   
   constructor() { }
 
+
+  mainDiv:any;
+  mainImg:any;
+
   ngOnInit() {
-    
+    this.mainDiv = document.querySelector(".main-img-container");
+    this.mainImg = document.querySelector(".mySwiper2");
   }
 
-
+  
   changeGalleryCategory(categoryid:number){
-    document.querySelector(".image-progress-loader")?.setAttribute("style", "display: block");
-    setTimeout(() => {
-      this.activeCategory = this.allCategories[categoryid - 1];
-    }, 10);
-
+    this.mainImg?.classList.add("zero-opacity");
+    this.mainDiv?.classList.add("skeleton");
+    this.activeCategory = this.allCategories[categoryid - 1];
   }
 
   loadMessage(){
-    document.querySelector(".image-progress-loader")?.setAttribute("style", "display: none");
-    //console.log("loaded");
+    setTimeout(() => {
+      this.mainImg?.classList.remove("zero-opacity");
+      this.mainDiv?.classList.remove("skeleton");
+    }, 300);
   }
 
 
