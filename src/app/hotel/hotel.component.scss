@@ -7,7 +7,7 @@
     margin: auto;
 }
 .gallery-container{
-    height: auto;
+    height: 450px;
 }
 .category-title{
     font-family: "Playfair Display", serif;
@@ -131,10 +131,6 @@
     .category-filter div.active{
         box-shadow: 0 0.1rem 0.1rem rgb(0 0 0 / 15%);
     }
-
-    .gallery-container{
-        height: auto;
-    }
   }
 
 
@@ -182,29 +178,38 @@
 }
 
 
-//checkout table
-.checkout-table{
-    @media (max-width:768px) {
-        
-        display: flex;
-        justify-content: space-between;
-        thead,tbody{
-            width: 50%;
-        }
-        thead{
-            background-color: transparent !important;
-        }
-        tbody{
-            text-align: end;
-        }
-        tr{
-            display: flex;
-            flex-flow: column;
-        }
-        th{
-            font-weight: 500;
-        }
+
+
+@media (max-width:768px){
+    .gallery-container{
+        height: auto !important;
     }
+
+
+
+    //checkout table
+    .checkout-table{
+            
+            display: flex;
+            justify-content: space-between;
+            thead,tbody{
+                width: 50%;
+            }
+            thead{
+                background-color: transparent !important;
+            }
+            tbody{
+                text-align: end;
+            }
+            tr{
+                display: flex;
+                flex-flow: column;
+            }
+            th{
+                font-weight: 500;
+            }
+    }
+
 }
 
 

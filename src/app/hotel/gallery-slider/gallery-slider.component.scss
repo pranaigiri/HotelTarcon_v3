@@ -98,35 +98,3 @@
     right: 1rem;
     display: none;
 }
-.fadeIn{
-  animation: fadeIn 1s ease forwards;
-}
-@keyframes fadeIn {
-  0%{
-    opacity: 0;
-  }100%{
-    opacity: 1;
-  }
-}
-
-.fadeInDelayed{
-  opacity: 0;
-  animation: fadeIn 1s .3s ease forwards;
-}
-
-
-.zero-opacity{
-  opacity: 0;
-}
-.skeleton{
-  animation: skeleton-loading 1s linear infinite alternate;
-  width: 100%;
-  border-radius: 6px;
-}
-@keyframes skeleton-loading {
-  0%{
-    background-color: hsl(40deg 100% 97%);
-  }100%{
-    background-color: hsl(39deg 100% 99%);
-  }
-}
