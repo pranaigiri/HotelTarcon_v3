@@ -29,6 +29,7 @@
             ],
             "styles": [
               "src/styles.scss",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
               "node_modules/@fortawesome/fontawesome-free/css/fontawesome.min.css"
             ],

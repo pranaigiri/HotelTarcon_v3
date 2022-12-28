@@ -49,6 +49,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 import { OrdersuccessComponent } from './hotel/ordersuccess/ordersuccess.component';
 import { FaqComponent } from './footer/faq/faq.component';
+import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 
 
@@ -118,6 +119,7 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
     NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderRouterModule,
     BrowserAnimationsModule,
+    NgxIntlTelInputModule,
 
     MatNativeDateModule,
     MatCardModule,
