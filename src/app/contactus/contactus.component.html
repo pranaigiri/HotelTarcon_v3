@@ -7,7 +7,8 @@
         <div class="row order-2 order-md-1">
             <div class="col-lg-6">
                 <div class="info-box mb-4">
-                    <i class="fa fa-map"></i>
+                    <!-- <i class="fa fa-map"></i> -->
+                    <i class="fa-solid fa-map-location-dot"></i>
                     <h3>Our Address</h3>
                     <p>Sungava, Near Vajra Taxi Stand, Gangtok, Sikkim - 737101</p>
                 </div>
@@ -23,7 +24,8 @@
 
             <div class="col-lg-3 col-md-6">
                 <div class="info-box  mb-4">
-                    <i class="fa fa-play"></i>
+                    <!-- <i class="fa fa-play"></i> -->
+                    <i class="fa-solid fa-square-phone"></i>
                     <h3>Call Us</h3>
                     <p>+9103592206161 &nbsp; +917449506745</p>
                 </div>
@@ -40,43 +42,45 @@
             </div>
 
             <div class="col-lg-6 order-1 order-md-2">
-                <form role="form" class="php-email-form h-100">
-                    <div class="row">
-                        <div class="form-group">
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Name"
-                                required [(ngModel)]="form.name">
-                        </div>
-                        <!-- <div class="col-md-6 form-group mt-3 mt-md-0">
-                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
-                                required [(ngModel)]="form.email">
-                        </div> -->
-                    </div>
-                    <div class="row mt-3">
-                        <div class="col-md-6 form-group">
-                            <input type="phone" name="mobile" class="form-control" id="mobile" placeholder="Mobile"
-                                required [(ngModel)]="form.name">
-                        </div>
-                        <div class="col-md-6 form-group">
-                            <input type="email" name="email" class="form-control" id="email" placeholder="Email"
-                                required [(ngModel)]="form.name">
-                        </div>
-                    </div>
-                    <!-- <div class="form-group mt-3">
-                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
-                            required [(ngModel)]="form.subject">
-                    </div> -->
+                <form role="form" class="contact-form h-100">
                     <div class="form-group mt-3">
-                        <select class="form-select" aria-label="Default select example">
-                            <option selected disabled>Select subject</option>
-                            <option value="enquiry">Enquiry</option>
-                            <option value="feedback">Feedback</option>
-                            <option value="report">Report</option>
-                            <option value="report">Others</option>
+                        <select class="form-select subject-select" aria-label="select subject" name="subject"
+                            id="subject">
+                            <option selected disabled hidden required>Select subject</option>
+                            <option value="enquiry" class="others">Enquiry</option>
+                            <option value="feedback" class="others">Feedback</option>
+                            <option value="report" class="others">Complaint</option>
+                            <option value="report" class="others">Others</option>
                         </select>
                     </div>
                     <div class="form-group mt-3">
-                        <textarea class="form-control" name="message" rows="5" placeholder="Message" required
-                            [(ngModel)]="form.message"></textarea>
+                        <input type="text" name="name" class="form-control contact-input" id="name" placeholder="Name"
+                            required [(ngModel)]="form.name">
+                    </div>
+                    <!-- <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email"
+                                required [(ngModel)]="form.email">
+                        </div> -->
+                    <div class="row form-group mt-3">
+                        <div class="col-md-6 mt-3 mt-md-0">
+                            <ngx-intl-tel-input [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+                                [searchCountryFlag]="true" [phoneValidation]="true"
+                                [selectedCountryISO]="CountryISO.India" name="phone" required [(ngModel)]="form.phone">
+                            </ngx-intl-tel-input>
+                        </div>
+                        <div class="col-md-6 form-group mt-3 mt-md-0">
+                            <input type="email" name="email" class="form-control contact-input" id="email"
+                                placeholder="Email (Optional)" required [(ngModel)]="form.email">
+                        </div>
+                    </div>
+
+                    <div class="form-group mt-3">
+                        <textarea [attr.disabled]="words >75 ? '' : null" (keydown)="wordCounter()" #text
+                            class="form-control" name="message" rows="6" placeholder="Message" required max="500"
+                            [(ngModel)]="form.message">
+                        </textarea>
+                        <div class="fw-light text-muted mt-1">(Max 80) words : <span id="wordCount">{{ words }}</span>
+                        </div>
                     </div>
                     <div class="my-3">
                         <div class="loading">Loading</div>
