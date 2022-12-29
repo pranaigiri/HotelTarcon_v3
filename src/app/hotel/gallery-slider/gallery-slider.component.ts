@@ -27,12 +27,12 @@ export class GallerySliderComponent implements OnInit {
         "assets/standard/4.jpg",
       ]
     },
-    { // 1 - suite
+    { // 1 - deluxe
       src:[
-        "assets/suite/1.jpg",
-        "assets/suite/2.jpg",
-        "assets/suite/3.jpg",
-        "assets/suite/4.jpg",
+        "assets/deluxe/1.JPG",
+        "assets/deluxe/2.JPG",
+        "assets/deluxe/3.JPG",
+        "assets/deluxe/4.JPG",
       ]
     },
     { // 2 - hillview
@@ -43,12 +43,12 @@ export class GallerySliderComponent implements OnInit {
         "assets/hillview/4.jpg",
       ]
     },
-    { // 3 - deluxe
+    { // 3 - suite
       src:[
-        "assets/deluxe/1.JPG",
-        "assets/deluxe/2.JPG",
-        "assets/deluxe/3.JPG",
-        "assets/deluxe/4.JPG",
+        "assets/suite/1.jpg",
+        "assets/suite/2.jpg",
+        "assets/suite/3.jpg",
+        "assets/suite/4.jpg",
       ]
     }
   ]

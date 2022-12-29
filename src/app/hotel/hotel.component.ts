@@ -34,23 +34,24 @@ export class HotelComponent implements OnInit {
     {
       categoryId: 1,
       categoryName: "Standard",
-      amount: 1000
+      amount: 3000
     },
     {
       categoryId: 2,
-      categoryName: "Suite",
-      amount: 2000
+      categoryName: "Deluxe",
+      amount: 4000
     },
     {
       categoryId: 3,
       categoryName: "Hill View",
-      amount: 3000
+      amount: 5000
     },
     {
       categoryId: 4,
-      categoryName: "Deluxe",
-      amount: 4000
+      categoryName: "Suite",
+      amount: 7500
     }
+
   ]
 
   //SELECTED ROOM DETAILS
@@ -58,6 +59,11 @@ export class HotelComponent implements OnInit {
 
   //OPTIONAL PLAN DETAILS
   OpPlanDetails: any = [
+    {
+      opId: 0,
+      opName: "None",
+      opAmount: 0
+    },
     {
       opId: 1,
       opName: "EP",
@@ -84,13 +90,17 @@ export class HotelComponent implements OnInit {
       opAmount: 1000
     }
   ];
-  openTab=1;
+  openTab = 1;
   //DEFAULT SELECTED OP DETAILS - EP
   selectedOpPlanDetails: any = this.OpPlanDetails[0];
 
 
   //TAXES & CHARGES
-  TAX: number = 0;
+  TAX: number = 0.12;
+
+  //TOTAL COST
+  totalCost: number = 0;
+  totalCostWithTax: number = 0;
 
   //CALCULATE TOTAL COST
   constructor(private paymentApi: PaymentService,
@@ -138,8 +148,8 @@ export class HotelComponent implements OnInit {
   @Output() selectedRangeValueChange = new EventEmitter<DateRange<Date>>();
   noOfDaysSelected: number = 0;
 
-  tempFromDate:any;
-  tempTodate:any;
+  tempFromDate: any;
+  tempTodate: any;
 
   selectedChange(m: any) {
 
@@ -177,6 +187,7 @@ export class HotelComponent implements OnInit {
             });
 
           this.selectedRangeValue = {};
+          this.totalCost = 0; this.totalCostWithTax = 0; this.TAX = 0;
         }
       }
     }, 1);
@@ -186,6 +197,27 @@ export class HotelComponent implements OnInit {
 
     this.tempFromDate = this.datepipe.transform(this.selectedRangeValue.start, 'd MMM, y');
     this.tempTodate = this.selectedRangeValue.end ? this.datepipe.transform(this.selectedRangeValue.end, 'd MMM, y') : this.tempFromDate;
+
+
+    this.updatePriceAndTaxes();
+
+
+  }
+
+  //UPDATE PRICE AND TAX
+  updatePriceAndTaxes() {
+
+    this.totalCost = this.selectedRoomDetails.amount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected);
+
+    //Change tax according to the amount
+    if (this.totalCost > 7000)
+      this.TAX = 0.18
+    else
+      this.TAX = 0.12
+
+    this.totalCostWithTax = this.totalCost + (this.totalCost * this.TAX);
+
+    console.log("TS", this.totalCost, "TAX", this.TAX, "TSWT", this.totalCostWithTax);
 
   }
 
@@ -215,7 +247,7 @@ export class HotelComponent implements OnInit {
     this.selectedCategory = value;
     this.selectedRoomDetails = this.roomDetails[--value];
     //console.log(this.selectedCategory);
-    this.openTab=this.selectedCategory
+    this.openTab = this.selectedCategory
   }
 
   //CHANGE OPTIONAL PLAN ON SELECT
@@ -276,6 +308,13 @@ export class HotelComponent implements OnInit {
   submitted = false;
 
   ngOnInit() {
+
+
+    //ASSIGN VALUES OF PRICES AND TAXES
+    this.TAX = 0.12;
+    this.totalCost = this.selectedRoomDetails.amount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected);
+    this.totalCostWithTax = this.totalCost + (this.totalCost * this.TAX);
+
 
     //LISTEN TO MAPPLAN CHECKBOX CHANGE
     let mapPlanCheckBoxes: any = document.querySelectorAll(
@@ -405,7 +444,7 @@ export class HotelComponent implements OnInit {
     orderRes: {},
 
     paymentRes: {
-      response:{}
+      response: {}
     }
   };
 
@@ -429,18 +468,18 @@ export class HotelComponent implements OnInit {
       selectedRoomAmount: this.selectedRoomDetails.amount,
       selectedOpPlan: this.selectedOpPlanDetails.opName,
       selectedOpAmount: this.selectedOpPlanDetails.opAmount,
-      breakfast:false,
-      lunch:false,
-      dinner:false,
+      breakfast: false,
+      lunch: false,
+      dinner: false,
       fromDate: this.tempFromDate,
       toDate: this.tempTodate,
-      totalCost: this.selectedRoomDetails.amount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected) + this.selectedOpPlanDetails.opAmount * (this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected),
+      totalCost: this.totalCostWithTax,
       totalDays: this.noOfDaysSelected <= 0 ? 1 : this.noOfDaysSelected,
       adults: this.customerDetails.adults || 0,
       children: this.customerDetails.children || 0
     };
 
-    if(this.selectedOpPlanDetails.opName == "MAP"){
+    if (this.selectedOpPlanDetails.opName == "MAP") {
       orderDetails.breakfast = this.OpPlanDetails[3].opSelection.breakfast;
       orderDetails.lunch = this.OpPlanDetails[3].opSelection.lunch;
       orderDetails.dinner = this.OpPlanDetails[3].opSelection.dinner;
@@ -468,7 +507,6 @@ export class HotelComponent implements OnInit {
     });
 
   }
-
 
   //initiate payment using generated order_id
   payWithRazor(order: any) {
@@ -576,10 +614,10 @@ export class HotelComponent implements OnInit {
 
   closeInvoice() {
 
-    if(this.child.downloadedFlag){
+    if (this.child.downloadedFlag) {
       this.showingInvoice = false;
-      window.scrollTo(0,0);
-    }else{
+      window.scrollTo(0, 0);
+    } else {
       Swal.fire({
         title: 'We recommend saving the invoice?',
         showDenyButton: true,
@@ -597,7 +635,7 @@ export class HotelComponent implements OnInit {
       })
     }
 
-    if(this.child.downloadedFlag && this.showingInvoice == false){
+    if (this.child.downloadedFlag && this.showingInvoice == false) {
       setTimeout(() => {
         location.reload();
       }, 1000);
