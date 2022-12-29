@@ -1,7 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from '../service/api.service';
 import { CountryISO, SearchCountryField } from "ngx-intl-tel-input";
-// import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 @Component({
   selector: 'app-contactus',
@@ -10,55 +9,23 @@ import { CountryISO, SearchCountryField } from "ngx-intl-tel-input";
 })
 export class ContactusComponent implements OnInit {
 
-  
-  wordCount: any;
-  @ViewChild('text') text!: ElementRef;
-  words: any;
-  wordCounter() {
-    this.wordCount = this.text ? this.text.nativeElement.value.split(/\s+/) : 0;
-    this.words = this.wordCount ? this.wordCount.length : 0;
-  }
-
   constructor(private apiService: ApiService) { 
-    // this.create();
+
   }
 
   ngOnInit() {
   }
 
-  form: any = {};
-  
-
-  isSubmit = false;
-
-  separateDialCode = false;
-  SearchCountryField = SearchCountryField;
-  // TooltipLabel = TooltipLabel;
-  CountryISO = CountryISO;
-  preferredCountries: CountryISO[] = [
-    CountryISO.UnitedStates,
-    CountryISO.UnitedKingdom
-  ];
+  form:any = {};
+  CountryISO = CountryISO; //for initial selected country enum in international telephone list
 
   postForm() {
-    this.apiService.postData("ContactUs/PostContactUs", this.form).subscribe((res: any) => {
-      //console.log(res);
-    })
+    // this.apiService.postData("ContactUs/PostContactUs", this.form).subscribe((res: any) => {
+      console.log(this.form);
+    // })
+    this.form ={};
+
   }
 
-  formSubmit() {
-    alert(this.form.name);
-  }
-  
-  // create() {
-  //   this.form = this.formBuilder.group({
-  //     name: ["", Validators.required],
-  //     email: ["", [Validators.required, Validators.email]],
-  //     username: ["", Validators.required],
-  //     password: ["", Validators.required],
-  //     address: ["", Validators.required],
-  //     phone: [""]
-  //   });
-  // }
 
 }
