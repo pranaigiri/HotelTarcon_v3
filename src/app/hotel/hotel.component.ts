@@ -17,6 +17,7 @@ import { catchError, finalize, throwError } from 'rxjs';
 
 import Swal from 'sweetalert2';
 import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
+import { CountryISO, SearchCountryField } from "ngx-intl-tel-input";
 
 @Component({
   selector: 'app-hotel',
@@ -58,41 +59,41 @@ export class HotelComponent implements OnInit {
   selectedRoomDetails: any = this.roomDetails[0];
 
   //OPTIONAL PLAN DETAILS
-  OpPlanDetails: any = [
-    {
-      opId: 0,
-      opName: "None",
-      opAmount: 0
-    },
-    {
-      opId: 1,
-      opName: "EP",
-      opAmount: 300
-    },
-    {
-      opId: 2,
-      opName: "CP",
-      opAmount: 500
-    },
-    {
-      opId: 3,
-      opName: "AP",
-      opAmount: 1000
-    },
-    {
-      opId: 4,
-      opName: "MAP",
-      opSelection: {
-        breakfast: false,
-        lunch: false,
-        dinner: false,
-      },
-      opAmount: 1000
-    }
-  ];
+  // OpPlanDetails: any = [
+  //   {
+  //     opId: 0,
+  //     opName: "None",
+  //     opAmount: 0
+  //   },
+  //   {
+  //     opId: 1,
+  //     opName: "EP",
+  //     opAmount: 300
+  //   },
+  //   {
+  //     opId: 2,
+  //     opName: "CP",
+  //     opAmount: 500
+  //   },
+  //   {
+  //     opId: 3,
+  //     opName: "AP",
+  //     opAmount: 1000
+  //   },
+  //   {
+  //     opId: 4,
+  //     opName: "MAP",
+  //     opSelection: {
+  //       breakfast: false,
+  //       lunch: false,
+  //       dinner: false,
+  //     },
+  //     opAmount: 1000
+  //   }
+  // ];
   openTab = 1;
   //DEFAULT SELECTED OP DETAILS - EP
-  selectedOpPlanDetails: any = this.OpPlanDetails[0];
+  // selectedOpPlanDetails: any = this.OpPlanDetails[0];
 
 
   //TAXES & CHARGES
@@ -150,6 +151,10 @@ export class HotelComponent implements OnInit {
 
   tempFromDate: any;
   tempTodate: any;
+
+
+  //for new phone numebr input on checkout
+  CountryISO = CountryISO;
 
   selectedChange(m: any) {
 
@@ -254,7 +259,7 @@ export class HotelComponent implements OnInit {
   selectedPlan: number = 0;
   changePlan(value: number) {
     this.selectedPlan = value;
-    this.selectedOpPlanDetails = this.OpPlanDetails[--value];
+    // this.selectedOpPlanDetails = this.OpPlanDetails[--value];
   }
 
 
@@ -317,73 +322,73 @@ export class HotelComponent implements OnInit {
 
 
     //LISTEN TO MAPPLAN CHECKBOX CHANGE
-    let mapPlanCheckBoxes: any = document.querySelectorAll(
-      '.map-li input[type="checkbox"]'
-    );
+    // let mapPlanCheckBoxes: any = document.querySelectorAll(
+    //   '.map-li input[type="checkbox"]'
+    // );
 
-    mapPlanCheckBoxes.forEach((checkbox: any) => {
+    // mapPlanCheckBoxes.forEach((checkbox: any) => {
 
-      checkbox.addEventListener("change", () => {
+    //   checkbox.addEventListener("change", () => {
 
-        //counter to keep track of selected map plan checkboxes
-        checkbox.checked ? this.mapCount++ : this.mapCount--;
+    //     //counter to keep track of selected map plan checkboxes
+    //     checkbox.checked ? this.mapCount++ : this.mapCount--;
 
-        //map radio select if min 2 checkbox selected
-        this.mapCount > 1 ? mapPlanRadio.checked = true : mapPlanRadio.checked = false;
+    //     //map radio select if min 2 checkbox selected
+    //     this.mapCount > 1 ? mapPlanRadio.checked = true : mapPlanRadio.checked = false;
 
 
-        if (this.mapCount == 2) {
-          mapPlanCheckBoxes.forEach((checkbox: any) => {
-            !checkbox.checked ? checkbox.disabled = true : null;
-          })
-        } else {
-          mapPlanCheckBoxes.forEach((checkbox: any) => {
-            checkbox.disabled = false;
-          })
-        }
+    //     if (this.mapCount == 2) {
+    //       mapPlanCheckBoxes.forEach((checkbox: any) => {
+    //         !checkbox.checked ? checkbox.disabled = true : null;
+    //       })
+    //     } else {
+    //       mapPlanCheckBoxes.forEach((checkbox: any) => {
+    //         checkbox.disabled = false;
+    //       })
+    //     }
 
-      });
+    //   });
 
-    });
+    // });
 
-    //LISTEN IF OP PLAN IS MAP
-    let mapPlanRadio: any = document.querySelector("#mapPlan");
-    mapPlanRadio.addEventListener("change", () => {
-      if (mapPlanRadio.checked && this.mapCount < 2) {
-        mapPlanRadio.checked = false;
-      }
-    });
+    // //LISTEN IF OP PLAN IS MAP
+    // let mapPlanRadio: any = document.querySelector("#mapPlan");
+    // mapPlanRadio.addEventListener("change", () => {
+    //   if (mapPlanRadio.checked && this.mapCount < 2) {
+    //     mapPlanRadio.checked = false;
+    //   }
+    // });
 
 
     //SELECT RADIO BUTTON OF OP PLANS
-    let opPlanRadios: any = document.querySelectorAll('.opPlanRadio');
+    // let opPlanRadios: any = document.querySelectorAll('.opPlanRadio');
 
-    //CLEAR OPPLAN CHECKBOXES & MAP PLAN CHECKBOXES
-    opPlanRadios.forEach((radio: any) => {
-      radio.addEventListener('change', () => {
+    // //CLEAR OPPLAN CHECKBOXES & MAP PLAN CHECKBOXES
+    // opPlanRadios.forEach((radio: any) => {
+    //   radio.addEventListener('change', () => {
 
-        //reset count for map checkboxes
-        opPlanRadios[3] != radio ? this.mapCount = 0 : null;
+    //     //reset count for map checkboxes
+    //     opPlanRadios[3] != radio ? this.mapCount = 0 : null;
 
-        //RESET ALL CHECKED PLANS
-        if (radio.value != this.selectedPlan)
-          radio.checked = false;
+    //     //RESET ALL CHECKED PLANS
+    //     if (radio.value != this.selectedPlan)
+    //       radio.checked = false;
 
-        //CLEAR MAP PLAN CHECKBOXES
-        if (radio.value != 4) {
-          mapPlanCheckBoxes.forEach((checkbox: any) => {
-            checkbox.checked = false;
-            this.OpPlanDetails[3].opSelection = {
-              breakfast: false,
-              lunch: false,
-              dinner: false
-            };
-            checkbox.disabled = false;
-          })
-        }
+    //     //CLEAR MAP PLAN CHECKBOXES
+    //     if (radio.value != 4) {
+    //       mapPlanCheckBoxes.forEach((checkbox: any) => {
+    //         checkbox.checked = false;
+    //         this.OpPlanDetails[3].opSelection = {
+    //           breakfast: false,
+    //           lunch: false,
+    //           dinner: false
+    //         };
+    //         checkbox.disabled = false;
+    //       })
+    //     }
 
-      });
-    });
+    //   });
+    // });
 
     //FOR CONTACT INFO FORM VALIDATION
     this.form = this.formBuilder.group({
@@ -414,6 +419,9 @@ export class HotelComponent implements OnInit {
     return this.form.controls;
   }
   onContactInfoSubmit(): void {
+
+    console.log("FORM", this.form);
+
     this.submitted = true;
     if (this.form.invalid) {
       this.contactInfoComplete = false;
@@ -466,8 +474,8 @@ export class HotelComponent implements OnInit {
       selectedRoomCategory: this.selectedRoomDetails.categoryId,
       selectedRoomName: this.selectedRoomDetails.categoryName,
       selectedRoomAmount: this.selectedRoomDetails.amount,
-      selectedOpPlan: this.selectedOpPlanDetails.opName,
-      selectedOpAmount: this.selectedOpPlanDetails.opAmount,
+      // selectedOpPlan: this.selectedOpPlanDetails.opName,
+      // selectedOpAmount: this.selectedOpPlanDetails.opAmount,
       breakfast: false,
       lunch: false,
       dinner: false,
@@ -479,11 +487,11 @@ export class HotelComponent implements OnInit {
       children: this.customerDetails.children || 0
     };
 
-    if (this.selectedOpPlanDetails.opName == "MAP") {
-      orderDetails.breakfast = this.OpPlanDetails[3].opSelection.breakfast;
-      orderDetails.lunch = this.OpPlanDetails[3].opSelection.lunch;
-      orderDetails.dinner = this.OpPlanDetails[3].opSelection.dinner;
-    }
+    // if (this.selectedOpPlanDetails.opName == "MAP") {
+    //   orderDetails.breakfast = this.OpPlanDetails[3].opSelection.breakfast;
+    //   orderDetails.lunch = this.OpPlanDetails[3].opSelection.lunch;
+    //   orderDetails.dinner = this.OpPlanDetails[3].opSelection.dinner;
+    // }
 
     let orderOptions: any = {
       amount: orderDetails.totalCost * 100, // need to convert to paise

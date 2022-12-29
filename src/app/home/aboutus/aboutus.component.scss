@@ -2,10 +2,15 @@
     transform: scale(.9);
     border-radius: 50px;
     border: 10px solid white;
+    transition: .5s ease;
 }
 
 .about-img.invert{
     transform: scale(.9);
+}
+
+.about-img:hover, .about-img.invert:hover{
+    transform: scale(1);
 }
 
 @media (min-width: 768px) {
