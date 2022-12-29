@@ -11,31 +11,35 @@
           <!-- CATEGORY FILTER CONTAINER -->
           <div class="container category-filter-container tarcon-gradient-bg mb-2 px-4 py-1">
             <div class="row category-filter">
-              <div (click)="changeCategory(1); child.changeGalleryCategory(1)" [ngClass]="{'active' : selectedCategory == 1}"
+              <div (click)="changeCategory(1); child.changeGalleryCategory(1)"
+                [ngClass]="{'active' : selectedCategory == 1}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-mug-hot text-primary"></i>
                 Standard
               </div>
-              <div (click)="changeCategory(2); child.changeGalleryCategory(2)" [ngClass]="{'active' : selectedCategory == 2}"
+              <div (click)="changeCategory(2); child.changeGalleryCategory(2)"
+                [ngClass]="{'active' : selectedCategory == 2}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
-                <i class="fa-solid fa-bowl-rice text-primary"></i>
-                Suite
+                <i class="fa-solid fa-tv text-primary"></i>
+                Deluxe
               </div>
-              <div (click)="changeCategory(3); child.changeGalleryCategory(3)" [ngClass]="{'active' : selectedCategory == 3}"
+              <div (click)="changeCategory(3); child.changeGalleryCategory(3)"
+                [ngClass]="{'active' : selectedCategory == 3}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-mountain-sun text-primary"></i>
                 Hill View
               </div>
-              <div (click)="changeCategory(4); child.changeGalleryCategory(4)" [ngClass]="{'active' : selectedCategory == 4}"
+              <div (click)="changeCategory(4); child.changeGalleryCategory(4)"
+                [ngClass]="{'active' : selectedCategory == 4}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
-                <i class="fa-solid fa-tv text-primary"></i>
-                Deluxe
+                <i class="fa-solid fa-bowl-rice text-primary"></i>
+                Suite
               </div>
             </div>
           </div>
 
           <!-- CATEGORY WISE GALLERY -->
-          <div class="container gallery-container skeleton px-0">
+          <div class="container gallery-container px-0">
             <app-gallery-slider #child></app-gallery-slider>
           </div>
 
@@ -129,6 +133,13 @@
             <!-- FROM TO CONTAINER -->
             <div class="container mb-5">
 
+              <div class="row from-to-container" *ngIf="!selectedRangeValue.start && !selectedRangeValue.end">
+                <div class="col-12 text-center d-flex flex-column align-content-center">
+                  <p class="mb-0">Please select your date</p>
+                  <p class="dark-title-cursive mb-0">On / From - To</p>
+                </div>
+              </div>
+
               <div class="row from-to-container" *ngIf="selectedRangeValue.start && noOfDaysSelected <= 1">
                 <div class="col-12 text-center d-flex flex-column align-content-center">
                   <p class="mb-0">ON</p>
@@ -150,15 +161,16 @@
             </div>
 
 
+            <!-- WARNING - DO NOT REMOVE COMMENTED CODES -->
+
             <!-- EP, CP, AP, PLAN CONTAINER -->
-            <div class="container my-5">
+            <!-- <div class="container my-5">
               <div class="row">
 
                 <h1 class="plan-title text-center px-4 mb-">Meal Plans</h1>
                 <p class="plan-cost text-center mb-3">BREAKFAST &nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
                   LUNCH &nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; DINNER</p>
 
-                <!-- HEADER -->
                 <div class="container plan-icons-container shadow-sm py-3">
                   <div class="row justify-content-between px-4">
                     <div class="col-5 col-lg-4 text-primary-dark"><small><b>MEAL</b></small></div>
@@ -236,7 +248,6 @@
                   </div>
                 </label>
 
-
                 <label class="container plan-container py-3 map-plan-label" [ngClass]="{'active' : selectedPlan == 4}"
                   for="mapPlan">
                   <div class="row justify-content-between px-4" for="mapPlan">
@@ -265,10 +276,8 @@
                 </label>
                 <small class="text-danger px-4 text-end" *ngIf="selectedPlan == 4 && mapCount < 2"><small>Select at
                     least 2 option.</small></small>
-
-
               </div>
-            </div>
+            </div> -->
 
 
             <!-- PRICE SUMMARY -->
@@ -292,14 +301,15 @@
                           Day{{noOfDaysSelected <=0 ? '' : 's' }} ) </small></small>
                   </div>
                   <div class="col text-end">
-                    <small><del>₹{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected) +
-                          (selectedRoomDetails.amount * (noOfDaysSelected <=0 ? 1 : noOfDaysSelected) * 0.1)}}</del>
-                          ₹{{selectedRoomDetails.amount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
+                    <small><del>₹{{totalCost + totalCost * 0.1}}</del>
+                          ₹{{totalCost}}</small>
                             <br>
                             <small><small class="text-muted"> ( Flat 10% Off ) </small></small>
                   </div>
                 </div>
-                <div class="row px-2 px-md-4 py-2">
+
+                <!-- MEAL PLAN - REMOVED -->
+                <!-- <div class="row px-2 px-md-4 py-2">
                   <div class="col">
                     <small>Meal Plan ({{selectedOpPlanDetails.opName}})</small><br>
                     <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
@@ -308,13 +318,14 @@
                   <div class="col text-end">
                     <small>₹{{selectedOpPlanDetails.opAmount * (noOfDaysSelected <= 0 ? 1 : noOfDaysSelected)}}</small>
                   </div>
-                </div>
+                </div> -->
+
                 <div class="row px-2 px-md-4 py-2">
                   <div class="col">
-                    <small>Taxes & Charges</small>
+                    <small>GST & Other Charges<br><small class="text-muted">( {{TAX == 0.12 ? '12%' : '18%'}} )</small></small>
                   </div>
                   <div class="col text-end">
-                    <small>₹{{TAX}}</small>
+                    <small>₹{{totalCost * TAX}}</small>
                   </div>
                 </div>
               </div>
@@ -323,18 +334,16 @@
             </div>
 
             <!-- PRICE CONTAINER -->
-            <div class="row flex-row gap-2 mb-5 justify-content-center align-items-center">
+            <div class="row flex-row gap-2 mb-5 justify-content-between align-items-center">
 
-              <div class="col-5 d-flex flex-column justify-content-center ps-3 ps-md-4">
-                <h1 class="mb-0 total-cost ps-2">Total Cost</h1>
-                <p class="my-0 ms-1 ps-2"><small>incl. all charges.</small></p>
+              <div class="col-5 d-flex flex-column justify-content-center ps-4">
+                <h1 class="mb-0 total-cost ps-2 ps-md-4">Total Cost</h1>
+                <p class="my-0 ms-1 ps-2 ps-md-4"><small>incl. all charges.</small></p>
               </div>
 
               <div class="col-6 pe-3 pe-md-4">
                 <div class="container price-container text-center">
-                  <h1 class="price-tag float-end mb-0 text-nowrap">₹ {{(selectedRoomDetails.amount * (noOfDaysSelected
-                    <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <=0 ? 1 :
-                      noOfDaysSelected))}}/-</h1>
+                  <h1 class="price-tag float-end mb-0 text-nowrap">₹ {{ totalCostWithTax }}/-</h1>
                 </div>
               </div>
 
@@ -420,9 +429,7 @@
                   <td>{{tempFromDate}}</td>
                   <td>{{tempTodate}}</td>
                   <td>{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}} Day{{noOfDaysSelected <=0 ? '' : 's' }}</td>
-                  <td>₹ {{(selectedRoomDetails.amount * (noOfDaysSelected
-                    <= 0 ? 1 : noOfDaysSelected)) + (selectedOpPlanDetails.opAmount * (noOfDaysSelected <=0 ? 1 :
-                      noOfDaysSelected))}}/-</td>
+                  <td>₹ {{totalCostWithTax}}/-</td>
                 </tr>
               </tbody>
             </table>
@@ -516,8 +523,8 @@
                         <i class="fa-solid fa-user text-muted"></i>
                       </span>
                     </div>
-                    <input type="number" min="0" max="5" placeholder="Total No. of Person" formControlName="adults" class="form-control"
-                      [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
+                    <input type="number" min="0" max="5" placeholder="Total No. of Person" formControlName="adults"
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
                     <div *ngIf="submitted && f['phone'].errors" class="invalid-feedback">
                       <div *ngIf="f['adults'].errors['required']">
                         Total No. of Person is required

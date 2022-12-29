@@ -27,12 +27,12 @@ export class GallerySliderComponent implements OnInit {
         "assets/standard/4.jpg",
       ]
     },
-    { // 1 - suite
+    { // 1 - deluxe
       src:[
-        "assets/suite/1.jpg",
-        "assets/suite/2.jpg",
-        "assets/suite/3.jpg",
-        "assets/suite/4.jpg",
+        "assets/deluxe/1.JPG",
+        "assets/deluxe/2.JPG",
+        "assets/deluxe/3.JPG",
+        "assets/deluxe/4.JPG",
       ]
     },
     { // 2 - hillview
@@ -43,12 +43,12 @@ export class GallerySliderComponent implements OnInit {
         "assets/hillview/4.jpg",
       ]
     },
-    { // 3 - deluxe
+    { // 3 - suite
       src:[
-        "assets/deluxe/1.JPG",
-        "assets/deluxe/2.JPG",
-        "assets/deluxe/3.JPG",
-        "assets/deluxe/4.JPG",
+        "assets/suite/1.jpg",
+        "assets/suite/2.jpg",
+        "assets/suite/3.jpg",
+        "assets/suite/4.jpg",
       ]
     }
   ]
@@ -69,25 +69,26 @@ export class GallerySliderComponent implements OnInit {
 
 
   mainDiv:any;
-  mainImg:any;
+  mainThumb:any;
 
   ngOnInit() {
     this.mainDiv = document.querySelector(".main-img-container");
-    this.mainImg = document.querySelector(".mySwiper2");
+    this.mainThumb = document.querySelector(".thumb-container");
   }
 
   
   changeGalleryCategory(categoryid:number){
-    this.mainImg?.classList.add("zero-opacity");
-    this.mainDiv?.classList.add("skeleton");
-    this.activeCategory = this.allCategories[categoryid - 1];
+    this.mainDiv.firstChild?.classList.add("zero-opacity");
+    this.mainThumb.firstChild?.classList.add("zero-opacity");
+    setTimeout(() => {
+      this.activeCategory = this.allCategories[categoryid - 1];
+    }, 300);
+
   }
 
   loadMessage(){
-    setTimeout(() => {
-      this.mainImg?.classList.remove("zero-opacity");
-      this.mainDiv?.classList.remove("skeleton");
-    }, 300);
+      this.mainDiv.firstChild?.classList.remove("zero-opacity");
+      this.mainThumb.firstChild?.classList.remove("zero-opacity");
   }
 
 
