@@ -69,25 +69,26 @@ export class GallerySliderComponent implements OnInit {
 
 
   mainDiv:any;
-  mainImg:any;
+  mainThumb:any;
 
   ngOnInit() {
     this.mainDiv = document.querySelector(".main-img-container");
-    this.mainImg = document.querySelector(".mySwiper2");
+    this.mainThumb = document.querySelector(".thumb-container");
   }
 
   
   changeGalleryCategory(categoryid:number){
-    this.mainImg?.classList.add("zero-opacity");
-    this.mainDiv?.classList.add("skeleton");
-    this.activeCategory = this.allCategories[categoryid - 1];
+    this.mainDiv.firstChild?.classList.add("zero-opacity");
+    this.mainThumb.firstChild?.classList.add("zero-opacity");
+    setTimeout(() => {
+      this.activeCategory = this.allCategories[categoryid - 1];
+    }, 300);
+
   }
 
   loadMessage(){
-    setTimeout(() => {
-      this.mainImg?.classList.remove("zero-opacity");
-      this.mainDiv?.classList.remove("skeleton");
-    }, 300);
+      this.mainDiv.firstChild?.classList.remove("zero-opacity");
+      this.mainThumb.firstChild?.classList.remove("zero-opacity");
   }
 
 
