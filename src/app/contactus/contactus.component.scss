@@ -162,6 +162,9 @@
  :host ::ng-deep input {
    height: 40px;
  }
+//  :host ::ng-deep input::placeholder{
+//   color:white;
+//  }
 
  .subject-select {
    color: grey;

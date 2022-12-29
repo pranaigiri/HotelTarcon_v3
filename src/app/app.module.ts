@@ -26,6 +26,8 @@ import { PopulardestinationComponent } from './home/populardestination/popularde
 import { ContactusComponent } from './contactus/contactus.component';
 import { PrivacypolicyComponent } from './footer/privacypolicy/privacypolicy.component';
 import { TermsandconditionsComponent } from './footer/termsandconditions/termsandconditions.component';
+import { FaqComponent } from './footer/faq/faq.component';
+import { RefundpolicyComponent } from './footer/refundpolicy/refundpolicy.component';
 import { HttpClientModule , HttpClient} from '@angular/common/http'
 // SERVICES
 import { EventEmitterService } from './event-emitter.service';
@@ -48,7 +50,6 @@ import { MatSelectModule } from '@angular/material/select';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 import { OrdersuccessComponent } from './hotel/ordersuccess/ordersuccess.component';
-import { FaqComponent } from './footer/faq/faq.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 
 
@@ -108,7 +109,8 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
       PrivacypolicyComponent,
       TermsandconditionsComponent,
       OrdersuccessComponent,
-      FaqComponent
+      FaqComponent,
+      RefundpolicyComponent
    ],
   imports: [
     BrowserModule,
