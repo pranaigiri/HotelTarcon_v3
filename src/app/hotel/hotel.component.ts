@@ -480,7 +480,7 @@ export class HotelComponent implements OnInit {
       currency: 'INR',
       name: "Tarcon Sikkim", // company name or product name
       description: this.selectedRoomDetails.categoryName,  // product description
-      image: 'assets/tarcon_logo_colored.png', // company logo or product image
+      image: 'assets/256_1.png', // company logo or product image
       order_id: order.id, // order_id created by you in backend
       prefill: {
         name: this.customerDetails.fullname,
@@ -581,8 +581,7 @@ export class HotelComponent implements OnInit {
       window.scrollTo(0,0);
     }else{
       Swal.fire({
-        title: 'Do you want to save invoice?',
-        text:'Close if already did!',
+        title: 'We recommend saving the invoice?',
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: 'Download',
