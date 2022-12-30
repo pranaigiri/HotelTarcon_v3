@@ -626,7 +626,7 @@
                       </span>
                     </div> -->
 
-                    <ngx-intl-tel-input [maxLength]="10" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
+                    <ngx-intl-tel-input class="w-100 newphone-input" [maxLength]="10" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
                       [searchCountryFlag]="true" [phoneValidation]="true" [selectedCountryISO]="CountryISO.India"
                       [customPlaceholder]="'XXXXXXXXXX'" [separateDialCode]="true" formControlName="phone"
                       [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
@@ -647,6 +647,7 @@
                         Phone number needs to be exactly 10
                       </div>
                     </div>
+
                   </div>
 
                 </div>
@@ -660,7 +661,7 @@
                       </span>
                     </div>
                     <input type="number" placeholder="Total No. of Person" formControlName="totalperson"
-                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f['totalperson'].errors }" />
+                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
                     <div *ngIf="submitted && f['adults'].errors" class="invalid-feedback">
                       <div *ngIf="f['adults'].errors['required']">
                         Total No. of Person is required
