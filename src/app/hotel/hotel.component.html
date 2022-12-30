@@ -11,25 +11,25 @@
           <!-- CATEGORY FILTER CONTAINER -->
           <div class="container category-filter-container tarcon-gradient-bg mb-2 px-4 py-1">
             <div class="row category-filter">
-              <div x-on:click="openTab = 'Standard'" (click)="changeCategory(1)"
+              <div (click)="changeCategory(1); child.changeGalleryCategory(1)"
                 [ngClass]="{'active' : selectedCategory == 1}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-mug-hot text-primary"></i>
                 Standard
               </div>
-              <div x-on:click="openTab = 'Suite'" (click)="changeCategory(2)"
+              <div (click)="changeCategory(2); child.changeGalleryCategory(2)"
                 [ngClass]="{'active' : selectedCategory == 2}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-bowl-rice text-primary"></i>
                 Suite
               </div>
-              <div x-on:click="openTab = 'HillView'" (click)="changeCategory(3)"
+              <div (click)="changeCategory(3); child.changeGalleryCategory(3)"
                 [ngClass]="{'active' : selectedCategory == 3}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-mountain-sun text-primary"></i>
                 Hill View
               </div>
-              <div x-on:click="openTab = 'Deluxe'" (click)="changeCategory(4)"
+              <div (click)="changeCategory(4); child.changeGalleryCategory(4)"
                 [ngClass]="{'active' : selectedCategory == 4}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-tv text-primary"></i>

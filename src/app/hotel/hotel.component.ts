@@ -91,7 +91,8 @@ export class HotelComponent implements OnInit {
   //     opAmount: 1000
   //   }
   // ];
-  openTab = 1;
+
+  openTab:any = 1;
   //DEFAULT SELECTED OP DETAILS - EP
   // selectedOpPlanDetails: any = this.OpPlanDetails[0];
 
