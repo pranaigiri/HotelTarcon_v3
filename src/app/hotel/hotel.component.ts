@@ -13,7 +13,7 @@ import {
 } from '@angular/forms';
 import { WindowRefService } from '../service/window-ref.service';
 import { PaymentService } from '../service/payment.service';
-import { catchError, finalize, throwError } from 'rxjs';
+import { catchError, finalize, min, throwError } from 'rxjs';
 
 import Swal from 'sweetalert2';
 import { OrdersuccessComponent } from './ordersuccess/ordersuccess.component';
@@ -156,6 +156,7 @@ export class HotelComponent implements OnInit {
 
   //for new phone numebr input on checkout
   CountryISO = CountryISO;
+  preferredCountries: CountryISO[] = [CountryISO.India, CountryISO.Bhutan, CountryISO.Nepal, CountryISO.Bangladesh];
 
   selectedChange(m: any) {
 
@@ -307,7 +308,7 @@ export class HotelComponent implements OnInit {
   form: FormGroup = new FormGroup({
     fullname: new FormControl(''),
     email: new FormControl(''),
-    phone: new FormControl(''),
+    phone: new FormControl(undefined, [Validators.required]),
     adults: new FormControl(0),
     children: new FormControl(0),
   });
@@ -398,17 +399,17 @@ export class HotelComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
 
       phone: [
-        '',
+        undefined,
         [
           Validators.required,
-          Validators.minLength(10),
-          Validators.maxLength(10),
+          Validators.minLength(7),
+          Validators.maxLength(15)
         ],
       ],
 
-      adults: ['', [Validators.required, Validators.max(50)]],
+      adults: ['', [Validators.required, Validators.max(5)]],
 
-      children: ['', [Validators.required, Validators.max(50)]],
+      children: ['', [Validators.required, Validators.max(3)]],
 
     });
 
@@ -424,6 +425,7 @@ export class HotelComponent implements OnInit {
     console.log("FORM", this.form);
 
     this.submitted = true;
+    
     if (this.form.invalid) {
       this.contactInfoComplete = false;
       return;
@@ -432,6 +434,7 @@ export class HotelComponent implements OnInit {
     }
 
     this.customerDetails = this.form.value;
+    console.log(this.customerDetails);
   }
   onReset(): void {
     this.submitted = false;
@@ -471,12 +474,14 @@ export class HotelComponent implements OnInit {
     //console.log("-------START - createOrder")
 
     let orderDetails: any = {
-      customerPhone: this.customerDetails.phone || "",
+      customerPhone: this.customerDetails.phone.e164Number || "",
       selectedRoomCategory: this.selectedRoomDetails.categoryId,
       selectedRoomName: this.selectedRoomDetails.categoryName,
       selectedRoomAmount: this.selectedRoomDetails.amount,
-      // selectedOpPlan: this.selectedOpPlanDetails.opName,
-      // selectedOpAmount: this.selectedOpPlanDetails.opAmount,
+      // selectedOpPlan: this.selectedOpPlanDetails.opName || "",
+      // selectedOpAmount: this.selectedOpPlanDetails.opAmount || 0,
+      selectedOpPlan: "",
+      selectedOpAmount: 0,
       breakfast: false,
       lunch: false,
       dinner: false,
@@ -532,7 +537,7 @@ export class HotelComponent implements OnInit {
       prefill: {
         name: this.customerDetails.fullname,
         email: this.customerDetails.email,
-        contact: this.customerDetails.phone
+        contact: this.customerDetails.phone.e164Number
       },
       modal: {
         // We should prevent closing of the form when esc key is pressed.

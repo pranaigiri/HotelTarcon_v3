@@ -620,16 +620,20 @@
                 <div class="form-group col-12 col-md-6 col-xl-4">
 
                   <div class="input-group">
+
                     <!-- <div class="input-group-prepend">
                       <span class="input-group-text h-100">
                         <i class="fa-solid fa-phone text-muted"></i>
                       </span>
                     </div> -->
 
-                    <ngx-intl-tel-input class="w-100 newphone-input" [maxLength]="10" [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
-                      [searchCountryFlag]="true" [phoneValidation]="true" [selectedCountryISO]="CountryISO.India"
-                      [customPlaceholder]="'XXXXXXXXXX'" [separateDialCode]="true" formControlName="phone"
-                      [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+                    <ngx-intl-tel-input minlength="6" [maxLength]="15" class="w-100 newphone-input" 
+                    [preferredCountries]="preferredCountries"
+                    [enablePlaceholder]="true"
+                    [searchCountryFlag]="true"  
+                    [phoneValidation]="true"
+                    [separateDialCode]="true" formControlName="phone"
+                    [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
                     </ngx-intl-tel-input>
 
                     <!-- <input type="tel" placeholder="Phone Number" formControlName="phone" class="form-control"
@@ -641,11 +645,7 @@
                       <div *ngIf="f['phone'].errors['required']">
                         Phone number is required
                       </div>
-                      <div *ngIf="f['phone'].errors['phone']">Phone Number is invalid</div>
-                      <div
-                        *ngIf="f['phone'].errors['minlength'] || f['phone'].errors['maxlength'] || f['phone'].errors['validatePhoneNumber']">
-                        Phone number needs to be exactly 10
-                      </div>
+                      <div *ngIf="f['phone'].errors['phone'] || f['phone'].errors['validatePhoneNumber']">Invalid Phone Number</div>
                     </div>
 
                   </div>
@@ -660,17 +660,17 @@
                         <i class="fa-solid fa-user text-muted"></i>
                       </span>
                     </div>
-                    <input type="number" placeholder="Total No. of Person" formControlName="totalperson"
+                    <input type="number" placeholder="Total No. of Person" formControlName="adults"
                       class="form-control" [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
                     <div *ngIf="submitted && f['adults'].errors" class="invalid-feedback">
                       <div *ngIf="f['adults'].errors['required']">
-                        Total No. of Person is required
+                        Total No. of Adults is required
                       </div>
                       <div *ngIf="f['adults'].errors['adults']">
-                        Total Person is invalid
+                        Total Adults is invalid
                       </div>
                       <div *ngIf="f['adults'].errors['max']">
-                        Maximum 50 Person Allowed
+                        Maximum 5 Adults Allowed
                       </div>
                     </div>
                   </div>
@@ -695,7 +695,7 @@
                         Total Children is invalid
                       </div>
                       <div *ngIf="f['children'].errors['max']">
-                        Maximum 50 Children Allowed
+                        Maximum 3 Childrens are Allowed
                       </div>
                     </div>
                   </div>

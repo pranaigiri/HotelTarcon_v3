@@ -58,9 +58,8 @@
                     <div class="row form-group mt-3">
                         <div class="col-md-6 mt-3 mt-md-0">
                             <ngx-intl-tel-input [enableAutoCountrySelect]="true" [enablePlaceholder]="true"
-                                [searchCountryFlag]="true" [phoneValidation]="true"
-                                [selectedCountryISO]="CountryISO.India" [maxLength]="10"
-                                [customPlaceholder]="'XXXXXXXXXX'" [separateDialCode]="true" name="phone" required
+                                [searchCountryFlag]="true" [phoneValidation]="true" [preferredCountries]="preferredCountries"
+                                [selectedCountryISO]="CountryISO.India" [maxLength]="10" [separateDialCode]="true" name="phone" required
                                 [(ngModel)]="form.phone" maxlength="100">
                             </ngx-intl-tel-input>
                         </div>

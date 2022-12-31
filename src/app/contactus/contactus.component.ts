@@ -18,6 +18,8 @@ export class ContactusComponent implements OnInit {
 
   form:any = {};
   CountryISO = CountryISO; //for initial selected country enum in international telephone list
+  preferredCountries: CountryISO[] = [CountryISO.India, CountryISO.Bhutan, CountryISO.Nepal, CountryISO.Bangladesh];
+
 
   postForm() {
     // this.apiService.postData("ContactUs/PostContactUs", this.form).subscribe((res: any) => {
