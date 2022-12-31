@@ -224,8 +224,6 @@ export class HotelComponent implements OnInit {
 
     this.totalCostWithTax = this.totalCost + (this.totalCost * this.TAX);
 
-    console.log("TS", this.totalCost, "TAX", this.TAX, "TSWT", this.totalCostWithTax);
-
   }
 
 

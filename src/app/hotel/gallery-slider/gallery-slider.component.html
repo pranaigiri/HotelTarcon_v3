@@ -1,6 +1,6 @@
 <div class="container-fluid px-0 mx-0 main-img-container skeleton-box rounded">
   <swiper style="--swiper-navigation-color: #fff;--swiper-pagination-color: #fff" [loop]="true" [spaceBetween]="10"
-  [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2">
+  [navigation]="true" [thumbs]="{ swiper: thumbsSwiper }" class="mySwiper2 zero-opacity">
 
   <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
     <img src="../../../{{src}}" class="fadeIn" width="3008" height="1688"/>
@@ -12,7 +12,7 @@
 
 <div class="container-fluid px-0 mx-0 thumb-container skeleton-box rounded">
   <swiper (swiper)="thumbsSwiper = $event" [loop]="true" [spaceBetween]="10" [slidesPerView]="4" [freeMode]="true"
-  [watchSlidesProgress]="true" class="mySwiper bg-white py-0 my-0">
+  [watchSlidesProgress]="true" class="mySwiper bg-white py-0 my-0 zero-opacity">
 
   <ng-template swiperSlide *ngFor="let src of activeCategory.src; let i = index">
     <img src="../../../{{src}}" (load)="loadMessage()" class="fadeInDelayed" width="3008" height="1688"/>
