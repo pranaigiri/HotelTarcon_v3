@@ -1,4 +1,5 @@
-<div class="container">
+<app-policy-header [expectedHeaderName]="headerName"></app-policy-header>
+<div class="container privacy-policy-container px-5 mb-5 policies">
   <h1>Online Booking (RazorPay)</h1>
   <p class="text-muted">Last updated: November 20, 2022</p>
   <h3>Processing Time</h3>
@@ -7,28 +8,28 @@
     or card balance.</p>
   <p>The time taken to process a normal refund depends on the payment mode used while making the payment.</p>
 
-  <table class="center table-bordered px-5 w-50">
+  <table class="center table-bordered px-5 w-100">
     <thead class="bg-light">
       <tr>
-        <th class="p-3">Payment Method</th>
-        <th class="p-3">Refund Time</th>
+        <th class="p-3 col-6">Payment Method</th>
+        <th class="p-3 col-6">Refund Time</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td class="p-3"><kbd>credit</kbd> or <kbd>debit cards</kbd></td>
+        <td class="p-3"><kbd class="bg-secondary">credit</kbd> or <kbd class="bg-secondary">debit cards</kbd></td>
         <td class="p-3">5-10 days</td>
       </tr>
       <tr>
-        <td class="p-3"><kbd>netbanking</kbd></td>
+        <td class="p-3"><kbd class="bg-secondary">netbanking</kbd></td>
         <td class="p-3">2-10 days</td>
       </tr>
       <tr>
-        <td class="p-3"><kbd>wallet</kbd></td>
+        <td class="p-3"><kbd class="bg-secondary">wallet</kbd></td>
         <td class="p-3">0-3 days</td>
       </tr>
       <tr>
-        <td class="p-3"><kbd>upi</kbd></td>
+        <td class="p-3"><kbd class="bg-secondary">upi</kbd></td>
         <td class="p-3">2-7 days</td>
       </tr>
     </tbody>

@@ -9,6 +9,9 @@ export class PrivacypolicyComponent implements OnInit {
 
   constructor() { }
 
+  //HEADER NAME
+  headerName:string = "PRIVACY POLICY"
+
   ngOnInit() {
   }
 

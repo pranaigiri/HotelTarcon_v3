@@ -3,21 +3,21 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
 
-import { SliderComponent } from './slider.component';
+import { PolicyHeaderComponent } from './policy-header.component';
 
-describe('SliderComponent', () => {
-  let component: SliderComponent;
-  let fixture: ComponentFixture<SliderComponent>;
+describe('PolicyHeaderComponent', () => {
+  let component: PolicyHeaderComponent;
+  let fixture: ComponentFixture<PolicyHeaderComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SliderComponent ]
+      declarations: [ PolicyHeaderComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(SliderComponent);
+    fixture = TestBed.createComponent(PolicyHeaderComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

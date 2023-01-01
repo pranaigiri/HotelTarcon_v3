@@ -493,3 +493,49 @@ html{
   .newphone-input div.separate-dial-code{
 	width: 100%;
   }
+
+
+
+  
+// POLICIES
+
+.policies{
+	h1{
+		padding-top: 28px;
+		font-size: 2rem;
+		text-align: center;
+	}
+	h2{
+		font-size: 1.5rem;
+		padding-top: 12px;
+		text-align: center;
+	}
+	h3{
+		font-size: 1rem;
+		padding-top: 12px;
+		text-align: center;
+	}
+	p, li{
+		font-size: .8rem;
+		text-align: justify;
+	}
+	
+	@media (max-width: 767.98px) {
+		h1{
+			font-size: 1.5rem;
+		}
+		h2{
+			font-size: 1rem;
+		}
+		h3{
+			font-size: .8rem;
+		}
+		p, li{
+			font-size: .7rem;
+		}
+	  }
+	
+	
+	
+	  
+}

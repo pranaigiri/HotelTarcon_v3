@@ -20,7 +20,6 @@ export class SliderComponent implements OnInit {
 
   constructor(private router: Router, private eventEmitterService: EventEmitterService,
     private ngZone: NgZone, private scroller: ViewportScroller) {
-
   }
 
   //CALL NAV COMPONENT FUNCTION
@@ -86,7 +85,7 @@ export class SliderComponent implements OnInit {
     // console.log("ru", this.router.url);
     // console.log("lp", location.pathname);
     // console.log("slideindex", slideIndex);
-    slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : this.router.navigate(['/', '/']);
+    slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : null;
   }
 
 

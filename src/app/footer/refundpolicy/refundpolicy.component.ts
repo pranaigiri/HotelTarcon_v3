@@ -7,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RefundpolicyComponent implements OnInit {
 
+    //HEADER NAME
+    headerName:string = "REFUND POLICY"
+
   constructor() { }
 
   ngOnInit() {

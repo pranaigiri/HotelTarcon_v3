@@ -1,0 +1,58 @@
+/* Policy header */
+
+.policies-heading{
+    font-size: 3rem;
+  }
+
+  .info-slider-container{
+    position: relative;
+    padding: 8rem 0rem 6rem 0rem;
+    width: 100%;
+    background-image: linear-gradient(180deg, #865a49, #41301c);
+}
+
+.info-slider-container::after{
+    content: "";
+    background: url('../../../assets/travel-pattern.png') repeat 0 0;
+    background-size: cover;
+    box-sizing: border-box;
+    animation: infiniteSlide 20s linear infinite;
+    opacity: 0.1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: 1;
+}
+
+  @keyframes infiniteSlide {
+      from { background-position: 0 0; }
+      to { background-position: 0 -400px; }
+  }
+
+.policies-heading{
+    background: linear-gradient(92deg, #ffc955, #fff3dc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.policy-link{
+    color: rgb(160, 160, 160);
+}
+
+.policy-link.active{
+    color: orange;
+}
+
+@media (max-width: 768px) {
+    
+  .policies-heading{
+    font-size: 2rem;
+  }
+
+    .info-slider-container{
+        padding: 4rem 0 2rem 0;
+    }
+}
+

@@ -35,8 +35,6 @@ import { EventEmitterService } from './event-emitter.service';
 
 //FOR FIREBASE HOSTING
 // Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
 import { ApiService } from './service/api.service';
 import { GallerySliderComponent } from './hotel/gallery-slider/gallery-slider.component';
 import { NgxUiLoaderConfig,SPINNER,POSITION,PB_DIRECTION, NgxUiLoaderHttpModule, NgxUiLoaderModule, NgxUiLoaderRouterModule } from 'ngx-ui-loader';
@@ -51,6 +49,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxPrintModule } from 'ngx-print';
 import { OrdersuccessComponent } from './hotel/ordersuccess/ordersuccess.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
+import { PolicyHeaderComponent } from './footer/policy-header/policy-header.component';
 
 
 
@@ -86,7 +85,7 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
   "minTime": 300
 }
 @NgModule({
-  declarations: [																			
+  declarations: [																									
     AppComponent,
     NavbarComponent,
     SliderComponent,
@@ -110,7 +109,8 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
       TermsandconditionsComponent,
       OrdersuccessComponent,
       FaqComponent,
-      RefundpolicyComponent
+      RefundpolicyComponent,
+      PolicyHeaderComponent
    ],
   imports: [
     BrowserModule,
