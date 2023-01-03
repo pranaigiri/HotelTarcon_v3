@@ -314,6 +314,9 @@ export class HotelComponent implements OnInit {
 
   ngOnInit() {
 
+    setTimeout(() => {
+      window.scrollTo(0,0);
+    }, 10);
 
     //ASSIGN VALUES OF PRICES AND TAXES
     this.TAX = 0.12;

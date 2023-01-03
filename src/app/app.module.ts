@@ -50,6 +50,7 @@ import { NgxPrintModule } from 'ngx-print';
 import { OrdersuccessComponent } from './hotel/ordersuccess/ordersuccess.component';
 import { NgxIntlTelInputModule } from 'ngx-intl-tel-input';
 import { PolicyHeaderComponent } from './footer/policy-header/policy-header.component';
+import { NewAboutUsComponent } from './footer/new-about-us/new-about-us.component';
 
 
 
@@ -110,7 +111,8 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
       OrdersuccessComponent,
       FaqComponent,
       RefundpolicyComponent,
-      PolicyHeaderComponent
+      PolicyHeaderComponent,
+      NewAboutUsComponent
    ],
   imports: [
     BrowserModule,

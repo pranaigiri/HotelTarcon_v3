@@ -33,6 +33,7 @@ export class SliderComponent implements OnInit {
   }
 
   getInitialIndex() {
+    debugger
     return location.pathname == "/bar" ? 3 : location.pathname == "/restaurant" ? 2 : location.pathname == "/hotel" ? 1 : 0;
   }
 
@@ -77,7 +78,6 @@ export class SliderComponent implements OnInit {
 
 
   ngOnInit() {
-
   }
 
   //UPDATE SLIDE AND PAGE ON PAGINATION CLICK
@@ -90,12 +90,10 @@ export class SliderComponent implements OnInit {
 
 
   @HostListener('click', ['$event']) onMouseClick(event: any) {
-    //console.log(event.target.id);
+    console.log(event.target.id);
     this.updateNavItems(event.target.id);
     this.updateCheckInForm(event.target.id);
-
   }
-
 
   scrollFunc(obj: any) {
     this.scroller.scrollToAnchor(obj)

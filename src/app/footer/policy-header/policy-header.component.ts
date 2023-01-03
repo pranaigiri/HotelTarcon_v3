@@ -13,6 +13,9 @@ export class PolicyHeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      window.scrollTo(0,0);
+    }, 10);
   }
 
 }

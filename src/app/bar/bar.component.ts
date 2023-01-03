@@ -469,6 +469,9 @@ export class BarComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    setTimeout(() => {
+      window.scrollTo(0,0);
+    }, 10);
   }
 
   filterMenu(category: any) {

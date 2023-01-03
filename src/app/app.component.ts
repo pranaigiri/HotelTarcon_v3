@@ -17,4 +17,18 @@ export class AppComponent {
   ngOnInit() {
     this.ngxLoader.stop();
   }
+
+  trimmedHomeUrl(){
+    let dirtyUrl = this.router.url;
+    if(dirtyUrl.split('#')[0] == '/' 
+    || dirtyUrl.split('#')[0] == '/home' 
+    || dirtyUrl.split('#')[0] == '/hotel' 
+    || dirtyUrl.split('#')[0] == '/restaurant'
+    || dirtyUrl.split('#')[0] == '/bar'){
+      console.log("DL",dirtyUrl);
+      return dirtyUrl;
+    }else{
+      return null
+    }
+  }
 }

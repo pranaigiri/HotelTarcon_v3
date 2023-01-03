@@ -10,29 +10,53 @@ import { EventEmitterService } from '../event-emitter.service';
 export class NavbarComponent implements OnInit {
 
 
+  // allNavMenus:any = {
+  //   defaultNav:[
+  //     {navMenu:"Home", link:"section-home"},
+  //     {navMenu:"Services", link:"section-service"},
+  //     {navMenu:"About", link:"section-about"},
+  //     {navMenu:"Contact", link:"section-contact"}
+  //   ],
+  //   hotelNav:[
+  //     {navMenu:"Home", link:"section-home"},
+  //     {navMenu:"Rooms", link:"section-rooms"},
+  //     {navMenu:"Nearzone", link:"section-nearbypoints"},
+  //     {navMenu:"Availability", link:"section-checkavailability"},
+  //     {navMenu:"Contact", link:"section-contact"}
+  //   ],
+  //   restaurantNav:[
+  //     {navMenu:"Home", link:"section-home"},
+  //     {navMenu:"Food Menu", link:"section-foodmenu"},
+  //     {navMenu:"Contact", link:"section-contact"}
+  //   ],
+  //   barNav:[
+  //     {navMenu:"Home", link:"section-home"},
+  //     {navMenu:"Bar Menu", link:"section-barmenu"},
+  //     {navMenu:"Contact", link:"section-contact"}
+  //   ]
+  // };
+
+  //NEW MENU DESIGN
   allNavMenus:any = {
     defaultNav:[
-      {navMenu:"Home", link:"section-home"},
-      {navMenu:"Services", link:"section-service"},
-      {navMenu:"About", link:"section-about"},
-      {navMenu:"Contact", link:"section-contact"}
+      {navTitle:'Services', url:'', fragment:'div-otherservices'},
+      {navTitle:'Contact', url:'/home', fragment:'div-contactus'},
+      {navTitle:'About', url:'/policy/about-us', fragment:''}
     ],
     hotelNav:[
-      {navMenu:"Home", link:"section-home"},
-      {navMenu:"Rooms", link:"section-rooms"},
-      {navMenu:"Nearzone", link:"section-nearbypoints"},
-      {navMenu:"Availability", link:"section-checkavailability"},
-      {navMenu:"Contact", link:"section-contact"}
+      {navTitle:'Rooms', url:'/hotel', fragment:'section-hotel'},
+      {navTitle:'Contact', url:'/home', fragment:'div-contactus'},
+      {navTitle:'About', url:'/policy/about-us', fragment:''}
     ],
     restaurantNav:[
-      {navMenu:"Home", link:"section-home"},
-      {navMenu:"Food Menu", link:"section-foodmenu"},
-      {navMenu:"Contact", link:"section-contact"}
+      {navTitle:'Menu', url:'/restaurant', fragment:'section-foodmenu'},
+      {navTitle:'Contact', url:'/home', fragment:'menu-restaurant'},
+      {navTitle:'About', url:'/policy/about-us', fragment:''}
     ],
     barNav:[
-      {navMenu:"Home", link:"section-home"},
-      {navMenu:"Bar Menu", link:"section-barmenu"},
-      {navMenu:"Contact", link:"section-contact"}
+      {navTitle:'Menu', url:'/bar', fragment:'section-bar'},
+      {navTitle:'Contact', url:'/home', fragment:'div-contactus'},
+      {navTitle:'About', url:'/policy/about-us', fragment:''}
     ]
   };
 
@@ -86,6 +110,21 @@ export class NavbarComponent implements OnInit {
       });    
     } 
 
+
+    let phoneNav:any; let burgerIcon:any;
+    setTimeout(() => {
+      phoneNav = document.querySelector(".phone-nav");
+      burgerIcon = document.querySelector("#burger-menu")
+    }, 10);
+
+    window.addEventListener("click", ($event:any) => {
+      if(phoneNav.classList.contains("opened")){
+        if($event.target != phoneNav && $event.target != burgerIcon){
+          this.showHidePhoneNav();
+        }
+      }
+    })
+
   }
 
       //EVENT EMITTER
@@ -122,13 +161,9 @@ export class NavbarComponent implements OnInit {
   
   
     }
-  
-  
-    //toggle phone navbar
-    togglePhoneNav($event:any){
-      
-  
-      let burger:any = $event.target;
+
+    showHidePhoneNav(){
+      let burger:any = document.querySelector(".burger-menu");
       let phonenav:any = document.querySelector(".phone-nav");
   
       burger.classList.add("c-rotate");
@@ -147,6 +182,37 @@ export class NavbarComponent implements OnInit {
   
       setTimeout(() => {
         burger.classList.remove("c-rotate");
+      }, 500);
+  
+
+      setTimeout(() => {
+        document.querySelector(".phone-nav")?.classList.toggle("opened");
+      }, 10);
+    }
+
+    //toggle phone navbar
+    togglePhoneNav($event:any){
+      let burger:any = $event.target;
+      burger.classList.add("pointer-events-none");
+      let phonenav:any = document.querySelector(".phone-nav");
+  
+      burger.classList.add("c-rotate");
+  
+      if(burger.classList.contains("fa-bars")){
+        phonenav.style.display = "block";
+        burger.classList.remove("fa-bars");
+        burger.classList.add("fa-xmark");
+      }else{
+        burger.classList.remove("fa-xmark");
+        burger.classList.add("fa-bars");
+        setTimeout(() => {
+          phonenav.style.display = "none";
+        }, 400);
+      }
+  
+      setTimeout(() => {
+        burger.classList.remove("c-rotate");
+        burger.classList.remove("pointer-events-none");
       }, 500);
   
 

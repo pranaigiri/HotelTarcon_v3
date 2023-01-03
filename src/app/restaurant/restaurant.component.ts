@@ -1346,6 +1346,9 @@ export class RestaurantComponent implements OnInit {
   }
 
   ngOnInit() {
+    setTimeout(() => {
+      window.scrollTo(0,0);
+    }, 10);
   }
 
   filterMenu(category: any) {

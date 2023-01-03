@@ -1,6 +1,6 @@
 <ngx-ui-loader></ngx-ui-loader>
 <app-navbar></app-navbar>
-<app-slider *ngIf="router.url == '/' || router.url == '/home' || router.url == '/hotel' ||router.url == '/restaurant' || router.url == '/bar'"></app-slider>
+<app-slider *ngIf="router.url == '/' || router.url == '/home' || router.url == '/hotel' ||router.url == '/restaurant' || router.url == '/bar' || router.url == trimmedHomeUrl()"></app-slider>
 <router-outlet></router-outlet>
 
 <a href="https://wa.me/7449506745" aria-label="Chat on WhatsApp" class="whatsapp-icon align-items-center d-flex" target="_blank">
