@@ -1,9 +1,12 @@
 <ngx-ui-loader></ngx-ui-loader>
 <app-navbar></app-navbar>
-<app-slider *ngIf="router.url == '/' || router.url == '/home' || router.url == '/hotel' ||router.url == '/restaurant' || router.url == '/bar' || router.url == trimmedHomeUrl()"></app-slider>
+<app-slider
+    *ngIf="router.url == '/' || router.url == '/home' || router.url == '/hotel' ||router.url == '/restaurant' || router.url == '/bar' || router.url == trimmedHomeUrl()">
+</app-slider>
 <router-outlet></router-outlet>
 
-<a href="https://wa.me/7449506745" aria-label="Chat on WhatsApp" class="whatsapp-icon align-items-center d-flex" target="_blank">
+<a href="https://wa.me/7449506745" aria-label="Chat on WhatsApp" class="whatsapp-icon align-items-center d-flex"
+    target="_blank">
     <i class="fa-brands fa-whatsapp fa-3x text-green" aria-hidden="true"></i>
 </a>
 <app-footer></app-footer>
