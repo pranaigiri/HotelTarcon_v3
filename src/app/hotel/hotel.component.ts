@@ -253,6 +253,7 @@ export class HotelComponent implements OnInit {
     this.selectedRoomDetails = this.roomDetails[--value];
     //console.log(this.selectedCategory);
     this.openTab = this.selectedCategory
+    this.updatePriceAndTaxes();
   }
 
   //CHANGE OPTIONAL PLAN ON SELECT
@@ -634,12 +635,12 @@ export class HotelComponent implements OnInit {
       window.scrollTo(0, 0);
     } else {
       Swal.fire({
-        title: 'We recommend saving the invoice?',
+        title: 'Please save your invoice?',
         showDenyButton: true,
         showCancelButton: true,
         confirmButtonText: 'Download',
         confirmButtonColor: '#76d07b',
-        denyButtonText: `Close Invoice`,
+        denyButtonText: `Save Later`,
       }).then((result) => {
         /* Read more about isConfirmed, isDenied below */
         if (result.isConfirmed) {

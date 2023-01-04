@@ -44,7 +44,7 @@ export class SliderComponent implements OnInit {
   config: SwiperOptions = {
     slidesPerView: 1,
     initialSlide: this.getInitialIndex(),
-    allowTouchMove: false,
+    navigation:true,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -84,19 +84,15 @@ export class SliderComponent implements OnInit {
   updateSlideAndPage(slideIndex: any) {
     // console.log("ru", this.router.url);
     // console.log("lp", location.pathname);
-    console.log("slideindex", slideIndex);
-    slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : slideIndex == 1 ? this.router.navigate(['/', 'home']) : null;
+    //console.log("slideindex", slideIndex);
+    slideIndex == 5 ? this.router.navigate(['/', 'home']) : slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : slideIndex == 1 ? this.router.navigate(['/', 'home']) :  slideIndex == 0 ? this.router.navigate(['/', 'bar']) : null;
   }
 
 
   @HostListener('click', ['$event']) onMouseClick(event: any) {
-    console.log(event.target.id);
+    //console.log(event.target.id);
     this.updateNavItems(event.target.id);
     this.updateCheckInForm(event.target.id);
-  }
-
-  scrollFunc(obj: any) {
-    this.scroller.scrollToAnchor(obj)
   }
 
 

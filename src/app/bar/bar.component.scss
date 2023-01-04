@@ -523,3 +523,7 @@ background-color: rgb(218, 70, 29);
       margin-bottom: 30px;
   }
 }
+
+.horizontal-scroll .col{
+  scroll-snap-align: center !important;
+}

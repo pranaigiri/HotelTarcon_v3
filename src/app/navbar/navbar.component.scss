@@ -7,6 +7,7 @@
     top: 0;
     color: white;
     background-image: linear-gradient(to right, rgba(255,255,255,0), rgba(255, 236, 204, 0));
+    user-select: none;
 }
 .c-navbar.expand{
     background-image: linear-gradient(to right, rgba(255,255,255,1), rgba(255, 236, 204, 1));
@@ -60,6 +61,7 @@
 
 .phone-nav{
     display: none;
+    user-select: none;
 }
 .phone-nav .ul .li{
     color: #9a8766;

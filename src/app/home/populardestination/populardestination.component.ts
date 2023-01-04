@@ -14,8 +14,8 @@ export class PopulardestinationComponent implements OnInit {
   }
 
   onWheel(event: WheelEvent): void {
-    if (event.deltaY > 0) document.querySelector('.horizontal-scroll')!.scrollLeft += 400;
-    else document.querySelector('.horizontal-scroll')!.scrollLeft -= 400;
+    if (event.deltaY > 0) document.querySelector('.horizontal-scroll')!.scrollLeft += 300;
+    else document.querySelector('.horizontal-scroll')!.scrollLeft -= 300;
     event.preventDefault();
   }
 

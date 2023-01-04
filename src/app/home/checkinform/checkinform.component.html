@@ -4,7 +4,7 @@
         <div class="block-32" ngClass="">
 
             <!-- FOR HOME AND HOTEL -->
-            <form class="block-form active mb-3">
+            <form class="block-form mb-3" [ngClass]="{'active' : router.url.split('#')[0] == '/' || router.url.split('#')[0] == '/home' || router.url.split('#')[0] == '/hotel'}">
                 <div class="row justify-content-center align-items-end">
                     <div class="col-md-6 mb-3 mb-lg-0 col-lg-3">
                         <div class="checkindate-container d-flex bg-white rounded">
@@ -50,7 +50,7 @@
             </form>
 
             <!-- FOR RESTAURANT -->
-            <form class="block-form">
+            <form class="block-form" [ngClass]="{'active' : router.url.split('#')[0] == '/restaurant'}">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <p>Table Booking coming soon! Stay tuned.</p>
@@ -59,7 +59,7 @@
             </form>
 
             <!-- FOR BAR-->
-            <form method="post" class="block-form" novalidate>
+            <form class="block-form" [ngClass]="{'active' : router.url.split('#')[0] == '/bar'}">
                 <div class="row justify-content-center">
                     <div class="col-12">
                         <p>Feature coming soon! Stay tuned.</p>

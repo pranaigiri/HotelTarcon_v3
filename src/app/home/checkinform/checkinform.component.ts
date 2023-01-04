@@ -35,21 +35,21 @@ export class CheckinformComponent implements OnInit {
     //EVENT EMITTER FUNCTION
     
     updateCheckInForm(paginationName:any){
-      let allCheckInForms = document.querySelectorAll(".block-form");
+      // let allCheckInForms = document.querySelectorAll(".block-form");
 
-      allCheckInForms.forEach(checkInForm => {
-       checkInForm.classList.remove("active");
-      });
-      allCheckInForms[1].parentElement?.setAttribute("style","width:100%");
-      if(paginationName == "swiper-pagination-bullet0" || paginationName == "swiper-pagination-bullet1" || location.pathname == "/" || location.pathname == "/hotel" && paginationName != undefined || ""){
-        allCheckInForms[0].classList.add("active");
-      }else if(paginationName == "swiper-pagination-bullet2" || location.pathname == "/restaurant"){
-        allCheckInForms[1].parentElement?.setAttribute("style","width:auto");
-        allCheckInForms[1].classList.add("active");
-      }else{
-        allCheckInForms[1].parentElement?.setAttribute("style","width:auto");
-        allCheckInForms[2].classList.add("active");
-      }
+      // allCheckInForms.forEach(checkInForm => {
+      //  checkInForm.classList.remove("active");
+      // });
+      // allCheckInForms[1].parentElement?.setAttribute("style","width:100%");
+      // if(paginationName == "swiper-pagination-bullet2" || location.pathname == "/restaurant"){
+      //   allCheckInForms[1].parentElement?.setAttribute("style","width:auto");
+      //   allCheckInForms[1].classList.add("active");
+      // }else if(paginationName == "swiper-pagination-bullet3" || location.pathname == "/bar"){
+      //   allCheckInForms[1].parentElement?.setAttribute("style","width:auto");
+      //   allCheckInForms[2].classList.add("active");
+      // }else{
+      //   allCheckInForms[0].classList.add("active");
+      // }
     }
 
 

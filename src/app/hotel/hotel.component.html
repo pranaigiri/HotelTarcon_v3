@@ -21,7 +21,7 @@
                 [ngClass]="{'active' : selectedCategory == 2}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-bowl-rice text-primary"></i>
-                Suite
+                Deluxe
               </div>
               <div (click)="changeCategory(3); child.changeGalleryCategory(3)"
                 [ngClass]="{'active' : selectedCategory == 3}"
@@ -33,7 +33,7 @@
                 [ngClass]="{'active' : selectedCategory == 4}"
                 class="col-6 col-lg-3 p-3 p-lg-2 d-flex gap-2 text-uppercase justify-content-center align-items-center category-filter-link">
                 <i class="fa-solid fa-tv text-primary"></i>
-                Deluxe
+                Suite
               </div>
             </div>
           </div>
@@ -508,6 +508,7 @@
 
 
   </div>
+  
 </section>
 
 <div class="checkout-form overflow-y-scroll" *ngIf="checkOutForm">
