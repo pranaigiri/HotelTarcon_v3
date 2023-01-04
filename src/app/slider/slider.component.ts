@@ -44,7 +44,7 @@ export class SliderComponent implements OnInit {
   config: SwiperOptions = {
     slidesPerView: 1,
     initialSlide: this.getInitialIndex(),
-    navigation: true,
+    allowTouchMove: false,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
@@ -84,8 +84,8 @@ export class SliderComponent implements OnInit {
   updateSlideAndPage(slideIndex: any) {
     // console.log("ru", this.router.url);
     // console.log("lp", location.pathname);
-    // console.log("slideindex", slideIndex);
-    slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : null;
+    console.log("slideindex", slideIndex);
+    slideIndex == 4 ? this.router.navigate(['/', 'bar']) : slideIndex == 3 ? this.router.navigate(['/', 'restaurant']) : slideIndex == 2 ? this.router.navigate(['/', 'hotel']) : slideIndex == 1 ? this.router.navigate(['/', 'home']) : null;
   }
 
 
