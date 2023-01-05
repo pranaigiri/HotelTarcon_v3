@@ -1,7 +1,7 @@
 <!-- Check Room Availibility Start -->
 <div class="container">
-    <div class="row check-availabilty text-center container mx-0 px-0" id="next checkin-form-id">
-        <div class="block-32" ngClass="">
+    <div class="row text-center container mx-0 px-0" id="checkin-form-id">
+        <div class="block-32" [ngClass]="{'w-auto' : router.url.split('#')[0] == '/bar' || router.url.split('#')[0] == '/restaurant'}">
 
             <!-- FOR HOME AND HOTEL -->
             <form class="block-form mb-3" [ngClass]="{'active' : router.url.split('#')[0] == '/' || router.url.split('#')[0] == '/home' || router.url.split('#')[0] == '/hotel'}">

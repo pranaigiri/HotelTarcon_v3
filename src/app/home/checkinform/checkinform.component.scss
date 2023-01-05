@@ -1,12 +1,6 @@
 // Check Room Availibility
 
-.check-availabilty {
-    position: relative;
-    z-index: 10;
-    top: -120px;
-}
-
-.check-availabilty .block-32 {
+#checkin-form-id .block-32 {
     background: linear-gradient(273deg, #fffefc, #fff4e1) !important;
     border-radius: 10px;
 

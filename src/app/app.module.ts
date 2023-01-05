@@ -121,7 +121,6 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
     HttpClientModule,
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     NgxUiLoaderHttpModule.forRoot(ngxUiLoaderConfig),
-    NgxUiLoaderRouterModule,
     BrowserAnimationsModule,
     NgxIntlTelInputModule,
 

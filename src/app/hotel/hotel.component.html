@@ -5,8 +5,55 @@
     <div class="container">
       <div class="row">
 
-        <!-- HOTEL CATEGORY INFO CONTAINER -->
-        <div class="col-12 col-lg-8">
+        <!-- CALENDAR CONTAINER -->
+        <div class="col-12 col-lg-3 px-0 px-md-2 pb-0 order-3 order-lg-1">
+
+
+          <h1 class="plan-title text-center px-4 mb-3">Select Date</h1>
+
+          <!-- CALENDAR CONTAINER -->
+          <div class="container px-0 my-3">
+            <mat-card>
+              <mat-calendar [dateFilter]="disableDateFilter" [selected]="selectedRangeValue"
+                (selectedChange)="selectedChange($event)" [minDate]="yesterday"></mat-calendar>
+            </mat-card>
+          </div>
+
+          <!-- FROM TO CONTAINER -->
+          <div class="container mb-5">
+
+            <div class="row from-to-container py-2" *ngIf="!selectedRangeValue.start && !selectedRangeValue.end">
+              <div class="col-12 text-center d-flex flex-column align-content-center">
+                <p class="mb-0">Please select your date</p>
+                <p class="dark-title-cursive mb-0">On / From - To</p>
+              </div>
+            </div>
+
+            <div class="row from-to-container py-2" *ngIf="selectedRangeValue.start && noOfDaysSelected <= 1">
+              <div class="col-12 text-center d-flex flex-column align-content-center">
+                <p class="mb-0">ON</p>
+                <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
+              </div>
+            </div>
+
+            <div class="row from-to-container py-2"
+              *ngIf="selectedRangeValue.start && selectedRangeValue.end && noOfDaysSelected > 1">
+              <div class="col-6 text-center d-flex flex-column align-content-center">
+                <p class="mb-0">FROM</p>
+                <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
+              </div>
+              <div class="col-6 text-center d-flex flex-column align-content-center border-start">
+                <p class="mb-0">TO</p>
+                <p class="dark-title-cursive mb-0">{{selectedRangeValue.end | date:'d MMM y'}}</p>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+        <!-- HOTEL GALLERY CONTAINER -->
+        <div class="col-12 col-lg-6 px-0 px-md-2 pb-4 order-1 order-lg-2">
 
           <!-- CATEGORY FILTER CONTAINER -->
           <div class="container category-filter-container tarcon-gradient-bg mb-2 px-4 py-1" id="category-filter">
@@ -44,13 +91,19 @@
           </div>
 
 
+
+
+        </div>
+
+        <!-- FEATURES CONTAINER -->
+        <div class="col-12 col-lg-12 px-0 px-md-2 pb-4 order-2 order-lg-4">
           <!-- CATEGORY DETAILS CONTAINER -->
           <div class="contanier category-details-container">
 
             <!-- FEATURES CONTAINER -->
             <!-- Suite Features -->
-            <div *ngIf="openTab == 2" class="row my-5 gap-2">
-              <h1 class="title">Suite Features</h1>
+            <div *ngIf="selectedCategory == 4" class="row mt-0 gap-2">
+              <h1 class="title">Suite Room Features</h1>
               <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
                 <div class="col">
                   <i class="fa-solid fa-couch"></i>
@@ -82,18 +135,18 @@
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bed"></i>
-                  Extra Bed <span class="text-muted">(Extra charge)</span>
+                  Extra Bed <span class="text-muted">(Charges apply)</span>
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bolt"></i>
-                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Extra charge)</span>
+                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Charges apply)</span>
                 </div>
               </div>
             </div>
 
             <!-- Hill View Features -->
-            <div *ngIf="openTab == 3" class="row my-5 gap-2">
-              <h1 class="title">Hill View Features</h1>
+            <div *ngIf="selectedCategory == 3" class="row my-0 gap-2">
+              <h1 class="title">Hill View Room Features</h1>
               <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
                 <div class="col">
                   <i class="fa-solid fa-couch"></i>
@@ -129,18 +182,18 @@
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bed"></i>
-                  Extra Bed <span class="text-muted">(Extra charge)</span>
+                  Extra Bed <span class="text-muted">(Charges apply)</span>
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bolt"></i>
-                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Extra charge)</span>
+                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Charges apply)</span>
                 </div>
               </div>
             </div>
-            
+
             <!-- Deluxe Features -->
-            <div *ngIf="openTab == 4" class="row my-5 gap-2">
-              <h1 class="title">Deluxe Features</h1>
+            <div *ngIf="selectedCategory == 2" class="row my-0 gap-2">
+              <h1 class="title">Deluxe Room Features</h1>
               <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
                 <div class="col">
                   <i class="fa-solid fa-couch"></i>
@@ -172,18 +225,18 @@
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bed"></i>
-                  Extra Bed <span class="text-muted">(Extra charge)</span>
+                  Extra Bed <span class="text-muted">(Charges apply)</span>
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bolt"></i>
-                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Extra charge)</span>
+                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Charges apply)</span>
                 </div>
               </div>
             </div>
 
             <!-- Standard Features -->
-            <div *ngIf="openTab == 1" class="row my-5 gap-2">
-              <h1 class="title">Standard Features</h1>
+            <div *ngIf="selectedCategory == 1" class="row my-0 gap-2">
+              <h1 class="title text-center text-lg-start">Standard Room Features</h1>
               <div class="row gap-2 row-cols-6 mx-0 px-3 features-container">
                 <div class="col">
                   <i class="fa-solid fa-couch"></i>
@@ -215,11 +268,11 @@
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bed"></i>
-                  Extra Bed <span class="text-muted">(Extra charge)</span>
+                  Extra Bed <span class="text-muted">(Charges apply)</span>
                 </div>
                 <div class="col">
                   <i class="fa-solid fa-bolt"></i>
-                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Extra charge)</span>
+                  Iron, Dryer, Heater, Trimmer <span class="text-muted">(Charges apply)</span>
                 </div>
               </div>
             </div>
@@ -229,189 +282,24 @@
             <!-- <hr class="hr-class"> -->
 
             <!-- DESCRIPTION CONTAINER -->
-            <!-- <div class="row my-5 gap-2">
-              <h1 class="title">Description</h1>
-              <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, libero tempora quo et magnam beatae
-                reprehenderit inventore ex qui quidem.</p>
-            </div> -->
+            <!-- <div class="row my-0 gap-2">
+            <h1 class="title">Description</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facere, libero tempora quo et magnam beatae
+              reprehenderit inventore ex qui quidem.</p>
+          </div> -->
           </div>
-
         </div>
-        <!-- END HOTEL CATEGORY INFO CONTAINER -->
 
-
-        <!-- RIGHT CONTAINER -->
-        <div class="col-12 col-lg-4 px-0 px-md-2">
-
-          <h1 class="checkout-title">Checkout</h1>
-
-
-          <!-- CALENDAR CONTAINER -->
-          <div class="container px-0 my-3">
-            <mat-card>
-              <mat-calendar [dateFilter]="disableDateFilter" [selected]="selectedRangeValue"
-                (selectedChange)="selectedChange($event)" [minDate]="yesterday"></mat-calendar>
-            </mat-card>
-          </div>
-
+        <!-- SUMMARY CONTAINER -->
+        <div class="col-12 col-lg-3 px-0 px-md-2 pb-5 order-4 order-lg-3">
           <!-- UNHIDE OP PLANS, SUMMARY, PRICE DETAILS IF DATE SELECTED-->
           <div class="container px-0 px-md-2">
 
-            <!-- FROM TO CONTAINER -->
-            <div class="container mb-5">
-
-              <div class="row from-to-container" *ngIf="!selectedRangeValue.start && !selectedRangeValue.end">
-                <div class="col-12 text-center d-flex flex-column align-content-center">
-                  <p class="mb-0">Please select your date</p>
-                  <p class="dark-title-cursive mb-0">On / From - To</p>
-                </div>
-              </div>
-
-              <div class="row from-to-container" *ngIf="selectedRangeValue.start && noOfDaysSelected <= 1">
-                <div class="col-12 text-center d-flex flex-column align-content-center">
-                  <p class="mb-0">ON</p>
-                  <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
-                </div>
-              </div>
-
-              <div class="row from-to-container"
-                *ngIf="selectedRangeValue.start && selectedRangeValue.end && noOfDaysSelected > 1">
-                <div class="col-6 text-center d-flex flex-column align-content-center">
-                  <p class="mb-0">FROM</p>
-                  <p class="dark-title-cursive mb-0">{{selectedRangeValue.start | date:'d MMM y'}}</p>
-                </div>
-                <div class="col-6 text-center d-flex flex-column align-content-center border-start">
-                  <p class="mb-0">TO</p>
-                  <p class="dark-title-cursive mb-0">{{selectedRangeValue.end | date:'d MMM y'}}</p>
-                </div>
-              </div>
-            </div>
-
-
-            <!-- WARNING - DO NOT REMOVE COMMENTED CODES -->
-
-            <!-- EP, CP, AP, PLAN CONTAINER -->
-            <!-- <div class="container my-5">
-              <div class="row">
-
-                <h1 class="plan-title text-center px-4 mb-">Meal Plans</h1>
-                <p class="plan-cost text-center mb-3">BREAKFAST &nbsp;&nbsp; - &nbsp;&nbsp;&nbsp;
-                  LUNCH &nbsp;&nbsp; - &nbsp;&nbsp;&nbsp; DINNER</p>
-
-                <div class="container plan-icons-container shadow-sm py-3">
-                  <div class="row justify-content-between px-4">
-                    <div class="col-5 col-lg-4 text-primary-dark"><small><b>MEAL</b></small></div>
-                    <div class="col px-0"><small><i class="fa-solid fa-bread-slice"></i></small></div>
-                    <div class="col px-0"><small><i class="fa-solid fa-burger"></i></small></div>
-                    <div class="col px-0"><small><i class="fa-solid fa-utensils"></i></small></div>
-                    <div class="col-1 px-0"></div>
-                  </div>
-                </div>
-
-
-                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 1}" for="epPlan">
-                  <div class="row justify-content-between px-4">
-                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">EP<small
-                        class="plan-cost">(+ ₹300)</small></div>
-                    <div class="col px-0">
-                      <small>
-                        <i class="fa-solid fa-check text-success"></i>
-                      </small>
-                    </div>
-                    <div class="col px-0">
-                      <small>
-                        <i class="fa-solid fa-xmark text-danger"></i>
-                      </small>
-                    </div>
-                    <div class="col px-0">
-                      <small>
-                        <i class="fa-solid fa-xmark text-danger"></i>
-                      </small>
-                    </div>
-                    <div class="col-1 px-0 text-end">
-                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" id="epPlan" value="1"
-                        (click)="changePlan(1)">
-                    </div>
-                  </div>
-                </label>
-
-                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 2}" for="cpPlan">
-                  <div class="row justify-content-between px-4" for="cpPlan">
-                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">CP<small
-                        class="plan-cost">(+ ₹500)</small></div>
-                    <div class="col px-0"><small>
-                        <i class="fa-solid fa-check text-success"></i>
-                      </small></div>
-                    <div class="col px-0"><small>
-                        <i class="fa-solid fa-check text-success"></i>
-                      </small></div>
-                    <div class="col px-0"><small>
-                        <i class="fa-solid fa-xmark text-danger"></i>
-                      </small></div>
-                    <div class="col-1 px-0 text-end">
-                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" id="cpPlan" value="2"
-                        (click)="changePlan(2)">
-                    </div>
-                  </div>
-                </label>
-
-                <label class="container plan-container py-3" [ngClass]="{'active' : selectedPlan == 3}" for="apPlan">
-                  <div class="row justify-content-between px-4" for="apPlan">
-                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">AP<small
-                        class="plan-cost">(+ ₹1000)</small></div>
-                    <div class="col px-0"><small>
-                        <i class="fa-solid fa-check text-success"></i>
-                      </small></div>
-                    <div class="col px-0"><small>
-                        <i class="fa-solid fa-check text-success"></i>
-                      </small></div>
-                    <div class="col px-0"><small>
-                        <i class="fa-solid fa-check text-success"></i>
-                      </small></div>
-                    <div class="col-1 px-0 text-end">
-                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" value="3" id="apPlan"
-                        (click)="changePlan(3)">
-                    </div>
-                  </div>
-                </label>
-
-                <label class="container plan-container py-3 map-plan-label" [ngClass]="{'active' : selectedPlan == 4}"
-                  for="mapPlan">
-                  <div class="row justify-content-between px-4" for="mapPlan">
-                    <div class="col-5 col-lg-4 d-flex align-items-center gap-2">MAP<small
-                        class="plan-cost">(+ ₹1000)</small></div>
-
-                    <div class="col px-0 map-li" (click)="changePlan(4)">
-                      <input type="checkbox" id="breakfast" value="1" class="form-check-input map-checkbox"
-                        [(ngModel)]="OpPlanDetails[3].opSelection.breakfast">
-                    </div>
-                    <div class="col px-0 map-li" (click)="changePlan(4)">
-                      <input type="checkbox" id="lunch" value="2" class="form-check-input map-checkbox"
-                        [(ngModel)]="OpPlanDetails[3].opSelection.lunch">
-                    </div>
-                    <div class="col px-0 map-li" (click)="changePlan(4)">
-                      <input type="checkbox" id="dinner" value="3" class="form-check-input map-checkbox"
-                        [(ngModel)]="OpPlanDetails[3].opSelection.dinner">
-                    </div>
-
-
-                    <div class="col-1 px-0 text-end">
-                      <input class="form-check-input opPlanRadio" type="radio" name="opPlanRadio" value="4" id="mapPlan"
-                        (click)="changePlan(4)">
-                    </div>
-                  </div>
-                </label>
-                <small class="text-danger px-4 text-end" *ngIf="selectedPlan == 4 && mapCount < 2"><small>Select at
-                    least 2 option.</small></small>
-              </div>
-            </div> -->
-
-
             <!-- PRICE SUMMARY -->
-            <div class="container mt-5 mb-3 mx-0 px-0 border-bottom">
-              <h1 class="plan-title text-center px-4 mb-3">Summary</h1>
+            <div class="container mt-0 mb-3 mx-0 px-0 border-bottom">
 
-              <div class="row container mx-0 plan-icons-container shadow-sm py-3 px-2 px-md-4">
+              <h1 class="checkout-title">Checkout</h1>
+              <div class="row container mx-0 plan-icons-container shadow-sm py-3 px-2 px-lg-2">
                 <div class="col text-primary-dark">
                   <small><b>ITEMS</b></small>
                 </div>
@@ -421,7 +309,7 @@
               </div>
 
               <div class="container price-summary-container">
-                <div class="row px-2 px-md-4 py-2">
+                <div class="row px-2 px-lg-2 py-2">
                   <div class="col">
                     <small>{{selectedRoomDetails.categoryName}} Room</small><br>
                     <small><small class="text-muted"> ( x{{noOfDaysSelected <= 0 ? 1 : noOfDaysSelected}}
@@ -447,33 +335,48 @@
                   </div>
                 </div> -->
 
-                <div class="row px-2 px-md-4 py-2">
+                <div class="row px-2 px-lg-2 py-2">
                   <div class="col">
-                    <small>GST & Other Charges<br><small class="text-muted">( {{TAX == 0.12 ? '12%' : '18%'}}
+                    <small>GST<small class="text-muted">( {{TAX == 0.12 ? '12%' : '18%'}}
                         )</small></small>
                   </div>
                   <div class="col text-end">
                     <small>₹{{totalCost * TAX}}</small>
                   </div>
                 </div>
+
+                <div class="row px-2 px-lg-2 py-2">
+                  <div class="col">
+                    <small>Service Charge<small class="text-muted">(0%)</small></small>
+                  </div>
+                  <div class="col text-end">
+                    <small>₹0</small>
+                  </div>
+                </div>
+
+
               </div>
 
 
             </div>
 
             <!-- PRICE CONTAINER -->
-            <div class="row flex-row gap-2 mb-5 justify-content-between align-items-center">
+            <div class="row flex-row px-4 px-lg-2 gap-0 gap-lg-2 mb-0 justify-content-between align-items-center">
 
-              <div class="col-5 d-flex flex-column justify-content-center ps-4">
+              <!-- <div class="col-5 d-flex flex-column justify-content-center ps-4">
                 <h1 class="mb-0 total-cost ps-2 ps-md-4">Total Cost</h1>
                 <p class="my-0 ms-1 ps-2 ps-md-4"><small>incl. all charges.</small></p>
+              </div> -->
+              <div class="col-5 col-lg-12">
+                <p class="text-center small text-secondary mb-0 float-start">Total Cost (including taxes)</p>
               </div>
-
-              <div class="col-6 pe-3 pe-md-4">
+              <div class="col-7 col-lg-12 pe-3 pe-md-4 my-2 mb-4 price-ticket-design">
                 <div class="container price-container text-center">
-                  <h1 class="price-tag float-end mb-0 text-nowrap">₹ {{ totalCostWithTax }}/-</h1>
+                  <h1 class="price-tag mb-0 text-center fs-1 py-2">₹ {{ totalCostWithTax }}/-</h1>
                 </div>
               </div>
+
+
 
 
             </div>
@@ -498,17 +401,17 @@
             </div>
 
           </div>
-
-
         </div>
-        <!-- END RIGHT CONTAINER -->
+
 
       </div>
+
+
     </div>
 
 
   </div>
-  
+
 </section>
 
 <div class="checkout-form overflow-y-scroll" *ngIf="checkOutForm">
@@ -628,13 +531,10 @@
                       </span>
                     </div> -->
 
-                    <ngx-intl-tel-input minlength="6" [maxLength]="15" class="w-100 newphone-input" 
-                    [preferredCountries]="preferredCountries"
-                    [enablePlaceholder]="true"
-                    [searchCountryFlag]="true"  
-                    [phoneValidation]="true"
-                    [separateDialCode]="true" formControlName="phone"
-                    [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
+                    <ngx-intl-tel-input minlength="6" [maxLength]="15" class="w-100 newphone-input"
+                      [preferredCountries]="preferredCountries" [enablePlaceholder]="true" [searchCountryFlag]="true"
+                      [phoneValidation]="true" [separateDialCode]="true" formControlName="phone"
+                      [ngClass]="{ 'is-invalid': submitted && f['phone'].errors }">
                     </ngx-intl-tel-input>
 
                     <!-- <input type="tel" placeholder="Phone Number" formControlName="phone" class="form-control"
@@ -646,7 +546,8 @@
                       <div *ngIf="f['phone'].errors['required']">
                         Phone number is required
                       </div>
-                      <div *ngIf="f['phone'].errors['phone'] || f['phone'].errors['validatePhoneNumber']">Invalid Phone Number</div>
+                      <div *ngIf="f['phone'].errors['phone'] || f['phone'].errors['validatePhoneNumber']">Invalid Phone
+                        Number</div>
                     </div>
 
                   </div>
@@ -661,8 +562,8 @@
                         <i class="fa-solid fa-user text-muted"></i>
                       </span>
                     </div>
-                    <input type="number" placeholder="Total No. of Person" formControlName="adults"
-                      class="form-control" [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
+                    <input type="number" placeholder="Total No. of Person" formControlName="adults" class="form-control"
+                      [ngClass]="{ 'is-invalid': submitted && f['adults'].errors }" />
                     <div *ngIf="submitted && f['adults'].errors" class="invalid-feedback">
                       <div *ngIf="f['adults'].errors['required']">
                         Total No. of Adults is required
