@@ -19,6 +19,7 @@ import { CheckinformComponent } from './home/checkinform/checkinform.component';
 import { TarconservicesComponent } from './home/tarconservices/tarconservices.component';
 import { GreetingComponent } from './home/greeting/greeting.component';
 import { AboutusComponent } from './home/aboutus/aboutus.component';
+import { OurstoryComponent } from './home/ourstory/ourstory.component';
 import { ExploreinnComponent } from './home/exploreinn/exploreinn.component';
 import { DineinnComponent } from './home/dineinn/dineinn.component';
 import { NearbyComponent } from './home/nearby/nearby.component';
@@ -101,6 +102,7 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
       TarconservicesComponent,
       GreetingComponent,
       AboutusComponent,
+      OurstoryComponent,
       ExploreinnComponent,
       DineinnComponent,
       NearbyComponent,

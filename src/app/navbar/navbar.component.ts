@@ -41,7 +41,7 @@ export class NavbarComponent implements OnInit {
     defaultNav:[
       {navTitle:'Services', url:'', fragment:'div-otherservices'},
       {navTitle:'Contact', url:'/home', fragment:'div-contactus'},
-      {navTitle:'About', url:'/policy/about-us', fragment:''}
+      {navTitle:'About', url:'about', fragment:''}
     ],
     hotelNav:[
       {navTitle:'Rooms', url:'/hotel', fragment:'section-hotel'},
