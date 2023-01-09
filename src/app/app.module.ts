@@ -22,6 +22,7 @@ import { AboutusComponent } from './home/aboutus/aboutus.component';
 import { OurstoryComponent } from './home/ourstory/ourstory.component';
 import { ExploreinnComponent } from './home/exploreinn/exploreinn.component';
 import { DineinnComponent } from './home/dineinn/dineinn.component';
+import { ModifybookingComponent } from './home/modifybooking/modifybooking.component';
 import { NearbyComponent } from './home/nearby/nearby.component';
 import { PopulardestinationComponent } from './home/populardestination/populardestination.component';
 import { ContactusComponent } from './contactus/contactus.component';
@@ -114,7 +115,8 @@ let ngxUiLoaderConfig: NgxUiLoaderConfig = {
       FaqComponent,
       RefundpolicyComponent,
       PolicyHeaderComponent,
-      NewAboutUsComponent
+      NewAboutUsComponent,
+      ModifybookingComponent
    ],
   imports: [
     BrowserModule,
