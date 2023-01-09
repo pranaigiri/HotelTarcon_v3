@@ -9,11 +9,14 @@
 <div class="text-center">
   <h2>Find Your Reservations</h2>
 </div>
-<div class="container d-flex justify-content-center">
+<div class="container d-flex justify-content-center mb-5">
   <div class="card w-50 w-sm-50 py-2">
     <div class="container">
       <div class="card-body text-center">
         <h5>WITH BOOKING NUMBER OR PAYMENT NUMBER</h5>
+
+        <!-- Error Messsage -->
+        <!-- We apologize. We cannot locate your reservation. Please check your information and try again. -->
       </div>
       <div class="mx-auto">
         <input type="text" class="form-control form-control-lg mt-0 mb-3" placeholder="Booking or Payment Number">
@@ -24,10 +27,50 @@
       </div>
       <hr>
       <div class="text-center">
-        Don't know your confirmation #?
-        Your confirmation # was included in an email sent at the time of booking. Please check your email to recover the
+        Don't know your Booking/Payment number?
+        Your Booking/Payment number was included in an email sent at the time of booking. Please check your email to
+        recover the
         number.
       </div>
     </div>
   </div>
+</div>
+
+
+<div class="container">
+  <p>Here is the details of your reservation with Id Interpolation</p>
+  <table class="table table-bordered">
+    <thead class="bg-light">
+      <tr>
+        <th scope="col">Booking Id</th>
+        <th scope="col">Payment Id</th>
+        <th scope="col">Guest Name</th>
+        <th scope="col">Advance Payment</th>
+        <th scope="col">Due Payment</th>
+        <th scope="col">Total Payment</th>
+        <th scope="col">Total Guest</th>
+        <th scope="col">Booking Date</th>
+        <th scope="col">Check-In</th>
+        <th scope="col">Check-Out</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Mark</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>Mark</td>
+        <td>Otto</td>
+        <td>@mdo</td>
+        <td>
+          <input type="button" class="btn btn-sm btn-primary" value="Edit"> &nbsp;
+          <input type="button" class="btn btn-sm btn-danger" value="Cancel">
+        </td>
+      </tr>
+  </table>
 </div>
