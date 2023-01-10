@@ -173,3 +173,14 @@
  .subject-select .others, selected {
    color: rgb(32, 32, 32);
  }
+
+
+ .map-container{
+  overflow: hidden;
+  border-radius: 10px;
+ }
+
+ .iframe-map{
+  top: -70px;
+  position: absolute;
+ }
