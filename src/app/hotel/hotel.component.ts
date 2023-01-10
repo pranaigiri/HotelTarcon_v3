@@ -476,17 +476,12 @@ export class HotelComponent implements OnInit {
     //console.log("-------START - createOrder")
 
     let orderDetails: any = {
+      customerName: this.customerDetails.fullname || "",
       customerPhone: this.customerDetails.phone.e164Number || "",
+      customerEmail: this.customerDetails.email || "",
       selectedRoomCategory: this.selectedRoomDetails.categoryId,
       selectedRoomName: this.selectedRoomDetails.categoryName,
       selectedRoomAmount: this.selectedRoomDetails.amount,
-      // selectedOpPlan: this.selectedOpPlanDetails.opName || "",
-      // selectedOpAmount: this.selectedOpPlanDetails.opAmount || 0,
-      selectedOpPlan: "",
-      selectedOpAmount: 0,
-      breakfast: false,
-      lunch: false,
-      dinner: false,
       fromDate: this.tempFromDate,
       toDate: this.tempTodate,
       totalCost: this.totalCostWithTax,
@@ -519,13 +514,13 @@ export class HotelComponent implements OnInit {
       this.paymentStateStarted = true;
       //console.log("Created Order:", res);
       this.successResponse.orderRes = res;
-      this.payWithRazor(res);
+      this.payWithRazor(res, orderOptions);
     });
 
   }
 
   //initiate payment using generated order_id
-  payWithRazor(order: any) {
+  payWithRazor(order: any, createdOrderDetails:any) {
 
     //console.log("-------START - payWithRazor")
     const options: any = {
@@ -564,12 +559,15 @@ export class HotelComponent implements OnInit {
 
         this.successResponse.paymentRes = options;
 
+        console.log("SUCCESS RESPONSE", this.successResponse.paymentRes);
+
         let customAttr: any = {
           razorpay_order_id: order.id,
           razorpay_payment_id: response.razorpay_payment_id,
           razorpay_signature: response.razorpay_signature,
           currency: order.currency,
-          amount: order.amount
+          amount: order.amount,
+          createdOrderDetails: createdOrderDetails
         }
 
         // call your backend api to verify payment signature & capture transaction

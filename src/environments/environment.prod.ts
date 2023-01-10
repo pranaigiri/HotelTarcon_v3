@@ -11,10 +11,10 @@ export const environment = {
   },
 
   //PRODUCTION API URL
-  apiUrl:"https://tarconsikkimazure.azurewebsites.net/api"
+  //apiUrl:"https://tarconsikkimazure.azurewebsites.net/api"
 
   //LOCALHOST API URL
-  //apiUrl:"https://localhost:7210/api"
+  apiUrl:"https://localhost:7210/api"
 
 
 };
